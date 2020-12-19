@@ -12,7 +12,7 @@ Use this installation script so you can honestly say _"I use Arch btw"_.
 ## Usage
 In an  [Arch Linux livecd](https://www.archlinux.org/download/) environment, download the installation script and run it.
 ```sh
-curl https://raw.githubusercontent.com/planet36/arch-install/master/arch-vbox.sh > arch-vbox.sh
+curl https://raw.githubusercontent.com/planet36/arch-install/main/arch-vbox.sh > arch-vbox.sh
 
 sh arch-vbox -u NEW_USER [-s NEW_USER_SHELL] [-w DPY_W] [-h DPY_H] -d DPY_D [-e ENCRYPT_PASSPHRASE]
 ```
@@ -37,7 +37,7 @@ If mandatory arguments are absent, you will be prompted to enter values for them
 The display dimensions are used to calculate the <abbr title="Dots Per Inch">DPI</abbr>.
 
 ### Dotfiles
-Dotfiles for the new user are cloned from [planet36/dotfiles](planet36/dotfiles).
+Dotfiles for the new user are cloned from [planet36/dotfiles](https://github.com/planet36/dotfiles).
 
 ## License
 [OSL-3.0](https://opensource.org/licenses/OSL-3.0)
