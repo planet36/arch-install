@@ -5,9 +5,9 @@ Use this installation script so you can honestly say _"I use Arch btw"_.
 
 ## Description
 - arch-vbox.sh
- - The script to [install Arch Linux](https://wiki.archlinux.org/index.php/Installation_guide) in a [VirtualBox](https://www.virtualbox.org/) guest
+  - The script to [install Arch Linux](https://wiki.archlinux.org/index.php/Installation_guide) in a [VirtualBox](https://www.virtualbox.org/) guest
 - arch-pkgs.txt
- - The list of [Arch Linux packages](https://www.archlinux.org/packages/) to install
+  - The list of [Arch Linux packages](https://www.archlinux.org/packages/) to install
 
 ## Usage
 In an  [Arch Linux livecd](https://www.archlinux.org/download/) environment, download the installation script and run it.
@@ -37,7 +37,7 @@ If mandatory arguments are absent, you will be prompted to enter values for them
 The display dimensions are used to calculate the <abbr title="Dots Per Inch">DPI</abbr>.
 
 ### Dotfiles
-Dotfiles for the new user are cloned from [planet36/dotfiles](https://github.com/planet36/dotfiles)
+Dotfiles for the new user are cloned from [planet36/dotfiles](https://github.com/planet36/dotfiles).
 
 ## License
 [OSL-3.0](https://opensource.org/licenses/OSL-3.0)
