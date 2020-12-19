@@ -18,17 +18,23 @@ sh arch-vbox -u NEW_USER [-s NEW_USER_SHELL] [-w DPY_W] [-h DPY_H] -d DPY_D [-e 
 ```
 
 ### Options
-- `-u` Specify the username of the new user.
+- `-u NEW_USER`
+  - Specify the username of the new user.
   - The default password is the same as the username.  Change it after the installation is finished!
-- `-s` Specify the _basename_ of the shell of the new user.
+- `-s NEW_USER_SHELL`
+  - Specify the _basename_ of the shell of the new user.
   - The default shell is **bash**.
   - See **/etc/shells** for available shells.
-- `-w` Specify the width (in pixels) of the display.
+- `-w DPY_W`
+  - Specify the width (in pixels) of the display.
   - The default value is **1920**.
-- `-h` Specify the height (in pixels) of the display.
+- `-h DPY_H`
+  - Specify the height (in pixels) of the display.
   - The default value is **1080**.
-- `-d` Specify the diagonal size (in inches) of the display.
-- `-e` Specify the encryption passphrase used to encrypt the root partition (**/dev/sda2**).
+- `-d DPY_D`
+  - Specify the diagonal size (in inches) of the display.
+- `-e ENCRYPT_PASSPHRASE`
+  - Specify the encryption passphrase used to encrypt the root partition (**/dev/sda2**).
   - The passphrase may not be empty.
   - If the `-e` option is absent, no partitions will be encrypted during installation.
 
