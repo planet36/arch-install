@@ -4,9 +4,9 @@
 Use this installation script so you can honestly say _"I use Arch btw"_.
 
 ## Description
-- arch-vbox.sh
+- [arch-vbox.sh](arch-vbox.sh)
   - The script to [install Arch Linux](https://wiki.archlinux.org/index.php/Installation_guide) in a [VirtualBox](https://www.virtualbox.org/) guest
-- arch-pkgs.txt
+- [arch-pkgs.txt](arch-pkgs.txt)
   - The list of [Arch Linux packages](https://www.archlinux.org/packages/) to install
 
 ## Usage
@@ -18,17 +18,17 @@ sh arch-vbox -u NEW_USER [-s NEW_USER_SHELL] [-w DPY_W] [-h DPY_H] -d DPY_D [-e 
 ```
 
 ### Options
-- `NEW_USER` is the username of the new user.
+- `-u` Specify the username of the new user.
   - The default password is the same as the username.  Change it after the installation is finished!
-- `NEW_USER_SHELL` is the _basename_ of the shell of the new user.
+- `-s` Specify the _basename_ of the shell of the new user.
   - The default shell is **bash**.
   - See **/etc/shells** for available shells.
-- `DPY_W` is the width (in pixels) of the display.
+- `-w` Specify the width (in pixels) of the display.
   - The default value is **1920**.
-- `DPY_H` is the height (in pixels) of the display.
+- `-h` Specify the height (in pixels) of the display.
   - The default value is **1080**.
-- `DPY_D` is the diagonal size (in inches) of the display.
-- `ENCRYPT_PASSPHRASE` is the encryption passphrase used to encrypt the root partition (**/dev/sda2**).
+- `-d` Specify the diagonal size (in inches) of the display.
+- `-e` Specify the encryption passphrase used to encrypt the root partition (**/dev/sda2**).
   - The passphrase may not be empty.
   - If the `-e` option is absent, no partitions will be encrypted during installation.
 
@@ -37,7 +37,7 @@ If mandatory arguments are absent, you will be prompted to enter values for them
 The display dimensions are used to calculate the <abbr title="Dots Per Inch">DPI</abbr>.
 
 ### Dotfiles
-Dotfiles for the new user are cloned from [planet36/dotfiles](https://github.com/planet36/dotfiles).
+Dotfiles for the new user are cloned from [planet36/dotfiles](planet36/dotfiles).
 
 ## License
 [OSL-3.0](https://opensource.org/licenses/OSL-3.0)
