@@ -1,0 +1,413 @@
+# vim: ft=sh:
+
+# https://www.archlinux.org/groups/
+
+base
+linux
+grub
+
+# Install initramfs compression methods listed in /etc/mkinitcpio.conf
+gzip
+bzip2
+xz
+lzop
+lz4
+zstd
+
+
+# compile tools
+base-devel
+
+
+# debug tools
+gdb
+ltrace
+strace
+
+
+# X
+xorg-server
+xorg-xclock
+xorg-xev
+xorg-xeyes
+xorg-xinit
+xorg-xmodmap
+xorg-xprop
+xorg-xrandr
+xorg-xrdb
+xorg-xset
+xorg-xsetroot
+xorg-xwd
+xorg-xwininfo
+numlockx
+xcape
+xclip
+xcompmgr
+xsel
+xterm
+
+
+# fonts
+fontconfig
+gnu-free-fonts
+
+
+# VirtualBox Guest Additions
+
+# https://wiki.archlinux.org/index.php/VirtualBox/Install_Arch_Linux_as_a_guest
+
+virtualbox-guest-utils
+# virtualbox-guest-dkms is necessary if the kernel is older than 5.6
+
+
+# pacman utils
+expac
+pacman-contrib
+pacman-mirrorlist
+reflector
+
+
+# shells
+bash
+dash
+fish
+xonsh
+zsh
+
+# https://github.com/ranger/ranger/issues/2079#issuecomment-716684122
+# XXX: ranger image previews are broken in fish 3.1.2 -- fixed here (2020-06-07)
+# https://github.com/fish-shell/fish-shell/commit/d5a239e59ec0e84a47d499270f618e432abd747f
+
+
+# bash utils
+bash-completion
+checkbashisms
+shellharden
+
+#shellcheck
+# Total Download Size:    23.31 MiB
+# Total Installed Size:  168.02 MiB
+# XXX: has huge dependencies (haskell)
+
+
+# zsh utils
+zsh-autosuggestions
+zsh-completions
+zsh-syntax-highlighting
+
+
+# docs
+man-db
+man-pages
+texinfo
+
+
+# words
+words
+
+
+# net tools
+openssh
+wget
+curl
+rsync
+
+
+# resource monitor
+bashtop
+htop
+iftop
+#glances
+#nmon
+
+#gtop
+# Total Download Size:   11.71 MiB
+# Total Installed Size:  38.66 MiB
+
+
+# git, gitk
+git
+tk
+
+#gitg
+# Total Download Size:    29.39 MiB
+# Total Installed Size:  139.56 MiB
+
+
+# C++ lib dev
+pcre2
+double-conversion
+fmt
+nlohmann-json
+jsoncpp
+freeglut
+
+
+# user utils
+opendoas
+util-linux
+at
+
+
+# code tools
+colordiff
+diffstat
+patch
+ctags
+sloccount
+cloc
+jq
+diff-so-fancy
+
+
+# python3
+python
+python-pip
+python-wheel
+pypy3
+ipython
+python-pylint
+
+
+# vim, neovim
+#vim
+neovim
+python-pynvim
+
+
+# tmux
+tmux
+
+
+# doc creation
+#doxygen
+#graphviz
+
+
+# dwm deps
+# https://aur.archlinux.org/packages/dwm/
+dmenu
+freetype2
+libx11
+libxft
+libxinerama
+
+
+# st deps
+# https://aur.archlinux.org/packages/st-git/
+libxft
+libxext
+ncurses
+
+
+# file tools
+fzf
+highlight
+dos2unix
+perl-rename
+tree
+fd
+dfc
+ncdu
+lsof
+
+#lsd
+# lsd installs awesome-terminal-fonts
+
+# XXX: lsd package needs to be updated as of 2020-12-09
+
+
+#exa
+##### exa isn't mature enough yet
+# Exa does not read the `TZ` environment variable, but it is a standard way to convey timezone data on musl #453
+# https://github.com/ogham/exa/issues/453
+# This was fixed here: https://github.com/ogham/exa/pull/725
+# on 2020-10-08
+
+
+# search tools
+ack
+ripgrep
+the_silver_searcher
+
+
+# comprson programs
+brotli
+bzip2
+gzip
+lbzip2
+lz4
+lzip
+lzop
+pbzip2
+pigz
+xz
+zstd
+
+
+# other comprson programs
+lrzip
+ncompress
+p7zip
+pixz
+unrar
+unzip
+zip
+zopfli
+
+
+# lynx
+lynx
+
+
+# NOTE: gtk3 apps depend on gsettings-desktop-schemas which depends on adobe-source-code-pro-fonts
+
+# browser
+firefox
+firefox-ublock-origin
+
+#chromium
+# XXX: no built-in ad blocking
+
+#chromium
+# Total Download Size:    65.00 MiB
+# Total Installed Size:  209.14 MiB
+
+# opera
+# Total Download Size:    67.14 MiB
+# Total Installed Size:  200.22 MiB
+
+# qutebrowser
+# Total Download Size:    72.08 MiB
+# Total Installed Size:  283.63 MiB
+
+
+# image tools
+imagemagick
+graphicsmagick
+optipng
+hsetroot
+feh
+sxiv
+jpegexiforient
+libheif
+libraw
+dcraw
+scrot
+xwallpaper
+
+#nitrogen
+# Total Download Size:    8.53 MiB
+# Total Installed Size:  52.66 MiB
+
+
+# video tools
+libdvdcss
+youtube-dl
+rtmpdump
+ffmpeg
+
+
+# file managers
+fff
+nnn
+ranger
+odt2txt
+mediainfo
+ueberzug
+w3m
+
+##### XXX: no image previews work in Terminator
+
+
+# utils
+time
+bc
+calc
+datamash
+dictd
+units
+figlet
+scrypt
+parallel
+neofetch
+cowsay
+cmatrix
+moreutils
+screenkey
+asciiquarium
+grc
+hyperfine
+
+#screenfetch
+# XXX: inferior to neofetch
+
+#lolcat
+# XXX: installs ruby
+
+
+# python3 modules
+python-yaml
+python-numpy
+python-scipy
+python-matplotlib
+python-gmpy2
+python-regex
+python-pillow
+python-geographiclib
+python-pendulum
+python-pycryptodome
+
+#python-sympy
+# Total Download Size:   10.09 MiB
+# Total Installed Size:  84.33 MiB
+
+
+# terms
+terminator
+kitty
+#termite
+#termite-terminfo
+
+# XXX: terminator package needs to be updated as of 2020-12-09
+
+# XXX: termite might be unmaintained
+
+
+# GUI diff tools
+meld
+# XXX: meld package needs to be updated as of 2020-12-09
+
+
+# meld deps
+# expac -S -1 '%E' -l '\n' meld
+python-gobject
+python-cairo
+gtksourceview3
+gtksourceview4 # XXX: required for new meld (3.21)
+gsettings-desktop-schemas
+dconf
+
+
+# XXX: can't compare folders
+#diffuse
+# Total Download Size:   0.32 MiB
+# Total Installed Size:  1.17 MiB
+
+# XXX: UI sucks
+#kompare
+# Total Download Size:    68.29 MiB
+# Total Installed Size:  304.81 MiB
+
+
+# games
+aisleriot # installs as sol
+
+##### TODO: compare this to aisleriot
+#pysolfc # installs as pysol
+#pysolfc-cardsets
+# Total Download Size:   31.58 MiB
+# Total Installed Size:  43.93 MiB
+# small cards
+# neat hints
+
