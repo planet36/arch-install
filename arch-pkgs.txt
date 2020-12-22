@@ -364,6 +364,7 @@ python-pycryptodome
 
 
 # terms
+alacritty
 terminator
 kitty
 #termite
