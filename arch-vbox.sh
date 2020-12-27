@@ -386,6 +386,28 @@ setup_2() {
     bash .dotfiles/install.bash -r -p
     # }}}
 
+    # {{{ lsd
+    ##### TODO: when lsd package is updated, remove this
+
+    #cd ~/.local/src
+    #if [ ! -d lsd ]
+    #then
+    #    git clone https://github.com/Peltoche/lsd.git
+    #    cd lsd
+    #    cargo build --release
+    #    cd target/release/
+    #    ln --verbose --symbolic --relative --backup=numbered --target-directory ~/.local/bin/ -- lsd
+    #fi
+
+    wget https://github.com/Peltoche/lsd/releases/download/0.19.0/lsd-0.19.0-x86_64-unknown-linux-gnu.tar.gz
+    tar -xf lsd-0.19.0-x86_64-unknown-linux-gnu.tar.gz && rm -f lsd-0.19.0-x86_64-unknown-linux-gnu.tar.gz
+    cd lsd-0.19.0-x86_64-unknown-linux-gnu/
+    ln --verbose --symbolic --relative --backup=numbered --target-directory ~/.local/bin/ -- lsd
+    cd ..
+    rm -rf lsd-0.19.0-x86_64-unknown-linux-gnu/
+
+    # }}}
+
     # {{{ meld
     ##### TODO: when meld package is updated, remove this
     cd ~/.local/src
