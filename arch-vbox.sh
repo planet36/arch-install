@@ -386,17 +386,6 @@ setup_2() {
     bash .dotfiles/install.bash -r -p
     # }}}
 
-    # {{{ terminator
-    ##### TODO: when terminator package is updated, remove this
-    cd ~/.local/src
-    if [ ! -d terminator ]
-    then
-        git clone https://github.com/gnome-terminator/terminator.git
-        cd terminator
-        ln --verbose --symbolic --relative --backup=numbered --target-directory ~/.local/bin/ -- terminator
-    fi
-    # }}}
-
     # {{{ meld
     ##### TODO: when meld package is updated, remove this
     cd ~/.local/src
