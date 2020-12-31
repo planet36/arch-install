@@ -415,7 +415,8 @@ setup_2() {
     then
         git clone https://gitlab.gnome.org/GNOME/meld.git
         cd meld/bin
-        ln --verbose --symbolic --relative --backup=numbered --target-directory ~/.local/bin/ -- meld
+        ##### XXX: meld 3.21 sucks
+        #ln --verbose --symbolic --relative --backup=numbered --target-directory ~/.local/bin/ -- meld
     fi
     # }}}
 
