@@ -162,6 +162,11 @@ jq
 diff-so-fancy
 
 
+# needed for git-send-email
+perl-io-socket-ssl
+perl-authen-sasl
+
+
 # python3
 python
 python-pip
