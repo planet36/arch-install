@@ -394,17 +394,25 @@ setup_2() {
     #then
     #    git clone https://github.com/Peltoche/lsd.git
     #    cd lsd
-    #    cargo build --release
+    #    cargo build --release --locked
     #    cd target/release/
     #    ln --verbose --symbolic --relative --backup=numbered --target-directory ~/.local/bin/ -- lsd
     #fi
 
+    cd ~/.local/bin
     wget https://github.com/Peltoche/lsd/releases/download/0.19.0/lsd-0.19.0-x86_64-unknown-linux-gnu.tar.gz
     tar -xf lsd-0.19.0-x86_64-unknown-linux-gnu.tar.gz && rm -f lsd-0.19.0-x86_64-unknown-linux-gnu.tar.gz
-    cd lsd-0.19.0-x86_64-unknown-linux-gnu/
-    ln --verbose --symbolic --relative --backup=numbered --target-directory ~/.local/bin/ -- lsd
-    cd ..
+    mv --verbose lsd-0.19.0-x86_64-unknown-linux-gnu/lsd .
     rm -rf lsd-0.19.0-x86_64-unknown-linux-gnu/
+
+    # }}}
+
+    # {{{ zoxide
+
+    cd ~/.local/bin
+    wget https://github.com/ajeetdsouza/zoxide/releases/download/v0.5.0/zoxide-x86_64-unknown-linux-gnu
+    mv zoxide-x86_64-unknown-linux-gnu zoxide
+    chmod u+x zoxide
 
     # }}}
 
