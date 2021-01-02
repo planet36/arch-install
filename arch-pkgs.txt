@@ -150,6 +150,7 @@ freeglut
 opendoas
 util-linux
 at
+lsof
 
 
 # code tools
@@ -161,6 +162,7 @@ sloccount
 cloc
 jq
 diff-so-fancy
+highlight
 
 
 # needed for git-send-email
@@ -208,16 +210,15 @@ libxext
 ncurses
 
 
-# file tools
-fzf
-highlight
+# file conversion tools
 dos2unix
 perl-rename
+
+
+# directory tools
 tree
-fd
 dfc
 ncdu
-lsof
 
 #lsd
 # lsd installs awesome-terminal-fonts
@@ -233,7 +234,12 @@ lsof
 # on 2020-10-08
 
 
-# search tools
+# search for files
+fd
+fzf
+
+
+# search within files
 ack
 ripgrep
 the_silver_searcher
