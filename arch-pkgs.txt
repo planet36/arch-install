@@ -67,6 +67,7 @@ pacman-mirrorlist
 reflector
 pkgfile
 asp
+pkgstats
 
 
 # shells
