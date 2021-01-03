@@ -1,0 +1,9 @@
+# Usage:
+# grep -E -o '^[^#]+' aur-pkgs.txt | xargs -r yay --color always -S --noconfirm --needed --answerdiff None
+
+bottom-bin
+#geographiclib
+gotop-bin
+lsd-bin
+#meld-git
+zoxide-bin
