@@ -443,10 +443,10 @@ setup_2() {
     # }}}
 
     # https://www.colour-science.org/installation-guide/
-    #pip install --user colour-science
+    #sudo --set-home pip install colour-science
 
     # https://github.com/gtaylor/python-colormath
-    #pip install colormath
+    #sudo --set-home pip install colormath
 }
 
 
