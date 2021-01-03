@@ -416,6 +416,16 @@ setup_2() {
 
     # }}}
 
+    # {{{ bottom
+
+    cd ~/.local/bin
+    wget https://github.com/ClementTsang/bottom/releases/download/0.5.6/bottom_x86_64-unknown-linux-gnu.tar.gz
+    tar -xf bottom_x86_64-unknown-linux-gnu.tar.gz && rm -f bottom_x86_64-unknown-linux-gnu.tar.gz
+    mv --verbose bottom_x86_64-unknown-linux-gnu/btm .
+    rm -rf bottom_x86_64-unknown-linux-gnu/
+
+    # }}}
+
     # {{{ meld
     ##### TODO: when meld package is updated, remove this
     cd ~/.local/src
