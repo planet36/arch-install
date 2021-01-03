@@ -18,6 +18,7 @@ DEFAULT_DPY_W=1920
 DEFAULT_DPY_H=1080
 
 PAC_CMD='pacman --color always -S --noconfirm --needed'
+YAY_CMD='yay --color always -S --noconfirm --needed --answerdiff None'
 
 
 is_int() {
