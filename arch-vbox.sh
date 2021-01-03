@@ -279,7 +279,7 @@ EOT
     # }}}
 
     # {{{ Install packages
-    curl https://raw.githubusercontent.com/planet36/arch-install/master/arch-pkgs.txt | grep -E -o '^[^#]+' | xargs -r $PAC_CMD
+    curl https://raw.githubusercontent.com/planet36/arch-install/main/arch-pkgs.txt | grep -E -o '^[^#]+' | xargs -r $PAC_CMD
     # }}}
 
     # {{{ Configure grub
