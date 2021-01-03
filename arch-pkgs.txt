@@ -384,8 +384,6 @@ kitty
 #termite
 #termite-terminfo
 
-# XXX: terminator package needs to be updated as of 2020-12-09
-
 # XXX: termite might be unmaintained
 
 
