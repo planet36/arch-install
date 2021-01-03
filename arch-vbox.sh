@@ -278,7 +278,7 @@ EOT
         gzip bzip2 xz lzop lz4 zstd
     # }}}
 
-    # {{{ Install packages
+    # {{{ Install Arch packages
     curl https://raw.githubusercontent.com/planet36/arch-install/main/arch-pkgs.txt | grep -E -o '^[^#]+' | xargs -r $PAC_CMD
     # }}}
 
@@ -372,6 +372,10 @@ EOT
 
 # setup user dotfiles and programs
 setup_2() {
+
+    # {{{ Install AUR packages
+    curl https://raw.githubusercontent.com/planet36/arch-install/main/aur-pkgs.txt | grep -E -o '^[^#]+' | xargs -r $YAY_CMD
+    # }}}
 
     # {{{ Setup dotfiles
     cd
