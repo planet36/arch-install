@@ -1,8 +1,12 @@
+# vim: ft=sh:
+
 # Usage:
-# grep -E -o '^[^#]+' aur-pkgs.txt | xargs -r yay --color always -S --noconfirm --needed --answerdiff None
+# grep -E -o '^[^#]+' aur-pkgs.txt | xargs -r -o yay --color always -S --needed --answerclean None --answerdiff None
+
 
 bottom-bin
 #geographiclib
+git-delta-bin
 gotop-bin
 lsd-bin
 #meld-git
