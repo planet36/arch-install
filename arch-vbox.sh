@@ -17,8 +17,8 @@ DEFAULT_NEW_USER_SHELL=bash
 DEFAULT_DPY_W=1920
 DEFAULT_DPY_H=1080
 
-PAC_CMD='pacman --color always -S --noconfirm --needed'
-YAY_CMD='yay --color always -S --noconfirm --needed --answerdiff None'
+PAC_CMD='pacman --color always -S --needed --noconfirm'
+YAY_CMD='yay --color always -S --needed --noconfirm --answerclean None --answerdiff None'
 
 
 is_int() {
