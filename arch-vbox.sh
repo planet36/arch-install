@@ -361,6 +361,56 @@ EOT
     #echo 'permit persist :wheel' > /etc/doas.conf
     # }}}
 
+    ##### TODO: test this
+    # {{{ Modify defaults for all users
+
+    # https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html
+    cat <<EOT >> /etc/security/pam_env.conf
+
+# Added by $THIS_SCRIPT
+PATH            DEFAULT=@{HOME}/.local/bin
+XDG_CACHE_HOME  DEFAULT=@{HOME}/.cache
+XDG_CONFIG_DIRS DEFAULT=/etc/xdg
+XDG_CONFIG_HOME DEFAULT=@{HOME}/.config
+XDG_DATA_DIRS   DEFAULT=/usr/local/share/:/usr/share/
+XDG_DATA_HOME   DEFAULT=@{HOME}/.local/share
+EOT
+
+    cd /etc/skel
+
+    rm --verbose -- .bash_logout
+
+    mkdir --verbose --parents -- \
+        .cache \
+        .config \
+        .local/share
+
+    mkdir --verbose --parents -- \
+        .local/bin \
+        .local/lib \
+        .local/src
+
+    mkdir --verbose --parents -- Downloads
+
+    mkdir --verbose --parents -- \
+        .local/share/vim/autoload \
+        .local/share/vim/backup \
+        .local/share/vim/colors \
+        .local/share/vim/swap \
+        .local/share/vim/undo
+
+    mkdir --verbose --parents -- \
+        .local/share/nvim/site/autoload \
+        .local/share/nvim/backup \
+        .local/share/nvim/colors \
+        .local/share/nvim/swap \
+        .local/share/nvim/undo
+
+    mkdir --verbose --mode=0700 -- .local/share/Trash
+
+    mkdir --verbose --parents -- .cache/xorg
+    # }}}
+
     # {{{ New user
     useradd \
         --gid wheel \
