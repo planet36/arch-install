@@ -368,7 +368,6 @@ EOT
     cat <<EOT >> /etc/security/pam_env.conf
 
 # Added by $THIS_SCRIPT
-PATH            DEFAULT=@{HOME}/.local/bin
 XDG_CACHE_HOME  DEFAULT=@{HOME}/.cache
 XDG_CONFIG_DIRS DEFAULT=/etc/xdg
 XDG_CONFIG_HOME DEFAULT=@{HOME}/.config
