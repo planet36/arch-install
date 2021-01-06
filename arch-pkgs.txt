@@ -335,8 +335,6 @@ mediainfo
 ueberzug
 w3m
 
-##### XXX: no image previews work in Terminator
-
 
 # utils
 time
@@ -357,11 +355,9 @@ asciiquarium
 grc
 hyperfine
 
-#screenfetch
-# XXX: inferior to neofetch
+#screenfetch # XXX: inferior to neofetch
 
-#lolcat
-# XXX: installs ruby
+#lolcat # XXX: installs ruby
 
 
 # python3 modules
