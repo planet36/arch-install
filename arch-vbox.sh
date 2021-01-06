@@ -18,7 +18,7 @@ DEFAULT_DPY_W=1920
 DEFAULT_DPY_H=1080
 
 PAC_CMD='pacman --color always -S --needed --noconfirm'
-YAY_CMD='yay --color always -S --needed --noconfirm --answerclean None --answerdiff None'
+YAY_CMD='/tmp/yay --color always -S --needed --noconfirm --aur --answerclean None --answerdiff None'
 
 
 is_int() {
@@ -109,6 +109,16 @@ fi
 EOT
 
     chmod --changes 755 -- /etc/X11/xinit/xinitrc.d/99-vboxclient-all.sh
+}
+
+
+##### TODO: test this
+install_yay_tmp() {
+
+    cd /tmp
+    curl -O -L https://github.com/Jguer/yay/releases/download/v10.1.2/yay_10.1.2_x86_64.tar.gz
+    tar -xf yay_10.1.2_x86_64.tar.gz
+    ln --symbolic --verbose -- yay_10.1.2_x86_64/yay
 }
 
 
@@ -280,7 +290,7 @@ EOT
     # }}}
 
     # {{{ Install Arch packages
-    curl https://raw.githubusercontent.com/planet36/arch-install/main/arch-pkgs.txt | grep -E -o '^[^#]+' | xargs -r $PAC_CMD
+    curl -L https://raw.githubusercontent.com/planet36/arch-install/main/arch-pkgs.txt | grep -E -o '^[^#]+' | xargs -r $PAC_CMD
     # }}}
 
     # {{{ Configure grub
@@ -374,8 +384,10 @@ EOT
 # setup user dotfiles and programs
 setup_2() {
 
+    install_yay_tmp
+
     # {{{ Install AUR packages
-    curl https://raw.githubusercontent.com/planet36/arch-install/main/aur-pkgs.txt | grep -E -o '^[^#]+' | xargs -r $YAY_CMD
+    curl -L https://raw.githubusercontent.com/planet36/arch-install/main/aur-pkgs.txt | grep -E -o '^[^#]+' | xargs -r $YAY_CMD
     # }}}
 
     # {{{ Setup dotfiles
@@ -451,7 +463,6 @@ parse_options() {
         printf 'Enter new user: '
         read -r NEW_USER < /dev/tty
         ARGS+=(-u "$NEW_USER")
-        #ARGS+=("$NEW_USER")
     fi
 
     if [ -z "$NEW_USER_SHELL" ]
@@ -467,7 +478,6 @@ parse_options() {
         #printf 'Enter the width (in pixels) of the display: '
         #read -r DPY_W < /dev/tty
         ARGS+=(-w "$DPY_W")
-        #ARGS+=("$DPY_W")
     fi
 
     if ! is_uint "$DPY_W"
@@ -482,7 +492,6 @@ parse_options() {
         #printf 'Enter the height (in pixels) of the display: '
         #read -r DPY_H < /dev/tty
         ARGS+=(-h "$DPY_H")
-        #ARGS+=("$DPY_H")
     fi
 
     if ! is_uint "$DPY_H"
@@ -496,7 +505,6 @@ parse_options() {
         printf 'Enter the diagonal size (in inches) of the display: '
         read -r DPY_D < /dev/tty
         ARGS+=(-d "$DPY_D")
-        #ARGS+=("$DPY_D")
     fi
 }
 
