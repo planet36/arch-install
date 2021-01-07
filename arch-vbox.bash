@@ -19,7 +19,6 @@ DEFAULT_DPY_W=1920
 DEFAULT_DPY_H=1080
 
 declare -a PACMAN_OPTIONS=(--color always -S --needed --noconfirm)
-declare -a YAY_OPTIONS=(--color always -S --needed --noconfirm --aur --answerclean None --answerdiff None)
 
 
 is_int() {
@@ -116,16 +115,6 @@ fi
 EOT
 
     chmod --changes 755 -- /etc/X11/xinit/xinitrc.d/99-vboxclient-all.sh
-}
-
-
-##### TODO: test this
-install_yay_tmp() {
-
-    cd /tmp
-    curl -O -L https://github.com/Jguer/yay/releases/download/v10.1.2/yay_10.1.2_x86_64.tar.gz
-    tar -xf yay_10.1.2_x86_64.tar.gz
-    ln --symbolic ${VERBOSE_OPTION} -- yay_10.1.2_x86_64/yay
 }
 
 
@@ -433,12 +422,6 @@ EOT
 
 # setup user dotfiles and programs
 setup_2() {
-
-    install_yay_tmp
-
-    # {{{ Install AUR packages
-    curl -L https://raw.githubusercontent.com/planet36/arch-install/main/aur-pkgs.txt | grep -E -o '^[^#]+' | xargs -r /tmp/yay "${YAY_OPTIONS[@]}"
-    # }}}
 
     # {{{ Setup dotfiles
     cd
