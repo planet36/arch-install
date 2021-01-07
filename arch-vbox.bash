@@ -406,6 +406,9 @@ EOT
     mkdir ${VERBOSE_OPTION} --mode=0700 -- .local/share/Trash
 
     mkdir ${VERBOSE_OPTION} --parents -- .cache/xorg
+
+    mkdir ${VERBOSE_OPTION} --parents -- \
+        .local/share/{bash,zsh}
     # }}}
 
     # {{{ New user
