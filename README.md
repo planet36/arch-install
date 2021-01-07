@@ -4,7 +4,7 @@
 Use this installation script so you can honestly say _"I use Arch btw"_.
 
 ## Description
-- [arch-vbox.sh](arch-vbox.sh)
+- [arch-vbox.bash](arch-vbox.bash)
   - The script to [install Arch Linux](https://wiki.archlinux.org/index.php/Installation_guide) in a [VirtualBox](https://www.virtualbox.org/) guest
 - [arch-pkgs.txt](arch-pkgs.txt)
   - The list of [Arch Linux packages](https://www.archlinux.org/packages/) to install
@@ -12,9 +12,9 @@ Use this installation script so you can honestly say _"I use Arch btw"_.
 ## Usage
 In an  [Arch Linux livecd](https://www.archlinux.org/download/) environment, download the installation script and run it.
 ```sh
-curl https://raw.githubusercontent.com/planet36/arch-install/main/arch-vbox.sh > arch-vbox.sh
+curl https://raw.githubusercontent.com/planet36/arch-install/main/arch-vbox.bash > arch-vbox.bash
 
-sh arch-vbox -u NEW_USER [-s NEW_USER_SHELL] [-w DPY_W] [-h DPY_H] -d DPY_D [-e ENCRYPT_PASSPHRASE]
+bash arch-vbox.bash -u NEW_USER [-s NEW_USER_SHELL] [-w DPY_W] [-h DPY_H] -d DPY_D [-e ENCRYPT_PASSPHRASE]
 ```
 
 ### Options
