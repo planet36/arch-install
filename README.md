@@ -19,7 +19,7 @@ bash arch-vbox.bash [-v] -u NEW_USER [-s NEW_USER_SHELL] [-w DPY_W] [-h DPY_H] -
 
 ### Options
 - `-v`
-  - Pass the `--verbose` option to many system commands that accept it.
+  - Pass the `--verbose` option to system commands that accept it.
 - `-u NEW_USER`
   - Specify the username of the new user.
   - The default password is the same as the username.  Change it after the installation is finished!
@@ -29,10 +29,10 @@ bash arch-vbox.bash [-v] -u NEW_USER [-s NEW_USER_SHELL] [-w DPY_W] [-h DPY_H] -
   - See **/etc/shells** for available shells.
 - `-w DPY_W`
   - Specify the width (in pixels) of the display.
-  - The default value is **1920**.
+  - The default width is **1920**.
 - `-h DPY_H`
   - Specify the height (in pixels) of the display.
-  - The default value is **1080**.
+  - The default height is **1080**.
 - `-d DPY_D`
   - Specify the diagonal size (in inches) of the display.
 - `-e ENCRYPT_PASSPHRASE`
