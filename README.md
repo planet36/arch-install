@@ -12,14 +12,14 @@ Use this installation script so you can honestly say _"I use Arch btw"_.
 ## Usage
 In an  [Arch Linux livecd](https://www.archlinux.org/download/) environment, download the installation script and run it.
 ```sh
-curl https://raw.githubusercontent.com/planet36/arch-install/main/arch-vbox.bash > arch-vbox.bash
+curl -O https://raw.githubusercontent.com/planet36/arch-install/main/arch-vbox.bash
 
 bash arch-vbox.bash [-v] -u NEW_USER [-s NEW_USER_SHELL] [-w DPY_W] [-h DPY_H] -d DPY_D [-e ENCRYPT_PASSPHRASE]
 ```
 
 ### Options
 - `-v`
-  - Pass `--verbose` option to many commands.
+  - Pass the `--verbose` option to many system commands that accept it.
 - `-u NEW_USER`
   - Specify the username of the new user.
   - The default password is the same as the username.  Change it after the installation is finished!
