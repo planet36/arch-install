@@ -1,4 +1,4 @@
-#!/usr/bin/sh
+#!/usr/bin/bash
 # SPDX-FileCopyrightText: Steven Ward
 # SPDX-License-Identifier: OSL-3.0
 
@@ -192,7 +192,7 @@ setup_0() {
     # https://wiki.archlinux.org/index.php/Systemd-networkd#Wired_adapter_using_DHCP
     cp --verbose /etc/systemd/network/20-ethernet.network /mnt/etc/systemd/network
 
-    arch-chroot /mnt sh /"$(basename -- "$0")" "${ARGS[@]}"
+    arch-chroot /mnt bash /"$(basename -- "$0")" "${ARGS[@]}"
 
     umount --verbose --recursive -- /mnt
 
@@ -222,6 +222,7 @@ EOT
         echo 'Press Enter key to reboot now'
         # shellcheck disable=SC2034
         read -r DUMMY < /dev/tty
+        #read -r -p 'Press Enter key to reboot'
     fi
 
     systemctl reboot
@@ -231,7 +232,7 @@ EOT
 # setup system, install packages
 setup_1() {
 
-    if [ $(id --user) -ne 0 ]
+    if [ "$(id --user)" -ne 0 ]
     then
         echo 'Error: must run as root'
         exit 1
@@ -431,7 +432,7 @@ EOT
     # }}}
 
     # Must use absolute path of $0
-    su --login --shell=/bin/sh "$NEW_USER" -- "$(realpath -- "$0")" "${ARGS[@]}"
+    su --login --shell=/bin/bash "$NEW_USER" -- "$(realpath -- "$0")" "${ARGS[@]}"
 }
 
 
@@ -516,6 +517,7 @@ parse_options() {
     then
         printf 'Enter new user: '
         read -r NEW_USER < /dev/tty
+        #read -r -p 'Enter new user: ' NEW_USER
         ARGS+=(-u "$NEW_USER")
     fi
 
@@ -558,6 +560,7 @@ parse_options() {
     then
         printf 'Enter the diagonal size (in inches) of the display: '
         read -r DPY_D < /dev/tty
+        #read -r -p 'Enter the diagonal size (in inches) of the display: ' NEW_USER
         ARGS+=(-d "$DPY_D")
     fi
 }
