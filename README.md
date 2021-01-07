@@ -14,10 +14,12 @@ In an  [Arch Linux livecd](https://www.archlinux.org/download/) environment, dow
 ```sh
 curl https://raw.githubusercontent.com/planet36/arch-install/main/arch-vbox.bash > arch-vbox.bash
 
-bash arch-vbox.bash -u NEW_USER [-s NEW_USER_SHELL] [-w DPY_W] [-h DPY_H] -d DPY_D [-e ENCRYPT_PASSPHRASE]
+bash arch-vbox.bash [-v] -u NEW_USER [-s NEW_USER_SHELL] [-w DPY_W] [-h DPY_H] -d DPY_D [-e ENCRYPT_PASSPHRASE]
 ```
 
 ### Options
+- `-v`
+  - Pass `--verbose` option to many commands.
 - `-u NEW_USER`
   - Specify the username of the new user.
   - The default password is the same as the username.  Change it after the installation is finished!

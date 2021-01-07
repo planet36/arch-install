@@ -123,7 +123,7 @@ install_yay_tmp() {
     cd /tmp
     curl -O -L https://github.com/Jguer/yay/releases/download/v10.1.2/yay_10.1.2_x86_64.tar.gz
     tar -xf yay_10.1.2_x86_64.tar.gz
-    ln --symbolic --verbose -- yay_10.1.2_x86_64/yay
+    ln --symbolic ${VERBOSE_OPTION} -- yay_10.1.2_x86_64/yay
 }
 
 
@@ -158,26 +158,26 @@ setup_0() {
 
         modprobe dm-crypt
 
-        printf '%s' "$ENCRYPT_PASSPHRASE" | cryptsetup --verbose --batch-mode luksFormat /dev/sda2
+        printf '%s' "$ENCRYPT_PASSPHRASE" | cryptsetup ${VERBOSE_OPTION} --batch-mode luksFormat /dev/sda2
 
-        printf '%s' "$ENCRYPT_PASSPHRASE" | cryptsetup --verbose --batch-mode open /dev/sda2 cryptroot
+        printf '%s' "$ENCRYPT_PASSPHRASE" | cryptsetup ${VERBOSE_OPTION} --batch-mode open /dev/sda2 cryptroot
 
         mkfs.ext4 -L root /dev/mapper/cryptroot
-        mount --verbose -- /dev/mapper/cryptroot /mnt
+        mount ${VERBOSE_OPTION} -- /dev/mapper/cryptroot /mnt
     else
         mkfs.ext4 -L root /dev/sda2
-        mount --verbose -- /dev/sda2 /mnt
+        mount ${VERBOSE_OPTION} -- /dev/sda2 /mnt
     fi
     # }}}
 
     # {{{ Format boot partition
     mkfs.ext4 -L boot /dev/sda1
-    mkdir --verbose -- /mnt/boot
-    mount --verbose -- /dev/sda1 /mnt/boot
+    mkdir ${VERBOSE_OPTION} -- /mnt/boot
+    mount ${VERBOSE_OPTION} -- /dev/sda1 /mnt/boot
     # }}}
 
     # {{{ Update mirrorlist
-    cp --verbose -- /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.bak
+    cp ${VERBOSE_OPTION} -- /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.bak
     reflector --save /etc/pacman.d/mirrorlist --sort score --country US --protocol https
     # }}}
 
@@ -187,14 +187,14 @@ setup_0() {
     genfstab -U /mnt >> /mnt/etc/fstab
 
     # Do not copy to /mnt/tmp because it is cleared after chroot
-    cp --verbose -- "$0" /mnt/
+    cp ${VERBOSE_OPTION} -- "$0" /mnt/
 
     # https://wiki.archlinux.org/index.php/Systemd-networkd#Wired_adapter_using_DHCP
-    cp --verbose /etc/systemd/network/20-ethernet.network /mnt/etc/systemd/network
+    cp ${VERBOSE_OPTION} /etc/systemd/network/20-ethernet.network /mnt/etc/systemd/network
 
     arch-chroot /mnt bash /"$(basename -- "$0")" "${ARGS[@]}"
 
-    umount --verbose --recursive -- /mnt
+    umount ${VERBOSE_OPTION} --recursive -- /mnt
 
     if findmnt -c -n --source /dev/cdrom -o TARGET > /dev/null
     then
@@ -383,27 +383,27 @@ EOT
 
     cd /etc/skel
 
-    rm --verbose -- .bash_logout
+    rm ${VERBOSE_OPTION} -- .bash_logout
 
-    mkdir --verbose --parents -- \
+    mkdir ${VERBOSE_OPTION} --parents -- \
         .cache \
         .config \
         .local/share
 
-    mkdir --verbose --parents -- \
+    mkdir ${VERBOSE_OPTION} --parents -- \
         .local/{bin,lib,src}
 
-    mkdir --verbose --parents -- Downloads
+    mkdir ${VERBOSE_OPTION} --parents -- Downloads
 
-    mkdir --verbose --parents -- \
+    mkdir ${VERBOSE_OPTION} --parents -- \
         .local/share/vim/{autoload,backup,colors,swap,undo}
 
-    mkdir --verbose --parents -- \
+    mkdir ${VERBOSE_OPTION} --parents -- \
         .local/share/nvim/{site/autoload,backup,colors,swap,undo}
 
-    mkdir --verbose --mode=0700 -- .local/share/Trash
+    mkdir ${VERBOSE_OPTION} --mode=0700 -- .local/share/Trash
 
-    mkdir --verbose --parents -- .cache/xorg
+    mkdir ${VERBOSE_OPTION} --parents -- .cache/xorg
     # }}}
 
     # {{{ New user
@@ -458,6 +458,7 @@ setup_2() {
 
 parse_options() {
 
+    VERBOSE_OPTION=''
     ##### XXX: needed in setup_1
     NEW_USER=''
     ##### XXX: needed in setup_1
@@ -469,9 +470,10 @@ parse_options() {
     ##### XXX: needed in setup_0, setup_1
     ENCRYPT_PASSPHRASE=''
 
-    while getopts 'u:s:w:h:d:e:' OPTION "${ARGS[@]}"
+    while getopts 'vu:s:w:h:d:e:' OPTION "${ARGS[@]}"
     do
         case $OPTION in
+            v) VERBOSE_OPTION='--verbose' ;;
             u) NEW_USER="$OPTARG" ;;
             s) NEW_USER_SHELL="$OPTARG" ;;
             w) DPY_W="$OPTARG" ;; # pixels
