@@ -1,5 +1,4 @@
-#!/bin/sh
-
+#!/usr/bin/sh
 # SPDX-FileCopyrightText: Steven Ward
 # SPDX-License-Identifier: OSL-3.0
 
@@ -17,8 +16,8 @@ DEFAULT_NEW_USER_SHELL=bash
 DEFAULT_DPY_W=1920
 DEFAULT_DPY_H=1080
 
-PAC_CMD='pacman --color always -S --needed --noconfirm'
-YAY_CMD='/tmp/yay --color always -S --needed --noconfirm --aur --answerclean None --answerdiff None'
+PACMAN_OPTIONS='--color always -S --needed --noconfirm'
+YAY_OPTIONS='--color always -S --needed --noconfirm --aur --answerclean None --answerdiff None'
 
 
 is_int() {
@@ -28,6 +27,11 @@ is_int() {
 
 is_uint() {
     is_int "$1" && test "$1" -ge 0
+}
+
+
+is_pos_int() {
+    is_int "$1" && test "$1" -gt 0
 }
 
 
@@ -54,6 +58,7 @@ EOT
 
 setup_hostname_hosts() {
 
+    # shellcheck disable=SC1091
     . /etc/os-release
 
     HOSTNAME="$ID"-vm
@@ -98,7 +103,6 @@ setup_vbox_service() {
 
     cat <<EOT > /etc/X11/xinit/xinitrc.d/99-vboxclient-all.sh
 #!/bin/sh
-
 # SPDX-FileCopyrightText: Steven Ward
 # SPDX-License-Identifier: OSL-3.0
 
@@ -124,7 +128,7 @@ install_yay_tmp() {
 
 setup_0() {
 
-    if [ $(id --user) -ne 0 ]
+    if [ "$(id --user)" -ne 0 ]
     then
         echo 'Error: must run as root'
         exit 1
@@ -216,6 +220,7 @@ EOT
     if [ -t 0 ]
     then
         echo 'Press Enter key to reboot now'
+        # shellcheck disable=SC2034
         read -r DUMMY < /dev/tty
     fi
 
@@ -284,13 +289,13 @@ EOT
 
     # {{{ Install Linux
     # Install initramfs compression methods listed in /etc/mkinitcpio.conf
-    $PAC_CMD \
+    pacman $PACMAN_OPTIONS \
         linux grub \
         gzip bzip2 xz lzop lz4 zstd
     # }}}
 
     # {{{ Install Arch packages
-    curl -L https://raw.githubusercontent.com/planet36/arch-install/main/arch-pkgs.txt | grep -E -o '^[^#]+' | xargs -r $PAC_CMD
+    curl -L https://raw.githubusercontent.com/planet36/arch-install/main/arch-pkgs.txt | grep -E -o '^[^#]+' | xargs -r pacman $PACMAN_OPTIONS
     # }}}
 
     # {{{ Configure grub
@@ -436,7 +441,7 @@ setup_2() {
     install_yay_tmp
 
     # {{{ Install AUR packages
-    curl -L https://raw.githubusercontent.com/planet36/arch-install/main/aur-pkgs.txt | grep -E -o '^[^#]+' | xargs -r $YAY_CMD
+    curl -L https://raw.githubusercontent.com/planet36/arch-install/main/aur-pkgs.txt | grep -E -o '^[^#]+' | xargs -r /tmp/yay $YAY_OPTIONS
     # }}}
 
     # {{{ Setup dotfiles
@@ -529,7 +534,7 @@ parse_options() {
         ARGS+=(-w "$DPY_W")
     fi
 
-    if ! is_uint "$DPY_W"
+    if ! is_pos_int "$DPY_W"
     then
         echo "Error: display width must be a positive integer: $DPY_W"
         exit 1
@@ -543,7 +548,7 @@ parse_options() {
         ARGS+=(-h "$DPY_H")
     fi
 
-    if ! is_uint "$DPY_H"
+    if ! is_pos_int "$DPY_H"
     then
         echo "Error: display height must be a positive integer: $DPY_H"
         exit 1
@@ -569,7 +574,7 @@ main() {
     else
         # in chroot
 
-        if [ $(id --user) -eq 0 ]
+        if [ "$(id --user)" -eq 0 ]
         then
             # as root
             setup_1 "${ARGS[@]}"
