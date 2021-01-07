@@ -16,11 +16,12 @@ DEFAULT_NEW_USER_SHELL=bash
 DEFAULT_DPY_W=1920
 DEFAULT_DPY_H=1080
 
-PACMAN_OPTIONS='--color always -S --needed --noconfirm'
-YAY_OPTIONS='--color always -S --needed --noconfirm --aur --answerclean None --answerdiff None'
+declare -a PACMAN_OPTIONS=(--color always -S --needed --noconfirm)
+declare -a YAY_OPTIONS=(--color always -S --needed --noconfirm --aur --answerclean None --answerdiff None)
 
 
 is_int() {
+    # shellcheck disable=SC2065
     test "$1" -eq 0 -o "$1" -ne 0 &> /dev/null
 }
 
@@ -59,7 +60,7 @@ EOT
 setup_hostname_hosts() {
 
     # shellcheck disable=SC1091
-    . /etc/os-release
+    source /etc/os-release
 
     HOSTNAME="$ID"-vm
     # https://wiki.archlinux.org/index.php/Network_configuration#Set_the_hostname
@@ -141,14 +142,13 @@ setup_0() {
     fi
     # }}}
 
-    # partition /dev/sda
-
+    # {{{ Partition /dev/sda
     #parted --script --align optimal /dev/sda mklabel msdos unit % mkpart primary 0 100
     parted --script --align optimal /dev/sda mklabel msdos \
     mkpart primary 1MiB 512MiB \
     mkpart primary 512MiB 100%
     parted --script /dev/sda set 1 boot on
-
+    # }}}
 
     # {{{ Format root partition
     if [ -n "$ENCRYPT_PASSPHRASE" ]
@@ -290,13 +290,13 @@ EOT
 
     # {{{ Install Linux
     # Install initramfs compression methods listed in /etc/mkinitcpio.conf
-    pacman $PACMAN_OPTIONS \
+    pacman "${PACMAN_OPTIONS[@]}" \
         linux grub \
         gzip bzip2 xz lzop lz4 zstd
     # }}}
 
     # {{{ Install Arch packages
-    curl -L https://raw.githubusercontent.com/planet36/arch-install/main/arch-pkgs.txt | grep -E -o '^[^#]+' | xargs -r pacman $PACMAN_OPTIONS
+    curl -L https://raw.githubusercontent.com/planet36/arch-install/main/arch-pkgs.txt | grep -E -o '^[^#]+' | xargs -r pacman "${PACMAN_OPTIONS[@]}"
     # }}}
 
     # {{{ Configure grub
@@ -391,25 +391,15 @@ EOT
         .local/share
 
     mkdir --verbose --parents -- \
-        .local/bin \
-        .local/lib \
-        .local/src
+        .local/{bin,lib,src}
 
     mkdir --verbose --parents -- Downloads
 
     mkdir --verbose --parents -- \
-        .local/share/vim/autoload \
-        .local/share/vim/backup \
-        .local/share/vim/colors \
-        .local/share/vim/swap \
-        .local/share/vim/undo
+        .local/share/vim/{autoload,backup,colors,swap,undo}
 
     mkdir --verbose --parents -- \
-        .local/share/nvim/site/autoload \
-        .local/share/nvim/backup \
-        .local/share/nvim/colors \
-        .local/share/nvim/swap \
-        .local/share/nvim/undo
+        .local/share/nvim/{site/autoload,backup,colors,swap,undo}
 
     mkdir --verbose --mode=0700 -- .local/share/Trash
 
@@ -442,7 +432,7 @@ setup_2() {
     install_yay_tmp
 
     # {{{ Install AUR packages
-    curl -L https://raw.githubusercontent.com/planet36/arch-install/main/aur-pkgs.txt | grep -E -o '^[^#]+' | xargs -r /tmp/yay $YAY_OPTIONS
+    curl -L https://raw.githubusercontent.com/planet36/arch-install/main/aur-pkgs.txt | grep -E -o '^[^#]+' | xargs -r /tmp/yay "${YAY_OPTIONS[@]}"
     # }}}
 
     # {{{ Setup dotfiles
