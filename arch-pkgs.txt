@@ -201,6 +201,7 @@ tmux
 # dwm deps
 # https://aur.archlinux.org/packages/dwm/
 dmenu
+fontconfig
 freetype2
 libx11
 libxft
@@ -209,9 +210,10 @@ libxinerama
 
 # st deps
 # https://aur.archlinux.org/packages/st-git/
+fontconfig
+freetype2
 libxft
-libxext
-ncurses
+ncurses # provides terminfo
 
 
 # file conversion tools
@@ -394,12 +396,12 @@ meld
 
 # meld deps
 # expac -S -1 '%E' -l '\n' meld
-python-gobject
-python-cairo
-gtksourceview3
-gtksourceview4 # XXX: required for new meld (3.21)
-gsettings-desktop-schemas
-dconf
+#python-gobject
+#python-cairo
+#gtksourceview3
+#gtksourceview4 # XXX: required for new meld (3.21)
+#gsettings-desktop-schemas
+#dconf
 
 
 # XXX: can't compare folders
