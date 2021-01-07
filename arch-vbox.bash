@@ -2,6 +2,8 @@
 # SPDX-FileCopyrightText: Steven Ward
 # SPDX-License-Identifier: OSL-3.0
 
+# shellcheck disable=SC2086
+
 declare -a ARGS=("$@")
 
 ##### XXX: maybe don't rely on set -e
