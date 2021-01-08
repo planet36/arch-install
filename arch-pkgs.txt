@@ -356,6 +356,7 @@ screenkey
 asciiquarium
 grc
 hyperfine
+libqalculate # 11.60 MiB
 
 #screenfetch # XXX: inferior to neofetch
 
