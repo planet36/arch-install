@@ -51,7 +51,6 @@ setup_grub() {
 # Added by $THIS_SCRIPT
 GRUB_CMDLINE_LINUX="cryptdevice=/dev/sda2:cryptroot"
 EOT
-
     fi
     grub-install /dev/sda
     grub-mkconfig -o /boot/grub/grub.cfg
@@ -149,26 +148,26 @@ setup_0() {
 
         modprobe dm-crypt
 
-        printf '%s' "$ENCRYPT_PASSPHRASE" | cryptsetup ${VERBOSE_OPTION} --batch-mode luksFormat /dev/sda2
+        printf '%s' "$ENCRYPT_PASSPHRASE" | cryptsetup --verbose --batch-mode luksFormat /dev/sda2
 
-        printf '%s' "$ENCRYPT_PASSPHRASE" | cryptsetup ${VERBOSE_OPTION} --batch-mode open /dev/sda2 cryptroot
+        printf '%s' "$ENCRYPT_PASSPHRASE" | cryptsetup --verbose --batch-mode open /dev/sda2 cryptroot
 
         mkfs.ext4 -L root /dev/mapper/cryptroot
-        mount ${VERBOSE_OPTION} -- /dev/mapper/cryptroot /mnt
+        mount --verbose -- /dev/mapper/cryptroot /mnt
     else
         mkfs.ext4 -L root /dev/sda2
-        mount ${VERBOSE_OPTION} -- /dev/sda2 /mnt
+        mount --verbose -- /dev/sda2 /mnt
     fi
     # }}}
 
     # {{{ Format boot partition
     mkfs.ext4 -L boot /dev/sda1
-    mkdir ${VERBOSE_OPTION} -- /mnt/boot
-    mount ${VERBOSE_OPTION} -- /dev/sda1 /mnt/boot
+    mkdir --verbose -- /mnt/boot
+    mount --verbose -- /dev/sda1 /mnt/boot
     # }}}
 
     # {{{ Update mirrorlist
-    cp ${VERBOSE_OPTION} -- /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.bak
+    cp --verbose -- /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.bak
     reflector --save /etc/pacman.d/mirrorlist --sort score --country US --protocol https
     # }}}
 
@@ -178,14 +177,14 @@ setup_0() {
     genfstab -U /mnt >> /mnt/etc/fstab
 
     # Do not copy to /mnt/tmp because it is cleared after chroot
-    cp ${VERBOSE_OPTION} -- "$0" /mnt/
+    cp --verbose -- "$0" /mnt/
 
     # https://wiki.archlinux.org/index.php/Systemd-networkd#Wired_adapter_using_DHCP
-    cp ${VERBOSE_OPTION} /etc/systemd/network/20-ethernet.network /mnt/etc/systemd/network
+    cp --verbose /etc/systemd/network/20-ethernet.network /mnt/etc/systemd/network
 
     arch-chroot /mnt bash /"$(basename -- "$0")" "${ARGS[@]}"
 
-    umount ${VERBOSE_OPTION} --recursive -- /mnt
+    umount --verbose --recursive -- /mnt
 
     if findmnt -c -n --source /dev/cdrom -o TARGET > /dev/null
     then
@@ -272,7 +271,6 @@ EOT
 HOOKS=(base udev autodetect modconf block keyboard keymap consolefont $ENCRYPT_HOOK fsck filesystems)
 COMPRESSION="zstd"
 EOT
-    #echo 'COMPRESSION="zstd"' >> /etc/mkinitcpio.conf
 
     #mkinitcpio -p linux
     # OR
@@ -374,29 +372,29 @@ EOT
 
     cd /etc/skel
 
-    rm ${VERBOSE_OPTION} -- .bash_logout
+    rm --verbose -- .bash_logout
 
-    mkdir ${VERBOSE_OPTION} --parents -- \
+    mkdir --verbose --parents -- \
         .cache \
         .config \
         .local/share
 
-    mkdir ${VERBOSE_OPTION} --parents -- \
+    mkdir --verbose --parents -- \
         .local/{bin,lib,src}
 
-    mkdir ${VERBOSE_OPTION} --parents -- Downloads
+    mkdir --verbose --parents -- Downloads
 
-    mkdir ${VERBOSE_OPTION} --parents -- \
+    mkdir --verbose --parents -- \
         .local/share/vim/{autoload,backup,colors,swap,undo}
 
-    mkdir ${VERBOSE_OPTION} --parents -- \
+    mkdir --verbose --parents -- \
         .local/share/nvim/{site/autoload,backup,colors,swap,undo}
 
-    mkdir ${VERBOSE_OPTION} --mode=0700 -- .local/share/Trash
+    mkdir --verbose --mode=0700 -- .local/share/Trash
 
-    mkdir ${VERBOSE_OPTION} --parents -- .cache/xorg
+    mkdir --verbose --parents -- .cache/xorg
 
-    mkdir ${VERBOSE_OPTION} --parents -- \
+    mkdir --verbose --parents -- \
         .local/share/{bash,zsh}
     # }}}
 
@@ -446,7 +444,6 @@ setup_2() {
 
 parse_options() {
 
-    VERBOSE_OPTION=''
     ##### XXX: needed in setup_1
     NEW_USER=''
     ##### XXX: needed in setup_1
@@ -458,10 +455,9 @@ parse_options() {
     ##### XXX: needed in setup_0, setup_1
     ENCRYPT_PASSPHRASE=''
 
-    while getopts 'vu:s:w:h:d:e:' OPTION "${ARGS[@]}"
+    while getopts 'u:s:w:h:d:e:' OPTION "${ARGS[@]}"
     do
         case $OPTION in
-            v) VERBOSE_OPTION='--verbose' ;;
             u) NEW_USER="$OPTARG" ;;
             s) NEW_USER_SHELL="$OPTARG" ;;
             w) DPY_W="$OPTARG" ;; # pixels
@@ -484,7 +480,7 @@ parse_options() {
     # Do not shift because options will be re-used
     #shift $((OPTIND - 1))
 
-    if [ -z "$NEW_USER" ] || [ -z "$DPY_W" ] || [ -z "$DPY_H" ] || [ -z "$DPY_D" ]
+    if [ -z "$NEW_USER" ]
     then
         if [ ! -t 0 ]
         then
@@ -536,13 +532,13 @@ parse_options() {
         exit 1
     fi
 
-    if [ -z "$DPY_D" ]
-    then
-        printf 'Enter the diagonal size (in inches) of the display: '
-        read -r DPY_D < /dev/tty
-        #read -r -p 'Enter the diagonal size (in inches) of the display: ' NEW_USER
-        ARGS+=(-d "$DPY_D")
-    fi
+    #if [ -z "$DPY_D" ]
+    #then
+    #    printf 'Enter the diagonal size (in inches) of the display: '
+    #    read -r DPY_D < /dev/tty
+    #    #read -r -p 'Enter the diagonal size (in inches) of the display: ' NEW_USER
+    #    ARGS+=(-d "$DPY_D")
+    #fi
 }
 
 
