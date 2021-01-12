@@ -359,6 +359,7 @@ EOT
     ##### TODO: test this
     # {{{ Modify defaults for all users
 
+    # {{{ Set XDG_* env vars
     # https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html
     cat <<EOT >> /etc/security/pam_env.conf
 
@@ -369,7 +370,9 @@ XDG_CONFIG_HOME DEFAULT=@{HOME}/.config
 XDG_DATA_DIRS   DEFAULT=/usr/local/share/:/usr/share/
 XDG_DATA_HOME   DEFAULT=@{HOME}/.local/share
 EOT
+    # }}}
 
+    # {{{ Create common directories
     cd /etc/skel
 
     rm --verbose -- .bash_logout
@@ -396,6 +399,8 @@ EOT
 
     mkdir --verbose --parents -- \
         .local/share/{bash,zsh}
+    # }}}
+
     # }}}
 
     # {{{ New user
