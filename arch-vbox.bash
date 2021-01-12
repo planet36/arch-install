@@ -356,7 +356,6 @@ EOT
     #echo 'permit persist :wheel' > /etc/doas.conf
     # }}}
 
-    ##### TODO: test this
     # {{{ Modify defaults for all users
 
     # {{{ Set XDG_* env vars
