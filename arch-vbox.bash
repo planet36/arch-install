@@ -117,6 +117,25 @@ EOT
 }
 
 
+setup_dpi() {
+
+    DPI=96
+
+    if [[ -n "$DPY_W" ]] && [[ -n "$DPY_H" ]] && [[ -n "$DPY_D" ]]
+    then
+        DPI=$(~/.local/bin/calc-dpi "$DPY_W" "$DPY_H" "$DPY_D")
+    fi
+
+    ##### TODO: is XDG_CONFIG_HOME known at this point?
+
+    # ~/.xprofile is sourced by some display managers
+    #printf "xrandr --dpi %d\n" "$DPI" >> $XDG_CONFIG_HOME/xorg/xprofile
+
+    #printf 'Xft.dpi: %d\n' "$DPI" >> "$XDG_CONFIG_HOME"/xorg/Xresources
+    printf 'Xft.dpi: %d\n' "$DPI" >> "$XDG_CONFIG_HOME"/xorg/Xft.dpi
+}
+
+
 setup_0() {
 
     if [ "$(id --user)" -ne 0 ]
@@ -433,9 +452,10 @@ setup_2() {
         git clone https://github.com/planet36/dotfiles.git .dotfiles
     fi
 
-    export DPY_W DPY_H DPY_D
-
     bash .dotfiles/install.bash -r -p
+
+    # May only be after the dotfiles are installed
+    setup_dpi
     # }}}
 
     # https://www.colour-science.org/installation-guide/
