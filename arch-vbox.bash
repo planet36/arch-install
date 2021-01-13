@@ -389,6 +389,14 @@ EOT
 
     # {{{ Modify defaults for all users
 
+    # {{{ /etc/login.defs used by useradd and newusers
+    cat <<EOT >> /etc/login.defs
+
+# Added by $THIS_SCRIPT
+CREATE_HOME yes
+EOT
+    # }}}
+
     # {{{ Set XDG_* env vars
     # https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html
     cat <<EOT >> /etc/security/pam_env.conf
