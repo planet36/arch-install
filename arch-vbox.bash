@@ -20,22 +20,18 @@ DEFAULT_DPY_H=1080
 
 declare -a PACMAN_OPTIONS=(--color always -S --needed --noconfirm)
 
-
 is_int() {
     # shellcheck disable=SC2065
     test "$1" -eq 0 -o "$1" -ne 0 &> /dev/null
 }
 
-
 is_uint() {
     is_int "$1" && test "$1" -ge 0
 }
 
-
 is_pos_int() {
     is_int "$1" && test "$1" -gt 0
 }
-
 
 setup_grub() {
 
@@ -55,7 +51,6 @@ EOT
     grub-install /dev/sda
     grub-mkconfig -o /boot/grub/grub.cfg
 }
-
 
 setup_hostname_hosts() {
 
@@ -78,7 +73,6 @@ setup_hostname_hosts() {
 EOT
 }
 
-
 setup_reflector_service() {
 
     cat <<EOT > /etc/xdg/reflector/reflector.conf
@@ -94,7 +88,6 @@ EOT
     systemctl start reflector.timer
     systemctl enable reflector.timer
 }
-
 
 setup_vbox_service() {
 
@@ -116,6 +109,29 @@ EOT
     chmod --changes 755 -- /etc/X11/xinit/xinitrc.d/99-vboxclient-all.sh
 }
 
+setup_xdg_vars() {
+
+    # https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html
+
+    : "${XDG_CACHE_HOME:=$HOME/.cache}"
+    : "${XDG_CONFIG_DIRS:=/etc/xdg}"
+    : "${XDG_CONFIG_HOME:=$HOME/.config}"
+    : "${XDG_DATA_DIRS:=/usr/local/share/:/usr/share/}"
+    : "${XDG_DATA_HOME:=$HOME/.local/share}"
+
+    export XDG_CACHE_HOME
+    export XDG_CONFIG_DIRS
+    export XDG_CONFIG_HOME
+    export XDG_DATA_DIRS
+    export XDG_DATA_HOME
+
+    mkdir --verbose --parents -- "$XDG_CACHE_HOME"
+    mkdir --verbose --parents -- "$XDG_CONFIG_HOME"
+    mkdir --verbose --parents -- "$XDG_DATA_HOME"
+
+    # XDG environment variables have been set
+    # XDG base directories have been created
+}
 
 setup_dpi() {
 
@@ -126,15 +142,12 @@ setup_dpi() {
         DPI=$(~/.local/bin/calc-dpi "$DPY_W" "$DPY_H" "$DPY_D")
     fi
 
-    ##### TODO: is XDG_CONFIG_HOME known at this point?
-
     # ~/.xprofile is sourced by some display managers
     #printf "xrandr --dpi %d\n" "$DPI" >> $XDG_CONFIG_HOME/xorg/xprofile
 
     #printf 'Xft.dpi: %d\n' "$DPI" >> "$XDG_CONFIG_HOME"/xorg/Xresources
     printf 'Xft.dpi: %d\n' "$DPI" >> "$XDG_CONFIG_HOME"/xorg/Xft.dpi
 }
-
 
 setup_0() {
 
@@ -236,7 +249,6 @@ EOT
 
     systemctl reboot
 }
-
 
 # setup system, install packages
 setup_1() {
@@ -390,7 +402,7 @@ XDG_DATA_HOME   DEFAULT=@{HOME}/.local/share
 EOT
     # }}}
 
-    # {{{ Create common directories
+    # {{{ Create common directories in /etc/skel
     cd /etc/skel
 
     rm --verbose -- .bash_logout
@@ -421,7 +433,7 @@ EOT
 
     # }}}
 
-    # {{{ New user
+    # {{{ Create new user
     useradd \
         --gid wheel \
         --groups vboxsf \
@@ -440,7 +452,6 @@ EOT
     su --login --shell=/bin/bash "$NEW_USER" -- "$(realpath -- "$0")" "${ARGS[@]}"
 }
 
-
 # setup user dotfiles and programs
 setup_2() {
 
@@ -454,6 +465,8 @@ setup_2() {
 
     bash .dotfiles/install.bash -r -p
 
+    setup_xdg_vars
+
     # May only be after the dotfiles are installed
     setup_dpi
     # }}}
@@ -464,7 +477,6 @@ setup_2() {
     # https://github.com/gtaylor/python-colormath
     #sudo --set-home pip install colormath
 }
-
 
 parse_options() {
 
@@ -556,6 +568,7 @@ parse_options() {
         exit 1
     fi
 
+    # This is optional
     #if [ -z "$DPY_D" ]
     #then
     #    printf 'Enter the diagonal size (in inches) of the display: '
@@ -564,7 +577,6 @@ parse_options() {
     #    ARGS+=(-d "$DPY_D")
     #fi
 }
-
 
 main() {
 
