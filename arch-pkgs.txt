@@ -208,6 +208,10 @@ libxft
 libxinerama
 
 
+# dwm optional deps
+rofi
+
+
 # st deps
 # https://aur.archlinux.org/packages/st-git/
 fontconfig
@@ -238,10 +242,6 @@ ncdu
 # https://github.com/ogham/exa/issues/453
 # This was fixed here: https://github.com/ogham/exa/pull/725
 # on 2020-10-08
-
-
-# dwm tools
-rofi
 
 
 # search for files
