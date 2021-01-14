@@ -240,6 +240,10 @@ ncdu
 # on 2020-10-08
 
 
+# dwm tools
+rofi
+
+
 # search for files
 fd
 fzf
