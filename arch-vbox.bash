@@ -139,14 +139,14 @@ setup_dpi() {
 
     if [[ -n "$DPY_W" ]] && [[ -n "$DPY_H" ]] && [[ -n "$DPY_D" ]]
     then
-        DPI=$(~/.local/bin/calc-dpi "$DPY_W" "$DPY_H" "$DPY_D")
+        DPI=$(~/.local/bin/calc-dpi -w "$DPY_W" -h "$DPY_H" "$DPY_D")
     fi
 
     # ~/.xprofile is sourced by some display managers
     #printf "xrandr --dpi %d\n" "$DPI" >> $XDG_CONFIG_HOME/xorg/xprofile
 
     #printf 'Xft.dpi: %d\n' "$DPI" >> "$XDG_CONFIG_HOME"/xorg/Xresources
-    printf 'Xft.dpi: %d\n' "$DPI" >> "$XDG_CONFIG_HOME"/xorg/Xft.dpi
+    printf 'Xft.dpi: %d\n' "$DPI" >> "$XDG_CONFIG_HOME"/xorg/Xresources-xft
 }
 
 setup_0() {
