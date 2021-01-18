@@ -445,10 +445,6 @@ EOT
     useradd \
         --gid wheel \
         --groups vboxsf \
-        --no-log-init \
-        --create-home \
-        --no-user-group \
-        --system \
         --shell "$(which -- "$NEW_USER_SHELL")" \
         -- "$NEW_USER"
 
