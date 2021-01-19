@@ -431,3 +431,6 @@ aisleriot # installs as sol
 # small cards
 # neat hints
 
+# distributed computing
+#boinc
+
