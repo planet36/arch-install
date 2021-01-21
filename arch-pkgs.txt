@@ -109,6 +109,7 @@ zsh
 bash-completion
 checkbashisms
 shellharden
+z
 
 #shellcheck
 # Total Download Size:    23.31 MiB
