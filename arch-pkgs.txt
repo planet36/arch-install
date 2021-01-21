@@ -35,20 +35,38 @@ xorg-xclock
 xorg-xev
 xorg-xeyes
 xorg-xinit
-xorg-xmodmap
 xorg-xprop
 xorg-xrandr
 xorg-xrdb
-xorg-xset
-xorg-xsetroot
 xorg-xwd
 xorg-xwininfo
-numlockx
-xcape
-xclip
 xcompmgr
-xsel
 xterm
+
+
+# background
+xorg-xset
+xorg-xsetroot
+
+
+# keyboard
+xorg-xmodmap
+xcape
+numlockx
+
+
+# clipboard
+xclip
+xsel
+
+
+# lock X
+slock
+xautolock
+
+
+# lock console, virtual terminal
+physlock
 
 
 # fonts
