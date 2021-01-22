@@ -109,7 +109,6 @@ zsh
 bash-completion
 checkbashisms
 shellharden
-z
 
 #shellcheck
 # Total Download Size:    23.31 MiB
@@ -121,6 +120,11 @@ z
 zsh-autosuggestions
 zsh-completions
 zsh-syntax-highlighting
+
+
+# shell utils
+thefuck
+z
 
 
 # docs
