@@ -32,6 +32,7 @@ strace
 # X
 xorg-server
 xorg-xclock
+xorg-xdpyinfo
 xorg-xev
 xorg-xeyes
 xorg-xinit
