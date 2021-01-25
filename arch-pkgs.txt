@@ -175,6 +175,10 @@ jsoncpp
 freeglut
 
 
+# dev tools
+gperf # needed to build coreutils
+
+
 # user utils
 opendoas
 util-linux
