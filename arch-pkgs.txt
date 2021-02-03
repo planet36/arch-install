@@ -166,13 +166,17 @@ tk
 # Total Installed Size:  139.56 MiB
 
 
-# C++ lib dev
+# C++ dev libs
 pcre2
 double-conversion
 fmt
 nlohmann-json
 jsoncpp
+
+
+# dev libs
 freeglut
+xxhash
 
 
 # dev tools
