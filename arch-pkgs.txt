@@ -394,6 +394,7 @@ asciiquarium
 grc
 hyperfine
 libqalculate # 11.60 MiB
+banner
 
 #screenfetch # XXX: inferior to neofetch
 
