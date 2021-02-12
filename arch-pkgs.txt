@@ -64,6 +64,8 @@ xsel
 # lock X
 slock
 xautolock
+xsecurelock
+xss-lock
 xtrlock
 
 
