@@ -89,6 +89,13 @@ EOT
     systemctl enable reflector.timer
 }
 
+setup_paccache_timer() {
+
+    # https://wiki.archlinux.org/index.php/Pacman#Cleaning_the_package_cache
+    systemctl start paccache.timer
+    systemctl enable paccache.timer
+}
+
 setup_vbox_service() {
 
     systemctl enable vboxservice.service
@@ -356,6 +363,8 @@ EOT
     # {{{ Update mirrorlist service
     setup_reflector_service
     # }}}
+
+    setup_paccache_timer
 
     setup_hostname_hosts
 
