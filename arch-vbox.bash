@@ -307,7 +307,6 @@ EOT
 #   Add "keymap consolefont" after "keyboard"
 #   If encrypt, "keyboard" must be before "encrypt" to enter the passphrase
 HOOKS=(base udev autodetect modconf block keyboard keymap consolefont $ENCRYPT_HOOK fsck filesystems)
-COMPRESSION="zstd"
 EOT
 
     #mkinitcpio -p linux
@@ -319,7 +318,7 @@ EOT
     # Install initramfs compression methods listed in /etc/mkinitcpio.conf
     pacman "${PACMAN_OPTIONS[@]}" \
         linux grub \
-        gzip bzip2 xz lzop lz4 zstd
+        bzip2 gzip lz4 lzop xz zstd
     # }}}
 
     # {{{ Install Arch packages
