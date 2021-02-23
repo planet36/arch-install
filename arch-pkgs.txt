@@ -94,6 +94,7 @@ reflector
 pkgfile
 asp
 pkgstats
+pacmatic
 
 
 # shells
