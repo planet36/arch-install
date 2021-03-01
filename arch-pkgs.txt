@@ -7,15 +7,15 @@
 # https://www.archlinux.org/groups/
 
 base
-linux
 grub
+linux
 
 # Install initramfs compression methods listed in /etc/mkinitcpio.conf
-gzip
 bzip2
-xz
-lzop
+gzip
 lz4
+lzop
+xz
 zstd
 
 
@@ -42,7 +42,6 @@ xorg-xrdb
 xorg-xwd
 xorg-xwininfo
 xcompmgr
-xterm
 
 
 # background
@@ -51,9 +50,9 @@ xorg-xsetroot
 
 
 # keyboard
-xorg-xmodmap
-xcape
 numlockx
+xcape
+xorg-xmodmap
 
 
 # clipboard
@@ -87,14 +86,14 @@ virtualbox-guest-utils
 
 
 # pacman utils
+asp
 expac
 pacman-contrib
 pacman-mirrorlist
-reflector
-pkgfile
-asp
-pkgstats
 pacmatic
+pkgfile
+pkgstats
+reflector
 
 
 # shells
@@ -142,10 +141,10 @@ words
 
 
 # net tools
-openssh
-wget
 curl
+openssh
 rsync
+wget
 
 
 # resource monitor
@@ -170,11 +169,11 @@ tk
 
 
 # C++ dev libs
-pcre2
 double-conversion
 fmt
-nlohmann-json
 jsoncpp
+nlohmann-json
+pcre2
 
 
 # dev libs
@@ -187,36 +186,36 @@ gperf # needed to build coreutils
 
 
 # user utils
-opendoas
-util-linux
 at
 lsof
+opendoas
+util-linux
 
 
 # code tools
-colordiff
-diffstat
-patch
-ctags
-sloccount
 cloc
-jq
+colordiff
+ctags
 diff-so-fancy
+diffstat
 highlight
+jq
+patch
+sloccount
 
 
 # needed for git-send-email
-perl-io-socket-ssl
 perl-authen-sasl
+perl-io-socket-ssl
 
 
 # python3
+ipython
+pypy3
 python
 python-pip
-python-wheel
-pypy3
-ipython
 python-pylint
+python-wheel
 
 
 # vim, neovim
@@ -262,10 +261,10 @@ perl-rename
 
 
 # directory tools
-tree
 dfc
-ncdu
 lsd # installs awesome-terminal-fonts
+ncdu
+tree
 
 
 #exa
@@ -339,17 +338,17 @@ firefox-ublock-origin
 
 
 # image tools
-imagemagick
-graphicsmagick
-optipng
-hsetroot
+dcraw
 feh
-sxiv
+graphicsmagick
+hsetroot
+imagemagick
 jpegexiforient
 libheif
 libraw
-dcraw
+optipng
 scrot
+sxiv
 xwallpaper
 
 #nitrogen
@@ -358,42 +357,42 @@ xwallpaper
 
 
 # video tools
-libdvdcss
-youtube-dl
-rtmpdump
 ffmpeg
+libdvdcss
+rtmpdump
+youtube-dl
 
 
 # file managers
 fff
-nnn
-ranger
-odt2txt
 mediainfo
+nnn
+odt2txt
+ranger
 ueberzug
 w3m
 
 
 # utils
-time
+asciiquarium
+banner
 bc
 calc
+cmatrix
+cowsay
 datamash
 dictd
-units
 figlet
-scrypt
-parallel
-neofetch
-cowsay
-cmatrix
-moreutils
-screenkey
-asciiquarium
 grc
 hyperfine
 libqalculate # 11.60 MiB
-banner
+moreutils
+neofetch
+parallel
+screenkey
+scrypt
+time
+units
 
 #screenfetch # XXX: inferior to neofetch
 
@@ -401,26 +400,27 @@ banner
 
 
 # python3 modules
-python-yaml
-python-numpy
-python-scipy
-python-matplotlib
-python-gmpy2
-python-regex
-python-pillow
 python-geographiclib
+python-gmpy2
+python-matplotlib
+python-numpy
 python-pendulum
+python-pillow
 python-pycryptodome
+python-regex
+python-scipy
+python-yaml
 
 #python-sympy
 # Total Download Size:   10.09 MiB
 # Total Installed Size:  84.33 MiB
 
 
-# terms
+# terminal emulators
 alacritty
-terminator
 kitty
+terminator
+xterm
 #termite
 #termite-terminfo
 
