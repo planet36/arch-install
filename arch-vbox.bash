@@ -371,6 +371,11 @@ EOT
     setup_vbox_service
     # }}}
 
+    # {{{ Disable systemd core dump archives, and use traditional Linux behavior
+    # https://man7.org/linux/man-pages/man5/core.5.html
+    echo 'kernel.core_pattern=core.%p' > /etc/sysctl.d/50-coredump.conf
+    # }}}
+
     # {{{ Fix bash in /etc/shells
     # https://bugs.archlinux.org/task/33677
     # https://bugs.archlinux.org/task/33694
