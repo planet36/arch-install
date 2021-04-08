@@ -39,6 +39,7 @@ xorg-xinit
 xorg-xprop
 xorg-xrandr
 xorg-xrdb
+xorg-xwayland
 xorg-xwd
 xorg-xwininfo
 xcompmgr
@@ -170,6 +171,7 @@ tk
 
 
 # C++ dev libs
+chrono-date
 double-conversion
 fmt
 jsoncpp
@@ -263,17 +265,10 @@ perl-rename
 
 # directory tools
 dfc
+exa
 lsd # installs awesome-terminal-fonts
 ncdu
 tree
-
-
-#exa
-##### exa isn't mature enough yet
-# Exa does not read the `TZ` environment variable, but it is a standard way to convey timezone data on musl #453
-# https://github.com/ogham/exa/issues/453
-# This was fixed here: https://github.com/ogham/exa/pull/725
-# on 2020-10-08
 
 
 # search for files
