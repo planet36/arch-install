@@ -75,6 +75,7 @@ physlock
 # fonts
 fontconfig
 gnu-free-fonts
+#xorg-fonts-misc # zutty default font
 
 
 # VirtualBox Guest Additions
@@ -421,17 +422,15 @@ alacritty
 kitty
 terminator
 xterm
+zutty
 #termite
 #termite-terminfo
-
-# XXX: terminator package needs to be updated as of 2021-02-12
 
 # XXX: termite might be unmaintained
 
 
 # GUI diff tools
 meld
-# XXX: meld package needs to be updated as of 2021-02-12
 
 
 # meld deps
