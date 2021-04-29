@@ -176,11 +176,12 @@ double-conversion
 fmt
 jsoncpp
 nlohmann-json
-pcre2
 
 
 # dev libs
 freeglut
+libbsd
+pcre2
 xxhash
 
 
