@@ -74,6 +74,7 @@ physlock
 
 
 # fonts
+font-bh-ttf # Luxi
 fontconfig
 gnu-free-fonts
 #xorg-fonts-misc # zutty default font
