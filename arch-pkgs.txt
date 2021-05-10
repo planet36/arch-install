@@ -73,10 +73,18 @@ xtrlock
 physlock
 
 
-# fonts
-font-bh-ttf # Luxi
+# fontconfig
 fontconfig
-gnu-free-fonts
+
+
+# fonts
+#adobe-source-code-pro-fonts # required by gsettings-desktop-schemas
+font-bh-ttf # Luxi
+gnu-free-fonts # required by firefox
+#otf-cascadia-code
+ttf-anonymous-pro
+ttf-hack
+ttf-jetbrains-mono
 #xorg-fonts-misc # zutty default font
 
 
