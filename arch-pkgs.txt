@@ -78,13 +78,16 @@ fontconfig
 
 
 # fonts
-#adobe-source-code-pro-fonts # required by gsettings-desktop-schemas
-font-bh-ttf # Luxi
+adobe-source-code-pro-fonts # required by gsettings-desktop-schemas
+#font-bh-ttf # Luxi
 gnu-free-fonts # required by firefox
 #otf-cascadia-code
-ttf-anonymous-pro
+#otf-overpass
+#ttf-anonymous-pro
+#ttf-dejavu
 ttf-hack
-ttf-jetbrains-mono
+#ttf-jetbrains-mono
+#ttf-liberation
 #xorg-fonts-misc # zutty default font
 
 
