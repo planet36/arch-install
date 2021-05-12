@@ -336,6 +336,9 @@ EOT
     #timedatectl set-timezone America/New_York
     #timedatectl set-ntp true
     #timedatectl status
+
+    # https://wiki.archlinux.org/title/Systemd-timesyncd
+    systemctl enable systemd-timesyncd.service
     # }}}
 
 
