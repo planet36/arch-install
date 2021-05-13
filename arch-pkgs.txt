@@ -28,6 +28,8 @@ gdb
 ltrace
 strace
 
+# Wayland
+#wofi
 
 # X
 xorg-server
