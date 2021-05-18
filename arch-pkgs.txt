@@ -375,13 +375,16 @@ youtube-dl
 
 
 # file managers
+broot
 fff
 mediainfo
 nnn
 odt2txt
 ranger
 ueberzug
+vifm
 w3m
+xplr
 
 
 # utils
