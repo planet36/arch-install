@@ -10,6 +10,7 @@ base
 grub
 linux
 
+
 # Install initramfs compression methods listed in /etc/mkinitcpio.conf
 bzip2
 gzip
@@ -28,8 +29,10 @@ gdb
 ltrace
 strace
 
+
 # Wayland
 #wofi
+
 
 # X
 xorg-server
@@ -380,16 +383,16 @@ youtube-dl
 
 
 # file managers
-broot
+#broot
 fff
 mediainfo
 nnn
 odt2txt
 ranger
 ueberzug
-vifm
+#vifm
 w3m
-xplr
+#xplr
 
 
 # utils
@@ -443,8 +446,6 @@ xterm
 zutty
 #termite
 #termite-terminfo
-
-# XXX: termite might be unmaintained
 
 
 # GUI diff tools
