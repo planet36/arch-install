@@ -268,8 +268,8 @@ setup_1() {
 
     # {{{ Locale
     mv --backup=numbered -- /etc/locale.gen /etc/locale.gen.bak
-    #sed -i 's/^#\s*\(en_US.UTF-8\)/\1/' /etc/locale.gen
-    #sed -i 's/^#\(en_US.UTF-8\)/\1/' /etc/locale.gen
+    #sed -E -i 's/^#\s*\(en_US.UTF-8\)/\1/' /etc/locale.gen
+    #sed -E -i 's/^#\(en_US.UTF-8\)/\1/' /etc/locale.gen
     echo 'en_US.UTF-8 UTF-8' > /etc/locale.gen
     locale-gen
 
@@ -287,6 +287,10 @@ EOT
     # https://wiki.archlinux.org/index.php/Chroot#Usage
     # Cannot be used inside a chroot
     #localectl set-locale LANG=en_US.UTF-8
+    # }}}
+
+    # {{{ Enable pacman parallel downloads
+    sed -E -i 's/^#(ParallelDownloads)\>/\1/' /etc/pacman.conf
     # }}}
 
     # {{{ Edit /etc/mkinitcpio.conf
