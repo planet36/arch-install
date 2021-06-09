@@ -30,6 +30,10 @@ ltrace
 strace
 
 
+# https://wiki.archlinux.org/title/Haveged
+haveged
+
+
 # Wayland
 #wofi
 
