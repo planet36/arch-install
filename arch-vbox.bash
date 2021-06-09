@@ -34,19 +34,20 @@ is_pos_int() {
 }
 
 setup_grub() {
+    cp --backup=numbered /etc/default/grub /etc/default/grub.bak
+
+    cat <<EOT >> /etc/default/grub
+
+# Added by $THIS_SCRIPT
+GRUB_CMDLINE_LINUX_DEFAULT+=" random.trust_cpu=yes"
+EOT
 
     if [ -n "$ENCRYPT_PASSPHRASE" ]
     then
         ### XXX: is this necessary here?
         #modprobe dm-crypt
 
-        cp --backup=numbered /etc/default/grub /etc/default/grub.bak
-
-        cat <<EOT >> /etc/default/grub
-
-# Added by $THIS_SCRIPT
-GRUB_CMDLINE_LINUX="cryptdevice=/dev/sda2:cryptroot"
-EOT
+        echo 'GRUB_CMDLINE_LINUX+=" cryptdevice=/dev/sda2:cryptroot"' >> /etc/default/grub
     fi
     grub-install /dev/sda
     grub-mkconfig -o /boot/grub/grub.cfg
