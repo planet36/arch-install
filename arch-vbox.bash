@@ -39,6 +39,7 @@ setup_grub() {
     cat <<EOT >> /etc/default/grub
 
 # Added by $THIS_SCRIPT
+GRUB_TIMEOUT=2
 GRUB_CMDLINE_LINUX_DEFAULT+=" random.trust_cpu=yes"
 EOT
 
