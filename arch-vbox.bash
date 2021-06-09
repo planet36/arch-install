@@ -378,14 +378,6 @@ EOT
     setup_vbox_service
     # }}}
 
-    # https://wiki.archlinux.org/title/Systemd#Using_units
-    systemctl mask lvm2-monitor.service
-
-    # {{{ Speed up systemd-random-seed.service
-    # https://wiki.archlinux.org/title/Haveged
-    systemctl enable haveged.service
-    # }}}
-
     # {{{ Disable systemd core dump archives, and use traditional Linux behavior
     # https://man7.org/linux/man-pages/man5/core.5.html
     echo 'kernel.core_pattern=core.%p' > /etc/sysctl.d/50-coredump.conf
