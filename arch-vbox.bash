@@ -291,7 +291,8 @@ EOT
     #localectl set-locale LANG=en_US.UTF-8
     # }}}
 
-    # {{{ Enable pacman parallel downloads
+    # {{{ Change pacman.conf misc options
+    sed -E -i 's/^#(VerbosePkgLists)\>/\1/' /etc/pacman.conf
     sed -E -i 's/^#(ParallelDownloads)\>/\1/' /etc/pacman.conf
     # }}}
 
