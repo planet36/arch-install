@@ -158,6 +158,7 @@ z
 man-db
 man-pages
 texinfo
+tldr
 
 
 # words
@@ -303,6 +304,10 @@ fzf
 ack
 ripgrep
 the_silver_searcher
+
+
+# text tools
+sd
 
 
 # comprson programs
