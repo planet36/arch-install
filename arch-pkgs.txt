@@ -370,6 +370,7 @@ imagemagick
 jpegexiforient
 libheif
 libraw
+maim
 optipng
 scrot
 sxiv
