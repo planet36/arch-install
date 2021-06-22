@@ -18,8 +18,6 @@ DEFAULT_NEW_USER_SHELL=bash
 DEFAULT_DPY_W=1920
 DEFAULT_DPY_H=1080
 
-declare -a PACMAN_OPTIONS=(-S --needed --noconfirm)
-
 is_int() {
     # shellcheck disable=SC2065
     test "$1" -eq 0 -o "$1" -ne 0 &> /dev/null
@@ -304,7 +302,7 @@ EOT
     # {{{ Update the keyring if it's out-of-date
     # Do not use the "--needed" option
     pacman -S          --noconfirm -y archlinux-keyring
-    pacman "${PACMAN_OPTIONS[@]}" -u
+    pacman -S --needed --noconfirm -u
     # }}}
 
     # {{{ Edit /etc/mkinitcpio.conf
@@ -334,13 +332,13 @@ EOT
 
     # {{{ Install Linux
     # Install initramfs compression methods listed in /etc/mkinitcpio.conf
-    pacman "${PACMAN_OPTIONS[@]}" \
+    pacman -S --needed --noconfirm \
         linux grub \
         bzip2 gzip lz4 lzop xz zstd
     # }}}
 
     # {{{ Install Arch packages
-    curl -L https://raw.githubusercontent.com/planet36/arch-install/main/arch-pkgs.txt | grep -E -o '^[^#]+' | xargs -r pacman "${PACMAN_OPTIONS[@]}"
+    curl -L https://raw.githubusercontent.com/planet36/arch-install/main/arch-pkgs.txt | grep -E -o '^[^#]+' | xargs -r pacman -S --needed --noconfirm
     # }}}
 
     # {{{ Configure grub
