@@ -301,6 +301,12 @@ EOT
     sed -E -i 's/^#(ParallelDownloads)\>/\1/' /etc/pacman.conf
     # }}}
 
+    # {{{ Update the keyring if it's out-of-date
+    # Do not use the "--needed" option
+    pacman -S          --noconfirm -y archlinux-keyring
+    pacman "${PACMAN_OPTIONS[@]}" -u
+    # }}}
+
     # {{{ Edit /etc/mkinitcpio.conf
     if [ -z "$ENCRYPT_PASSPHRASE" ]
     then
