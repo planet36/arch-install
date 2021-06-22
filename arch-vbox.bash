@@ -18,7 +18,7 @@ DEFAULT_NEW_USER_SHELL=bash
 DEFAULT_DPY_W=1920
 DEFAULT_DPY_H=1080
 
-declare -a PACMAN_OPTIONS=(--color always -S --needed --noconfirm)
+declare -a PACMAN_OPTIONS=(-S --needed --noconfirm)
 
 is_int() {
     # shellcheck disable=SC2065
