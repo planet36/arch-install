@@ -79,7 +79,7 @@ setup_reflector_service() {
 
     cat <<EOT > /etc/xdg/reflector/reflector.conf
 --country US
---latest 5
+--number 5
 --protocol https
 --save /etc/pacman.d/mirrorlist
 --sort score
@@ -209,7 +209,12 @@ setup_0() {
 
     # {{{ Update mirrorlist
     cp --verbose -- /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.bak
-    reflector --save /etc/pacman.d/mirrorlist --sort score --country US --protocol https
+    reflector --country US --number 5 --protocol https --save /etc/pacman.d/mirrorlist --sort score
+    # }}}
+
+    # {{{ Change pacman.conf misc options
+    sed -E -i 's/^#(VerbosePkgLists)\>/\1/' /etc/pacman.conf
+    sed -E -i 's/^#(ParallelDownloads)\>/\1/' /etc/pacman.conf
     # }}}
 
     #pacstrap /mnt base linux
