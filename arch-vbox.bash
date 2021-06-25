@@ -453,7 +453,7 @@ EOT
         .local/share
 
     mkdir --verbose --parents -- \
-        .local/{bin,lib,src}
+        .local/{bin,include,lib,src}
 
     mkdir --verbose --parents -- Downloads
 
