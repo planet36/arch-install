@@ -158,7 +158,8 @@ setup_dpi() {
 
 setup_0() {
 
-    if [ "$(id --user)" -ne 0 ]
+    #if [ "$(id --user)" -ne 0 ]
+    if ((EUID != 0))
     then
         echo 'Error: must run as root'
         exit 1
@@ -265,7 +266,8 @@ EOT
 # setup system, install packages
 setup_1() {
 
-    if [ "$(id --user)" -ne 0 ]
+    #if [ "$(id --user)" -ne 0 ]
+    if ((EUID != 0))
     then
         echo 'Error: must run as root'
         exit 1
@@ -625,7 +627,8 @@ main() {
     else
         # in chroot
 
-        if [ "$(id --user)" -eq 0 ]
+        #if [ "$(id --user)" -eq 0 ]
+        if ((EUID == 0))
         then
             # as root
             setup_1 "${ARGS[@]}"
