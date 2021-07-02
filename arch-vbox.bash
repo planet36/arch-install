@@ -618,7 +618,7 @@ main() {
 
     if ((EUID == 0))
     then # as root
-        if [ "$(stat --format %i /)" -ne 2 ]
+        if ! systemd-detect-virt -r
         then # not in chroot
             setup_0 "${ARGS[@]}"
         else # in chroot
