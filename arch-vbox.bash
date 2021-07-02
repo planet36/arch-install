@@ -616,16 +616,16 @@ parse_options() {
 
 main() {
 
-    if [ "$(stat --format %i /)" -ne 2 ]
-    then # not in chroot
-        setup_0 "${ARGS[@]}"
-    else # in chroot
-        if ((EUID == 0))
-        then # as root
+    if ((EUID == 0))
+    then # as root
+        if [ "$(stat --format %i /)" -ne 2 ]
+        then # not in chroot
+            setup_0 "${ARGS[@]}"
+        else # in chroot
             setup_1 "${ARGS[@]}"
-        else # not as root
-            setup_2 "${ARGS[@]}"
         fi
+    else # not as root
+        setup_2 "${ARGS[@]}"
     fi
 }
 
