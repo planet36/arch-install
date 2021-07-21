@@ -224,7 +224,7 @@ setup_0() {
     cp --verbose -- "$0" /mnt/
 
     # https://wiki.archlinux.org/index.php/Systemd-networkd#Wired_adapter_using_DHCP
-    cp --verbose /etc/systemd/network/20-ethernet.network /mnt/etc/systemd/network
+    cp --verbose /etc/systemd/network/* /mnt/etc/systemd/network/
 
     arch-chroot /mnt bash /"$(basename -- "$0")" "${ARGS[@]}"
 
