@@ -357,6 +357,17 @@ EOT
     systemctl enable systemd-timesyncd.service
     # }}}
 
+    # Use static IP address
+    cat <<EOT >> /etc/systemd/network/20-ethernet.network
+
+# Added by $THIS_SCRIPT
+[Network]
+DHCP=no
+Address=10.0.2.15/24
+Gateway=10.0.2.2
+#DNS=8.8.8.8
+#DNS=8.8.4.4
+EOT
 
     #cat <<EOT > /etc/resolv.conf.head
 #nameserver 1.1.1.1
