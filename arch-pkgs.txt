@@ -92,11 +92,19 @@ adobe-source-code-pro-fonts # required by gsettings-desktop-schemas
 gnu-free-fonts # required by firefox
 #otf-cascadia-code
 #otf-overpass
+#ttc-iosevka # large download/installed size
+#ttc-iosevka-curly # large download/installed size
+#ttc-iosevka-curly-slab # large download/installed size
+#ttc-iosevka-slab # large download/installed size
 #ttf-anonymous-pro
 #ttf-dejavu
 ttf-hack
+#ttf-ibm-plex
 #ttf-jetbrains-mono
 #ttf-liberation
+#ttf-monoid
+#ttf-roboto-mono
+#ttf-ubuntu-font-family
 #xorg-fonts-misc # zutty default font
 
 
@@ -416,6 +424,7 @@ hyperfine
 libqalculate # 11.60 MiB
 moreutils
 neofetch
+#onefetch
 parallel
 screenkey
 scrypt
