@@ -159,6 +159,7 @@ words
 
 # net tools
 curl
+#mosh
 openssh
 rsync
 wget
