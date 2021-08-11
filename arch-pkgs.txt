@@ -135,10 +135,6 @@ fish
 #xonsh
 #zsh
 
-# https://github.com/ranger/ranger/issues/2079#issuecomment-716684122
-# XXX: ranger image previews are broken in fish 3.1.2 -- fixed here (2020-06-07)
-# https://github.com/fish-shell/fish-shell/commit/d5a239e59ec0e84a47d499270f618e432abd747f
-
 
 # bash utils
 bash-completion
