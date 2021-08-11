@@ -132,7 +132,7 @@ bash
 dash
 fish
 #ksh
-xonsh
+#xonsh
 #zsh
 
 # https://github.com/ranger/ranger/issues/2079#issuecomment-716684122
@@ -158,7 +158,7 @@ shellharden
 
 
 # shell utils
-thefuck
+#thefuck
 z
 
 
