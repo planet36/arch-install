@@ -34,25 +34,14 @@ strace
 #wofi
 
 
+# https://archlinux.org/groups/x86_64/xorg/
+xorg
+
 # X
-xorg-server
 xorg-xclock
-xorg-xdpyinfo
-xorg-xev
 xorg-xeyes
 xorg-xinit
-xorg-xprop
-xorg-xrandr
-xorg-xrdb
-xorg-xwayland
-xorg-xwd
-xorg-xwininfo
 xcompmgr
-
-
-# background
-xorg-xset
-xorg-xsetroot
 
 
 # keyboard, mouse
@@ -62,7 +51,6 @@ xautomation # has xte
 xcape
 xdo
 xdotool
-xorg-xmodmap
 
 
 # clipboard
