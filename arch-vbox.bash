@@ -59,7 +59,7 @@ setup_hostname_hosts() {
 
     HOSTNAME="$ID"-vm
     # https://wiki.archlinux.org/index.php/Network_configuration#Set_the_hostname
-    echo "$HOSTNAME" > /etc/hostname
+    printf '%s\n' "$HOSTNAME" > /etc/hostname
 
     # https://wiki.archlinux.org/index.php/Chroot#Usage
     # Cannot be used inside a chroot
@@ -253,6 +253,8 @@ EOT
     # if interactive
     if [ -t 0 ]
     then
+        printf 'Took %d seconds\n\n' "$SECONDS"
+
         echo 'Press Enter key to reboot now'
         # shellcheck disable=SC2034
         read -r DUMMY < /dev/tty
@@ -409,6 +411,7 @@ EOT
     # {{{ Fix bash in /etc/shells
     # https://bugs.archlinux.org/task/33677
     # https://bugs.archlinux.org/task/33694
+    # https://bugs.archlinux.org/task/69699
     echo '/usr/bin/bash' >> /etc/shells
     # }}}
 
@@ -597,7 +600,7 @@ parse_options() {
 
     if ! is_pos_int "$DPY_W"
     then
-        echo "Error: display width must be a positive integer: $DPY_W"
+        printf 'Error: display width must be a positive integer: %s\n' "$DPY_W"
         exit 1
     fi
 
@@ -611,7 +614,7 @@ parse_options() {
 
     if ! is_pos_int "$DPY_H"
     then
-        echo "Error: display height must be a positive integer: $DPY_H"
+        printf 'Error: display height must be a positive integer: %s\n' "$DPY_H"
         exit 1
     fi
 
