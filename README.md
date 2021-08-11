@@ -17,6 +17,8 @@ curl -O https://raw.githubusercontent.com/planet36/arch-install/main/arch-vbox.b
 bash arch-vbox.bash -u NEW_USER [-s NEW_USER_SHELL] [-w DPY_W] [-h DPY_H] [-d DPY_D] [-e ENCRYPT_PASSPHRASE]
 ```
 
+The installation process is uninterruptible.  That is, if it's stopped before finishing, it can't be resumed.
+
 ### Options
 - `-u NEW_USER`
   - Specify the username of the new user.
