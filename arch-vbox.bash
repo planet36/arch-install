@@ -187,8 +187,10 @@ setup_0() {
 
         modprobe dm-crypt
 
+        echo 'cryptsetup (1) ...'
         printf '%s' "$ENCRYPT_PASSPHRASE" | cryptsetup --verbose --batch-mode luksFormat /dev/sda2
 
+        echo 'cryptsetup (2) ...'
         printf '%s' "$ENCRYPT_PASSPHRASE" | cryptsetup --verbose --batch-mode open /dev/sda2 cryptroot
 
         mkfs.ext4 -L root /dev/mapper/cryptroot
@@ -253,7 +255,7 @@ EOT
     # if interactive
     if [ -t 0 ]
     then
-        printf 'Took %d seconds\n\n' "$SECONDS"
+        printf '\nTook %d seconds\n\n' "$SECONDS"
 
         echo 'Press Enter key to reboot now'
         # shellcheck disable=SC2034
