@@ -167,6 +167,12 @@ setup_0() {
     # {{{ Set console font
     if command -v setfont > /dev/null
     then
+        # To print the character set of the active font: showconsolefont
+
+        # Fonts are in:
+        # /usr/share/kbd/consolefonts (arch)
+        # /lib/kbd/consolefonts (fedora)
+
         setfont Lat2-Terminus16
     fi
     # }}}
@@ -283,6 +289,7 @@ setup_1() {
     locale-gen
 
     # {{{ Set console font
+    # https://www.man7.org/linux/man-pages/man5/vconsole.conf.5.html
     # Should be set before mkinitcpio is called
     cat <<EOT >> /etc/vconsole.conf
 KEYMAP=us
@@ -484,8 +491,46 @@ EOT
     mkdir --verbose --parents -- .cache/xorg
 
     mkdir --verbose --parents -- \
-        .local/share/{bash,zsh}
+        .local/share/{bash,fish,zsh}
     # }}}
+
+    cat <<EOT >> /etc/profile
+
+# Added by $THIS_SCRIPT
+
+# Prepend user path
+PATH="\$HOME/.local/bin:\$PATH"
+
+# Set XDG vars
+# https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html
+: "\${XDG_CACHE_HOME:=\$HOME/.cache}"
+: "\${XDG_CONFIG_DIRS:=/etc/xdg}"
+: "\${XDG_CONFIG_HOME:=\$HOME/.config}"
+: "\${XDG_DATA_DIRS:=/usr/local/share/:/usr/share/}"
+: "\${XDG_DATA_HOME:=\$HOME/.local/share}"
+export XDG_CACHE_HOME
+export XDG_CONFIG_DIRS
+export XDG_CONFIG_HOME
+export XDG_DATA_DIRS
+export XDG_DATA_HOME
+EOT
+
+    cat <<EOT >> /etc/fish/config.fish
+
+# Added by $THIS_SCRIPT
+
+# Prepend user path
+# Move ~/.local/bin to the front of PATH.
+fish_add_path --move "\$HOME"/.local/bin
+
+# Set XDG vars
+# https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html
+if not set --query XDG_CACHE_HOME  ; set --export --global XDG_CACHE_HOME  "\$HOME"/.cache                ; end
+if not set --query XDG_CONFIG_DIRS ; set --export --global XDG_CONFIG_DIRS /etc/xdg                      ; end
+if not set --query XDG_CONFIG_HOME ; set --export --global XDG_CONFIG_HOME "\$HOME"/.config               ; end
+if not set --query XDG_DATA_DIRS   ; set --export --global XDG_DATA_DIRS   /usr/local/share/:/usr/share/ ; end
+if not set --query XDG_DATA_HOME   ; set --export --global XDG_DATA_HOME   "\$HOME"/.local/share          ; end
+EOT
 
     # }}}
 
