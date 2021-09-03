@@ -413,6 +413,7 @@ neofetch
 parallel
 screenkey
 scrypt
+termdown
 time
 units
 
@@ -475,6 +476,7 @@ meld
 
 # games
 aisleriot # installs as sol
+tty-solitaire
 
 ##### TODO: compare this to aisleriot
 #pysolfc # installs as pysol
