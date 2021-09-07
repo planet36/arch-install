@@ -474,6 +474,10 @@ meld
 # Total Installed Size:  304.81 MiB
 
 
+# MAME tools
+mame-tools
+
+
 # games
 aisleriot # installs as sol
 tty-solitaire
