@@ -22,16 +22,13 @@ zstd
 
 # compile tools
 base-devel
+#jdk-openjdk
 
 
 # debug tools
 gdb
 ltrace
 strace
-
-
-# Wayland
-#wofi
 
 
 # https://archlinux.org/groups/x86_64/xorg/
@@ -68,6 +65,10 @@ xtrlock
 
 # lock console, virtual terminal
 physlock
+
+
+# Wayland
+#wofi
 
 
 # fontconfig
@@ -276,6 +277,7 @@ ncurses # provides terminfo
 
 
 # file conversion tools
+detox
 dos2unix
 perl-rename
 
