@@ -38,7 +38,7 @@ setup_grub() {
 
 # Added by $THIS_SCRIPT
 GRUB_TIMEOUT=2
-GRUB_CMDLINE_LINUX_DEFAULT+=" random.trust_cpu=yes"
+GRUB_CMDLINE_LINUX_DEFAULT+=" mitigations=off random.trust_cpu=yes"
 EOT
 
     if [ -n "$ENCRYPT_PASSPHRASE" ]
