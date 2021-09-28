@@ -488,11 +488,11 @@ tty-solitaire
 
 ##### TODO: compare this to aisleriot
 #pysolfc # installs as pysol
-#pysolfc-cardsets
 # Total Download Size:   31.58 MiB
 # Total Installed Size:  43.93 MiB
 # small cards
 # neat hints
+
 
 # distributed computing
 #boinc
