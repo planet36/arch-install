@@ -365,7 +365,7 @@ EOT
     #timedatectl status
 
     # https://wiki.archlinux.org/title/Systemd-timesyncd
-    systemctl enable systemd-timesyncd.service
+    #systemctl enable systemd-timesyncd.service
     # }}}
 
     # Use static IP address
