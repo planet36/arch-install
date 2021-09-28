@@ -169,6 +169,7 @@ wget
 # resource monitor
 bashtop
 bpytop
+btop
 htop
 iftop
 #glances
