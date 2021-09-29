@@ -168,8 +168,10 @@ wget
 
 # resource monitor
 bashtop
+bottom
 bpytop
 btop
+#gtop
 htop
 iftop
 #glances
@@ -221,6 +223,7 @@ colordiff
 ctags
 diff-so-fancy
 diffstat
+git-delta
 highlight
 jq
 patch
