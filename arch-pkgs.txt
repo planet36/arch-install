@@ -386,6 +386,7 @@ ffmpeg
 libdvdcss
 rtmpdump
 youtube-dl
+yt-dlp
 
 
 # file managers
