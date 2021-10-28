@@ -344,6 +344,7 @@ lynx
 # browser
 firefox
 firefox-ublock-origin
+firefox-dark-reader
 
 #chromium
 # XXX: no built-in ad blocking
