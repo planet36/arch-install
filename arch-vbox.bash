@@ -41,7 +41,7 @@ GRUB_TIMEOUT=2
 GRUB_CMDLINE_LINUX_DEFAULT+=" mitigations=off random.trust_cpu=yes"
 EOT
 
-    if [ -n "$ENCRYPT_PASSPHRASE" ]
+    if $ENCRYPT_ROOT_PARTITION
     then
         ### XXX: is this necessary here?
         #modprobe dm-crypt
@@ -164,6 +164,36 @@ setup_0() {
         exit 1
     fi
 
+    ENCRYPT_PASSPHRASE=''
+
+    if $ENCRYPT_ROOT_PARTITION
+    then
+        if [ ! -t 0 ]
+        then
+            echo 'Error: must run in an interactive shell'
+            exit 1
+        fi
+
+        while true
+        do
+            read -r -s -p 'Enter encryption passphrase: ' ENCRYPT_PASSPHRASE
+            if [ -z "$ENCRYPT_PASSPHRASE" ]
+            then
+                echo 'Error: passphrase for encrypting the root partition may not be empty'
+                continue
+            fi
+
+            read -r -s -p 'Confirm encryption passphrase: ' ENCRYPT_PASSPHRASE2
+            if [[ "$ENCRYPT_PASSPHRASE" != "$ENCRYPT_PASSPHRASE2" ]]
+            then
+                echo 'Error: passphrases do not match'
+                continue
+            fi
+
+            break
+        done
+    fi
+
     # {{{ Set console font
     if command -v setfont > /dev/null
     then
@@ -186,7 +216,7 @@ setup_0() {
     # }}}
 
     # {{{ Format root partition
-    if [ -n "$ENCRYPT_PASSPHRASE" ]
+    if $ENCRYPT_ROOT_PARTITION
     then
         # https://wiki.archlinux.org/index.php/Dm-crypt/Encrypting_an_entire_system
         # https://linuxhint.com/setup-luks-encryption-on-arch-linux/
@@ -317,7 +347,7 @@ EOT
     # }}}
 
     # {{{ Edit /etc/mkinitcpio.conf
-    if [ -z "$ENCRYPT_PASSPHRASE" ]
+    if $ENCRYPT_ROOT_PARTITION
     then
         # Must not add "encrypt" if the "crypt=" parameter won't be given to kernel
         ENCRYPT_HOOK=''
@@ -586,9 +616,9 @@ parse_options() {
     DPY_H=''
     DPY_D=''
     ##### XXX: needed in setup_0, setup_1
-    ENCRYPT_PASSPHRASE=''
+    ENCRYPT_ROOT_PARTITION=false
 
-    while getopts 'u:s:w:h:d:e:' OPTION "${ARGS[@]}"
+    while getopts 'u:s:w:h:d:e' OPTION "${ARGS[@]}"
     do
         case $OPTION in
             u) NEW_USER="$OPTARG" ;;
@@ -596,16 +626,7 @@ parse_options() {
             w) DPY_W="$OPTARG" ;; # pixels
             h) DPY_H="$OPTARG" ;; # pixels
             d) DPY_D="$OPTARG" ;; # inches
-            e) ENCRYPT_PASSPHRASE="$OPTARG"
-
-                # This only happens when an empty string is explicitly given
-                if [ -z "$ENCRYPT_PASSPHRASE" ]
-                then
-                    echo 'Error: The passphrase for encrypting the root partition may not be empty'
-                    exit 1
-                fi
-
-                ;;
+            e) ENCRYPT_ROOT_PARTITION=true ;;
             \?) exit 1 ;;
             *) ;;
         esac

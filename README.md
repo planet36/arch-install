@@ -14,7 +14,7 @@ In an  [Arch Linux livecd](https://www.archlinux.org/download/) environment, dow
 ```sh
 curl -O https://raw.githubusercontent.com/planet36/arch-install/main/arch-vbox.bash
 
-bash arch-vbox.bash -u NEW_USER [-s NEW_USER_SHELL] [-w DPY_W] [-h DPY_H] [-d DPY_D] [-e ENCRYPT_PASSPHRASE]
+bash arch-vbox.bash -u NEW_USER [-s NEW_USER_SHELL] [-w DPY_W] [-h DPY_H] [-d DPY_D] [-e]
 ```
 
 The installation process is uninterruptible.  That is, if it's stopped before finishing, it can't be resumed.
@@ -35,9 +35,9 @@ The installation process is uninterruptible.  That is, if it's stopped before fi
   - The default height is **1080**.
 - `-d DPY_D`
   - Specify the diagonal size (in inches) of the display.
-- `-e ENCRYPT_PASSPHRASE`
-  - Specify the encryption passphrase used to encrypt the root partition (**/dev/sda2**).
-  - The passphrase may not be empty.
+- `-e`
+  - Encrypt the root partition (**/dev/sda2**).
+  - Prompt for the passphrase, which may not be empty.
   - If absent, no partitions will be encrypted during installation.
 
 If mandatory arguments are absent, you will be prompted to enter values for them.
