@@ -641,10 +641,7 @@ parse_options() {
             echo 'Error: must run in an interactive shell'
             exit 1
         fi
-    fi
 
-    if [ -z "$NEW_USER" ]
-    then
         printf 'Enter new user: '
         read -r NEW_USER < /dev/tty
         #read -r -p 'Enter new user: ' NEW_USER
