@@ -37,8 +37,7 @@ The installation process is uninterruptible.  That is, if it's stopped before fi
   - Specify the diagonal size (in inches) of the display.
 - `-e`
   - Encrypt the root partition (**/dev/sda2**).
-  - Prompt for the passphrase, which may not be empty.
-  - If absent, no partitions will be encrypted during installation.
+  - The passphrase may not be empty.
 
 If mandatory arguments are absent, you will be prompted to enter values for them.
 
