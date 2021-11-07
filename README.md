@@ -42,7 +42,7 @@ The installation process is uninterruptible.  That is, if it's stopped before fi
 
 If mandatory arguments are absent, you will be prompted to enter values for them.
 
-The display dimensions are used to calculate the <abbr title="Dots Per Inch">DPI</abbr>.  If not given, a default DPI of **96** will be used.
+The display dimensions are used to calculate the [PPI](https://en.wikipedia.org/wiki/Pixel_density#Calculation_of_monitor_PPI).  If not given, a default PPI of **96** will be used.
 
 ### Dotfiles
 Dotfiles for the new user are cloned from [planet36/dotfiles](https://github.com/planet36/dotfiles).
