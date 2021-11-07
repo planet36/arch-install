@@ -164,6 +164,19 @@ setup_0() {
         exit 1
     fi
 
+    # {{{ Set console font
+    if command -v setfont > /dev/null
+    then
+        # To print the character set of the active font: showconsolefont
+
+        # Fonts are in:
+        # /usr/share/kbd/consolefonts (arch)
+        # /lib/kbd/consolefonts (fedora)
+
+        setfont Lat2-Terminus16
+    fi
+    # }}}
+
     ENCRYPT_PASSPHRASE=''
 
     if $ENCRYPT_ROOT_PARTITION
@@ -195,19 +208,6 @@ setup_0() {
             break
         done
     fi
-
-    # {{{ Set console font
-    if command -v setfont > /dev/null
-    then
-        # To print the character set of the active font: showconsolefont
-
-        # Fonts are in:
-        # /usr/share/kbd/consolefonts (arch)
-        # /lib/kbd/consolefonts (fedora)
-
-        setfont Lat2-Terminus16
-    fi
-    # }}}
 
     # {{{ Partition /dev/sda
     #parted --script --align optimal /dev/sda mklabel msdos unit % mkpart primary 0 100
