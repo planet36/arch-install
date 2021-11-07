@@ -349,10 +349,10 @@ EOT
     # {{{ Edit /etc/mkinitcpio.conf
     if $ENCRYPT_ROOT_PARTITION
     then
+        ENCRYPT_HOOK='encrypt'
+    else
         # Must not add "encrypt" if the "crypt=" parameter won't be given to kernel
         ENCRYPT_HOOK=''
-    else
-        ENCRYPT_HOOK='encrypt'
     fi
 
     # https://wiki.archlinux.org/index.php/Mkinitcpio#Common_hooks
