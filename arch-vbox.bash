@@ -177,6 +177,7 @@ setup_0() {
         while true
         do
             read -r -s -p 'Enter encryption passphrase: ' ENCRYPT_PASSPHRASE
+            echo
             if [ -z "$ENCRYPT_PASSPHRASE" ]
             then
                 echo 'Error: passphrase for encrypting the root partition may not be empty'
@@ -184,6 +185,7 @@ setup_0() {
             fi
 
             read -r -s -p 'Confirm encryption passphrase: ' ENCRYPT_PASSPHRASE2
+            echo
             if [[ "$ENCRYPT_PASSPHRASE" != "$ENCRYPT_PASSPHRASE2" ]]
             then
                 echo 'Error: passphrases do not match'
