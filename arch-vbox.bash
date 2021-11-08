@@ -589,7 +589,7 @@ setup_2() {
 
     if [ ! -d .dotfiles ]
     then
-        git clone git@github.com:planet36/dotfiles.git .dotfiles
+        git clone https://github.com/planet36/dotfiles.git .dotfiles
     fi
 
     bash .dotfiles/install.bash -r -p
