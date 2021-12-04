@@ -404,6 +404,8 @@ w3m
 
 
 # utils
+aalib
+asciinema
 asciiquarium
 banner
 bc
