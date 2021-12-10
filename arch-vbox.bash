@@ -39,6 +39,7 @@ setup_grub() {
 # Added by $THIS_SCRIPT
 GRUB_TIMEOUT=2
 GRUB_CMDLINE_LINUX_DEFAULT+=" mitigations=off random.trust_cpu=yes"
+GRUB_GFXMODE=${DPY_W}x${DPY_H}x32,1280x1024x32,auto
 EOT
 
     if $ENCRYPT_ROOT_PARTITION
