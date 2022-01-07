@@ -76,6 +76,7 @@ EOT
 
 setup_reflector_service() {
 
+    mv --backup=numbered -- /etc/xdg/reflector/reflector.conf /etc/xdg/reflector/reflector.conf.bak
     cat <<EOT > /etc/xdg/reflector/reflector.conf
 --country US
 --number 5
