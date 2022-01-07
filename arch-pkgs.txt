@@ -448,6 +448,7 @@ python-pycryptodome
 python-regex
 python-scipy
 python-yaml
+python-zxcvbn
 
 #python-sympy
 # Total Download Size:   10.09 MiB
