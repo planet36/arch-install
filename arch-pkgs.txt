@@ -489,6 +489,10 @@ meld
 # Total Installed Size:  304.81 MiB
 
 
+# GUI password manager
+#keepassxc
+
+
 # MAME tools
 #mame-tools
 
