@@ -494,6 +494,11 @@ meld
 #keepassxc
 
 
+# Tor
+#tor
+#nyx
+
+
 # MAME tools
 #mame-tools
 
