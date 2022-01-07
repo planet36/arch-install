@@ -105,7 +105,7 @@ setup_vbox_service() {
     #modprobe -a vboxguest vboxsf vboxvideo
 
     cat <<EOT > /etc/X11/xinit/xinitrc.d/99-vboxclient-all.sh
-#!/bin/sh
+#!/usr/bin/sh
 # SPDX-FileCopyrightText: Steven Ward
 # SPDX-License-Identifier: OSL-3.0
 
@@ -283,7 +283,7 @@ setup_0() {
         #       parallel, and execution of the action is not continued before all executables finished.
 
         cat <<EOT > /usr/lib/systemd/system-shutdown/eject.shutdown
-#!/bin/sh
+#!/usr/bin/sh
 /usr/bin/eject -v -T
 EOT
 
@@ -580,7 +580,7 @@ EOT
     # }}}
 
     # Must use absolute path of $0
-    su --login --shell=/bin/bash "$NEW_USER" -- "$(realpath -- "$0")" "${ARGS[@]}"
+    su --login --shell=/usr/bin/bash "$NEW_USER" -- "$(realpath -- "$0")" "${ARGS[@]}"
 }
 
 # setup user dotfiles and programs
