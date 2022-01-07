@@ -87,14 +87,14 @@ EOT
 
     # https://wiki.archlinux.org/index.php/Reflector#Automation
     # reflector.timer starts reflector.service weekly
-    systemctl start reflector.timer
+    #systemctl start reflector.timer # Running in chroot, ignoring command 'start'
     systemctl enable reflector.timer
 }
 
 setup_paccache_timer() {
 
     # https://wiki.archlinux.org/index.php/Pacman#Cleaning_the_package_cache
-    systemctl start paccache.timer
+    #systemctl start paccache.timer # Running in chroot, ignoring command 'start'
     systemctl enable paccache.timer
 }
 
