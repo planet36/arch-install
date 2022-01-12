@@ -291,6 +291,10 @@ dos2unix
 perl-rename
 
 
+# filesystem tools
+duf
+
+
 # directory tools
 dfc
 exa
