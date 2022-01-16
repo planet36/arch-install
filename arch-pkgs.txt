@@ -22,6 +22,7 @@ zstd
 
 # compile tools
 base-devel
+#clang
 #jdk-openjdk
 
 
