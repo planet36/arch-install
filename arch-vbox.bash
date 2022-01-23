@@ -59,10 +59,10 @@ setup_hostname_hosts() {
     source /etc/os-release
 
     HOSTNAME="$ID"-vm
-    # https://wiki.archlinux.org/index.php/Network_configuration#Set_the_hostname
+    # https://wiki.archlinux.org/title/Network_configuration#Set_the_hostname
     printf '%s\n' "$HOSTNAME" > /etc/hostname
 
-    # https://wiki.archlinux.org/index.php/Chroot#Usage
+    # https://wiki.archlinux.org/title/Chroot#Usage
     # Cannot be used inside a chroot
     #hostnamectl set-hostname "$HOSTNAME"
     #hostnamectl status
@@ -85,7 +85,7 @@ setup_reflector_service() {
 --sort score
 EOT
 
-    # https://wiki.archlinux.org/index.php/Reflector#Automation
+    # https://wiki.archlinux.org/title/Reflector#Automation
     # reflector.timer starts reflector.service weekly
     #systemctl start reflector.timer # Running in chroot, ignoring command 'start'
     systemctl enable reflector.timer
@@ -93,7 +93,7 @@ EOT
 
 setup_paccache_timer() {
 
-    # https://wiki.archlinux.org/index.php/Pacman#Cleaning_the_package_cache
+    # https://wiki.archlinux.org/title/Pacman#Cleaning_the_package_cache
     #systemctl start paccache.timer # Running in chroot, ignoring command 'start'
     systemctl enable paccache.timer
 }
@@ -222,7 +222,7 @@ setup_0() {
     # {{{ Format root partition
     if $ENCRYPT_ROOT_PARTITION
     then
-        # https://wiki.archlinux.org/index.php/Dm-crypt/Encrypting_an_entire_system
+        # https://wiki.archlinux.org/title/Dm-crypt/Encrypting_an_entire_system
         # https://linuxhint.com/setup-luks-encryption-on-arch-linux/
 
         modprobe dm-crypt
@@ -265,7 +265,7 @@ setup_0() {
     # Do not copy to /mnt/tmp because it is cleared after chroot
     cp --verbose -- "$0" /mnt/
 
-    # https://wiki.archlinux.org/index.php/Systemd-networkd#Wired_adapter_using_DHCP
+    # https://wiki.archlinux.org/title/Systemd-networkd#Wired_adapter_using_DHCP
     cp --verbose /etc/systemd/network/* /mnt/etc/systemd/network/
 
     arch-chroot /mnt bash /"$(basename -- "$0")" "${ARGS[@]}"
@@ -334,7 +334,7 @@ EOT
     #export LANG=en_US.UTF-8
     #echo "LANG=$LANG" > /etc/locale.conf
 
-    # https://wiki.archlinux.org/index.php/Chroot#Usage
+    # https://wiki.archlinux.org/title/Chroot#Usage
     # Cannot be used inside a chroot
     #localectl set-locale LANG=en_US.UTF-8
     # }}}
@@ -359,7 +359,7 @@ EOT
         ENCRYPT_HOOK=''
     fi
 
-    # https://wiki.archlinux.org/index.php/Mkinitcpio#Common_hooks
+    # https://wiki.archlinux.org/title/Mkinitcpio#Common_hooks
     cat <<EOT >> /etc/mkinitcpio.conf
 
 # Added by $THIS_SCRIPT
@@ -391,7 +391,7 @@ EOT
     # }}}
 
     # {{{ System time zone, NTP
-    # https://wiki.archlinux.org/index.php/Chroot#Usage
+    # https://wiki.archlinux.org/title/Chroot#Usage
     # Cannot be used inside a chroot
     #timedatectl status
     #timedatectl set-timezone America/New_York
