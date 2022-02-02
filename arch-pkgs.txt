@@ -217,6 +217,7 @@ gperf # needed to build coreutils
 
 # user utils
 at
+entr
 lsof
 opendoas
 util-linux
