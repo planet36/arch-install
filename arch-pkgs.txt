@@ -317,6 +317,8 @@ the_silver_searcher
 
 
 # text tools
+#bat
+#bat-extras
 sd
 
 
@@ -398,6 +400,11 @@ libdvdcss
 rtmpdump
 youtube-dl
 yt-dlp
+
+
+# audio tools
+opus-tools
+python-eyed3
 
 
 # file managers
