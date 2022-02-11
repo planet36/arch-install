@@ -202,6 +202,7 @@ double-conversion
 fmt
 jsoncpp
 nlohmann-json
+spdlog
 
 
 # dev libs
