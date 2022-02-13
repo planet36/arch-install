@@ -51,7 +51,7 @@ xdo
 xdotool
 
 
-# clipboard
+# X clipboard
 xclip
 xsel
 
@@ -70,6 +70,10 @@ physlock
 
 # Wayland
 #wofi
+
+
+# Wayland clipboard
+#wl-clipboard
 
 
 # fontconfig
@@ -255,6 +259,7 @@ python-wheel
 #vim
 neovim
 python-pynvim
+#vis
 
 
 # tmux
