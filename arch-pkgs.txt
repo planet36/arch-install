@@ -239,6 +239,7 @@ highlight
 jq
 patch
 sloccount
+tidy
 
 
 # needed for git-send-email
