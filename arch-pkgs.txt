@@ -437,6 +437,7 @@ calc
 cmatrix
 cowsay
 datamash
+dateutils
 dictd
 figlet
 grc
