@@ -307,6 +307,7 @@ duf
 # directory tools
 dfc
 exa
+lfs
 lsd # installs awesome-terminal-fonts
 ncdu
 tree
