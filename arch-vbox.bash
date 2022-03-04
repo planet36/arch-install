@@ -56,7 +56,7 @@ EOT
 setup_hostname_hosts() {
 
     # shellcheck disable=SC1091
-    source /etc/os-release
+    source /usr/lib/os-release
 
     HOSTNAME="$ID"-vm
     # https://wiki.archlinux.org/title/Network_configuration#Set_the_hostname
