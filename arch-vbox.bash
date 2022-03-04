@@ -14,7 +14,6 @@ THIS_SCRIPT="$(realpath -- "$0")"
 
 export LC_ALL=C
 
-DEFAULT_NEW_USER_SHELL=bash
 DEFAULT_DPY_W=1920
 DEFAULT_DPY_H=1080
 
@@ -572,7 +571,6 @@ EOT
     useradd \
         --gid wheel \
         --groups vboxsf \
-        --shell "$(which -- "$NEW_USER_SHELL")" \
         -- "$NEW_USER"
 
     # The initial password is the user name
@@ -580,7 +578,7 @@ EOT
     # }}}
 
     # Must use absolute path of $0
-    su --login --shell=/usr/bin/bash "$NEW_USER" -- "$(realpath -- "$0")" "${ARGS[@]}"
+    su --login "$NEW_USER" -- "$(realpath -- "$0")" "${ARGS[@]}"
 }
 
 # setup user dotfiles and programs
@@ -613,8 +611,6 @@ parse_options() {
 
     ##### XXX: needed in setup_1
     NEW_USER=''
-    ##### XXX: needed in setup_1
-    NEW_USER_SHELL=''
     ##### XXX: needed in setup_2
     DPY_W=''
     DPY_H=''
@@ -622,11 +618,10 @@ parse_options() {
     ##### XXX: needed in setup_0, setup_1
     ENCRYPT_ROOT_PARTITION=false
 
-    while getopts 'u:s:w:h:d:e' OPTION "${ARGS[@]}"
+    while getopts 'u:w:h:d:e' OPTION "${ARGS[@]}"
     do
         case $OPTION in
             u) NEW_USER="$OPTARG" ;;
-            s) NEW_USER_SHELL="$OPTARG" ;;
             w) DPY_W="$OPTARG" ;; # pixels
             h) DPY_H="$OPTARG" ;; # pixels
             d) DPY_D="$OPTARG" ;; # inches
@@ -650,13 +645,6 @@ parse_options() {
         read -r NEW_USER < /dev/tty
         #read -r -p 'Enter new user: ' NEW_USER
         ARGS+=(-u "$NEW_USER")
-    fi
-
-    if [ -z "$NEW_USER_SHELL" ]
-    then
-        NEW_USER_SHELL="$DEFAULT_NEW_USER_SHELL"
-        ARGS+=(-s "$NEW_USER_SHELL")
-        #ARGS+=("$NEW_USER_SHELL")
     fi
 
     if [ -z "$DPY_W" ]

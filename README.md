@@ -14,7 +14,7 @@ In an  [Arch Linux livecd](https://www.archlinux.org/download/) environment, dow
 ```sh
 curl -O https://raw.githubusercontent.com/planet36/arch-install/main/arch-vbox.bash
 
-bash arch-vbox.bash -u NEW_USER [-s NEW_USER_SHELL] [-w DPY_W] [-h DPY_H] [-d DPY_D] [-e]
+bash arch-vbox.bash -u NEW_USER [-w DPY_W] [-h DPY_H] [-d DPY_D] [-e]
 ```
 
 The installation process is uninterruptible.  That is, if it's stopped before finishing, it can't be resumed.
@@ -23,10 +23,6 @@ The installation process is uninterruptible.  That is, if it's stopped before fi
 - `-u NEW_USER`
   - Specify the username of the new user.
   - The default password is the same as the username.  Change it after the installation is finished!
-- `-s NEW_USER_SHELL`
-  - Specify the _basename_ of the shell of the new user.
-  - The default shell is **bash**.
-  - See **/etc/shells** for available shells.
 - `-w DPY_W`
   - Specify the width (in pixels) of the display.
   - The default width is **1920**.
