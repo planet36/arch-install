@@ -306,6 +306,7 @@ duf
 
 # directory tools
 dfc
+#dust
 exa
 lfs
 lsd # installs awesome-terminal-fonts
