@@ -32,6 +32,10 @@ ltrace
 strace
 
 
+# firewall
+ufw
+
+
 # https://archlinux.org/groups/x86_64/xorg/
 xorg
 
