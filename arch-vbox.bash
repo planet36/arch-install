@@ -6,7 +6,7 @@
 
 declare -a ARGS=("$@")
 
-##### XXX: maybe don't rely on set -e
+# set -e is unreliable and convoluted
 # https://mywiki.wooledge.org/BashFAQ/105
 set -e
 
@@ -43,9 +43,6 @@ EOT
 
     if $ENCRYPT_ROOT_PARTITION
     then
-        ### XXX: is this necessary here?
-        #modprobe dm-crypt
-
         echo 'GRUB_CMDLINE_LINUX+=" cryptdevice=/dev/sda2:cryptroot"' >> /etc/default/grub
     fi
     grub-install /dev/sda
@@ -609,13 +606,13 @@ setup_2() {
 
 parse_options() {
 
-    ##### XXX: needed in setup_1
+    # Used in setup_1
     NEW_USER=''
-    ##### XXX: needed in setup_2
+    # Used in setup_dpi (setup_2)
     DPY_W=''
     DPY_H=''
     DPY_D=''
-    ##### XXX: needed in setup_0, setup_1
+    # Used in setup_0, setup_grub, setup_1
     ENCRYPT_ROOT_PARTITION=false
 
     while getopts 'u:w:h:d:e' OPTION "${ARGS[@]}"
