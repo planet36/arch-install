@@ -518,7 +518,7 @@ EOT
     mkdir --verbose --parents -- .cache/xorg
 
     mkdir --verbose --parents -- \
-        .local/share/{bash,fish,zsh}
+        .local/share/{bash,fish}
     # }}}
 
     printf '\n# Added by %q\n' "$THIS_SCRIPT" >> /etc/profile
