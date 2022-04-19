@@ -427,6 +427,7 @@ fff
 mediainfo
 nnn
 odt2txt
+#pcmanfm
 ranger
 ueberzug
 #vifm
