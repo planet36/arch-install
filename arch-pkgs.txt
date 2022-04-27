@@ -43,6 +43,7 @@ xorg
 xorg-xclock
 xorg-xeyes
 xorg-xinit
+xorg-xmessage
 xcompmgr
 
 
@@ -169,6 +170,7 @@ tldr
 
 
 # words
+aspell
 words
 
 
@@ -263,6 +265,7 @@ python-wheel
 
 # editors
 #vim
+kakoune
 neovim
 python-pynvim
 #vis
