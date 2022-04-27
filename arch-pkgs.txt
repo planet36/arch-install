@@ -261,7 +261,7 @@ python-pylint
 python-wheel
 
 
-# vim, neovim
+# editors
 #vim
 neovim
 python-pynvim
