@@ -539,6 +539,7 @@ meld
 # games
 aisleriot # installs as sol
 bsd-games
+#kpat
 tty-solitaire
 
 ##### TODO: compare this to aisleriot
