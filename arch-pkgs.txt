@@ -543,12 +543,6 @@ bsd-games
 #pysolfc # installs as pysol
 tty-solitaire
 
-##### TODO: compare this to aisleriot
-# Total Download Size:   31.58 MiB
-# Total Installed Size:  43.93 MiB
-# small cards
-# neat hints
-
 
 # distributed computing
 #boinc
