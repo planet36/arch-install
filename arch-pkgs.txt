@@ -540,10 +540,10 @@ meld
 aisleriot # installs as sol
 bsd-games
 #kpat
+#pysolfc # installs as pysol
 tty-solitaire
 
 ##### TODO: compare this to aisleriot
-#pysolfc # installs as pysol
 # Total Download Size:   31.58 MiB
 # Total Installed Size:  43.93 MiB
 # small cards
