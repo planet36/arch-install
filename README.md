@@ -5,7 +5,7 @@ Use this installation script so you can honestly say _"I use Arch btw"_.
 
 ## File Description
 - [arch-vbox.bash](arch-vbox.bash)
-  - Script to [install Arch Linux](https://wiki.archlinux.org/index.php/Installation_guide) in a [VirtualBox](https://www.virtualbox.org/) guest
+  - Script to [install Arch Linux](https://wiki.archlinux.org/title/Installation_guide) in a [VirtualBox](https://www.virtualbox.org/) guest
 - [arch-pkgs.txt](arch-pkgs.txt)
   - List of [Arch Linux packages](https://www.archlinux.org/packages/) to install
 
