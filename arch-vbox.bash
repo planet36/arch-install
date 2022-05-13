@@ -123,16 +123,19 @@ setup_xdg_vars() {
     : "${XDG_CONFIG_HOME:=$HOME/.config}"
     : "${XDG_DATA_DIRS:=/usr/local/share/:/usr/share/}"
     : "${XDG_DATA_HOME:=$HOME/.local/share}"
+    : "${XDG_STATE_HOME:=$HOME/.local/state}"
 
     export XDG_CACHE_HOME
     export XDG_CONFIG_DIRS
     export XDG_CONFIG_HOME
     export XDG_DATA_DIRS
     export XDG_DATA_HOME
+    export XDG_STATE_HOME
 
     mkdir --verbose --parents -- "$XDG_CACHE_HOME"
     mkdir --verbose --parents -- "$XDG_CONFIG_HOME"
     mkdir --verbose --parents -- "$XDG_DATA_HOME"
+    mkdir --verbose --parents -- "$XDG_STATE_HOME"
 
     # XDG environment variables have been set
     # XDG base directories have been created
@@ -492,6 +495,7 @@ XDG_CONFIG_DIRS DEFAULT=/etc/xdg
 XDG_CONFIG_HOME DEFAULT=@{HOME}/.config
 XDG_DATA_DIRS   DEFAULT=/usr/local/share/:/usr/share/
 XDG_DATA_HOME   DEFAULT=@{HOME}/.local/share
+XDG_STATE_HOME  DEFAULT=@{HOME}/.local/state
 EOT
     # }}}
 
@@ -535,11 +539,13 @@ PATH="$HOME/.local/bin:$PATH"
 : "${XDG_CONFIG_HOME:=$HOME/.config}"
 : "${XDG_DATA_DIRS:=/usr/local/share/:/usr/share/}"
 : "${XDG_DATA_HOME:=$HOME/.local/share}"
+: "${XDG_STATE_HOME:=$HOME/.local/state}"
 export XDG_CACHE_HOME
 export XDG_CONFIG_DIRS
 export XDG_CONFIG_HOME
 export XDG_DATA_DIRS
 export XDG_DATA_HOME
+export XDG_STATE_HOME
 EOT
 
     printf '\n# Added by %q\n' "$THIS_SCRIPT" >> /etc/fish/config.fish
@@ -557,6 +563,7 @@ if not set --query XDG_CONFIG_DIRS ; set --export --global XDG_CONFIG_DIRS /etc/
 if not set --query XDG_CONFIG_HOME ; set --export --global XDG_CONFIG_HOME "$HOME"/.config               ; end
 if not set --query XDG_DATA_DIRS   ; set --export --global XDG_DATA_DIRS   /usr/local/share/:/usr/share/ ; end
 if not set --query XDG_DATA_HOME   ; set --export --global XDG_DATA_HOME   "$HOME"/.local/share          ; end
+if not set --query XDG_STATE_HOME  ; set --export --global XDG_STATE_HOME  "$HOME"/.local/state          ; end
 EOT
 
     # }}}
