@@ -485,20 +485,6 @@ CREATE_HOME yes
 EOT
     # }}}
 
-    # {{{ Set XDG_* env vars
-    # https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html
-    cat <<EOT >> /etc/security/pam_env.conf
-
-# Added by $THIS_SCRIPT
-XDG_CACHE_HOME  DEFAULT=@{HOME}/.cache
-XDG_CONFIG_DIRS DEFAULT=/etc/xdg
-XDG_CONFIG_HOME DEFAULT=@{HOME}/.config
-XDG_DATA_DIRS   DEFAULT=/usr/local/share/:/usr/share/
-XDG_DATA_HOME   DEFAULT=@{HOME}/.local/share
-XDG_STATE_HOME  DEFAULT=@{HOME}/.local/state
-EOT
-    # }}}
-
     # {{{ Create common directories in /etc/skel
     cd /etc/skel
 
