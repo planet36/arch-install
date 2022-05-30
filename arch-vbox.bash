@@ -548,24 +548,6 @@ export XDG_DATA_HOME
 export XDG_STATE_HOME
 EOT
 
-    printf '\n# Added by %q\n' "$THIS_SCRIPT" >> /etc/fish/config.fish
-
-    cat <<'EOT' >> /etc/fish/config.fish
-
-# Prepend user path
-# Move ~/.local/bin to the front of PATH.
-fish_add_path --move "$HOME"/.local/bin
-
-# Set XDG vars
-# https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html
-if not set --query XDG_CACHE_HOME  ; set --export --global XDG_CACHE_HOME  "$HOME"/.cache                ; end
-if not set --query XDG_CONFIG_DIRS ; set --export --global XDG_CONFIG_DIRS /etc/xdg                      ; end
-if not set --query XDG_CONFIG_HOME ; set --export --global XDG_CONFIG_HOME "$HOME"/.config               ; end
-if not set --query XDG_DATA_DIRS   ; set --export --global XDG_DATA_DIRS   /usr/local/share/:/usr/share/ ; end
-if not set --query XDG_DATA_HOME   ; set --export --global XDG_DATA_HOME   "$HOME"/.local/share          ; end
-if not set --query XDG_STATE_HOME  ; set --export --global XDG_STATE_HOME  "$HOME"/.local/state          ; end
-EOT
-
     # }}}
 
     # {{{ Create new user
