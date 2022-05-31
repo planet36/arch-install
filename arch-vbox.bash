@@ -504,8 +504,6 @@ EOT
     mkdir --verbose --parents -- \
         .local/share/nvim/{site/autoload,backup,colors,swap,undo}
 
-    mkdir --verbose --mode=0700 -- .local/share/Trash
-
     mkdir --verbose --parents -- .cache/xorg
 
     mkdir --verbose --parents -- \
