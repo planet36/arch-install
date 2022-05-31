@@ -16,6 +16,7 @@ export LC_ALL=C
 
 DEFAULT_DPY_W=1920
 DEFAULT_DPY_H=1080
+DEFAULT_DPI=96
 
 is_int() {
     # shellcheck disable=SC2065
@@ -143,7 +144,7 @@ setup_xdg_vars() {
 
 setup_dpi() {
 
-    DPI=96
+    local DPI="$DEFAULT_DPI"
 
     if [[ -n "$DPY_W" ]] && [[ -n "$DPY_H" ]] && [[ -n "$DPY_D" ]]
     then
