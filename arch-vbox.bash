@@ -492,11 +492,6 @@ EOT
     rm --verbose -- .bash_logout
 
     mkdir --verbose --parents -- \
-        .cache \
-        .config \
-        .local/share
-
-    mkdir --verbose --parents -- \
         .local/{bin,include,lib,src}
 
     mkdir --verbose --parents -- Downloads
