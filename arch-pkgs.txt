@@ -157,7 +157,6 @@ shellharden
 
 
 # shell utils
-#thefuck
 #z
 #zoxide
 
