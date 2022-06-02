@@ -494,11 +494,6 @@ EOT
     mkdir --verbose --parents -- Downloads
 
     mkdir --verbose --parents -- \
-        .local/share/nvim/{site/autoload,backup,colors,swap,undo}
-
-    mkdir --verbose --parents -- .cache/xorg
-
-    mkdir --verbose --parents -- \
         .local/share/{bash,fish}
     # }}}
 
