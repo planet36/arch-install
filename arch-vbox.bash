@@ -492,9 +492,6 @@ EOT
     rm --verbose -- .bash_logout
 
     mkdir --verbose --parents -- Downloads
-
-    mkdir --verbose --parents -- \
-        .local/share/{bash,fish}
     # }}}
 
     # }}}
