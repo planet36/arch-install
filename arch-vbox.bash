@@ -497,11 +497,14 @@ setup_2() {
         git clone --quiet https://github.com/planet36/dotfiles.git .dotfiles
     fi
 
-    bash .dotfiles/install.bash -r -p
+    bash .dotfiles/install.bash -r
 
     # Copied from .bash_profile
     source "${XDG_CONFIG_HOME:-$HOME/.config}"/bash/xdg-envvars.bash || return
     source "$XDG_CONFIG_HOME"/bash/envvars.bash || return
+
+    # Install programs after env vars are set
+    bash .dotfiles/install.bash -p
 
     # May only be after the dotfiles are installed
     setup_dpi
