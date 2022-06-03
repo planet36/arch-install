@@ -500,8 +500,8 @@ setup_2() {
     bash .dotfiles/install.bash -r
 
     # Copied from .bash_profile
-    source "${XDG_CONFIG_HOME:-$HOME/.config}"/bash/xdg-envvars.bash || return
-    source "$XDG_CONFIG_HOME"/bash/envvars.bash || return
+    source "${XDG_CONFIG_HOME:-$HOME/.config}"/bash/xdg-envvars.bash
+    source "$XDG_CONFIG_HOME"/bash/envvars.bash
 
     # Install programs after env vars are set
     bash .dotfiles/install.bash -p
