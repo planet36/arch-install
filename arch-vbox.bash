@@ -506,6 +506,9 @@ setup_2() {
     # Install programs after env vars are set
     bash .dotfiles/install.bash -p
 
+    # Install neovim plugins
+    bash "$XDG_DATA_HOME"/nvim/site/pack/myplugins/clone-plugins.bash
+
     # May only be after the dotfiles are installed
     setup_dpi
     # }}}
