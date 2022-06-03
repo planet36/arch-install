@@ -118,7 +118,6 @@ EOT
     chmod --changes 755 -- /etc/X11/xinit/xinitrc.d/99-vboxclient-all.sh
 }
 
-
 setup_dpi() {
 
     local DPI="$DEFAULT_DPI"
@@ -499,6 +498,10 @@ setup_2() {
     fi
 
     bash .dotfiles/install.bash -r -p
+
+    # Copied from .bash_profile
+    source "${XDG_CONFIG_HOME:-$HOME/.config}"/bash/xdg-envvars.bash || return
+    source "$XDG_CONFIG_HOME"/bash/envvars.bash || return
 
     # May only be after the dotfiles are installed
     setup_dpi
