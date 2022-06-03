@@ -14,6 +14,9 @@ THIS_SCRIPT="$(realpath -- "$0")"
 
 export LC_ALL=C
 
+# Do not save history
+unset HISTFILE
+
 DEFAULT_DPY_W=1920
 DEFAULT_DPY_H=1080
 DEFAULT_DPI=96
