@@ -506,7 +506,13 @@ setup_2() {
     source "$XDG_CONFIG_HOME"/bash/envvars.bash
 
     # Install programs after env vars are set
-    bash .dotfiles/install.bash -p
+    # XXX: Do not run sequential targets (i.e. install, clean) in parallel
+    # Install programs from dotfiles
+    make -j"$(nproc)" -C .dotfiles/other/build-local install
+    make -j"$(nproc)" -C .dotfiles/other/build-local clean
+    # Install programs from external git repos
+    make -j"$(nproc)" -C ~/.local/src install
+    make -j"$(nproc)" -C ~/.local/src clean
 
     # Install neovim plugins
     bash "$XDG_DATA_HOME"/nvim/site/pack/myplugins/clone-plugins.bash
