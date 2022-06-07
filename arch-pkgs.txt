@@ -264,7 +264,7 @@ python-wheel
 
 # editors
 #vim
-kakoune
+#kakoune
 neovim
 python-pynvim
 #vis
