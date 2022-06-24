@@ -116,7 +116,6 @@ imvirt
 # https://wiki.archlinux.org/title/VirtualBox/Install_Arch_Linux_as_a_guest
 
 virtualbox-guest-utils
-# virtualbox-guest-dkms # necessary if the kernel is older than 5.6
 
 
 # pacman utils
