@@ -333,8 +333,8 @@ the_silver_searcher
 
 
 # text tools
-#bat
-#bat-extras
+bat
+bat-extras
 choose
 sd
 
