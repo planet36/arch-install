@@ -490,9 +490,9 @@ python-zxcvbn
 # terminal emulators
 alacritty
 kitty
-terminator
+#terminator
 xterm
-zutty
+#zutty
 
 
 # GUI diff tools
