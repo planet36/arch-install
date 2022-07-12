@@ -493,8 +493,6 @@ kitty
 terminator
 xterm
 zutty
-#termite
-#termite-terminfo
 
 
 # GUI diff tools
