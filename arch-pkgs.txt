@@ -420,6 +420,7 @@ yt-dlp
 
 
 # audio tools
+libfdk-aac
 opus-tools
 python-eyed3
 
