@@ -525,6 +525,9 @@ setup_2() {
 
     # https://github.com/gtaylor/python-colormath
     #sudo --set-home pip install colormath
+
+    # https://eyed3.readthedocs.io/en/latest/installation.html
+    #sudo --set-home pip install eyed3
 }
 
 parse_options() {
