@@ -41,7 +41,7 @@ setup_grub() {
 
 # Added by $THIS_SCRIPT
 GRUB_TIMEOUT=2
-GRUB_CMDLINE_LINUX_DEFAULT+=" mitigations=off random.trust_cpu=yes"
+GRUB_CMDLINE_LINUX_DEFAULT+=" mitigations=off random.trust_cpu=yes vconsole.font=Lat2-Terminus16"
 GRUB_GFXMODE=${DPY_W}x${DPY_H}x32,1280x1024x32,auto
 EOT
 
@@ -301,10 +301,10 @@ setup_1() {
     # {{{ Set console font
     # https://www.man7.org/linux/man-pages/man5/vconsole.conf.5.html
     # Should be set before mkinitcpio is called
-    cat <<EOT >> /etc/vconsole.conf
-KEYMAP=us
-FONT=Lat2-Terminus16
-EOT
+#    cat <<EOT >> /etc/vconsole.conf
+#KEYMAP=us
+#FONT=Lat2-Terminus16
+#EOT
     # }}}
 
     #export LANG=en_US.UTF-8
