@@ -352,10 +352,8 @@ EOT
     # }}}
 
     # {{{ Install Linux
-    # Install initramfs compression methods listed in /etc/mkinitcpio.conf
     pacman -S --needed --noconfirm \
-        linux grub \
-        bzip2 gzip lz4 lzop xz zstd
+        base grub linux
     # }}}
 
     # {{{ Install Arch packages
