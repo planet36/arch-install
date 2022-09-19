@@ -332,6 +332,10 @@ ripgrep
 the_silver_searcher
 
 
+# search emojis
+#rofimoji
+
+
 # text tools
 bat
 bat-extras
@@ -458,6 +462,7 @@ moreutils
 neofetch
 #onefetch
 parallel
+#rofi-calc
 screenkey
 scrypt
 termdown
