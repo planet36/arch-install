@@ -233,6 +233,11 @@ setup_0() {
     sed -E -i 's/^#(ParallelDownloads)\>/\1/' /etc/pacman.conf
     # }}}
 
+    # {{{ Initialize the keyring and reload the default keys
+    pacman-key --init
+    pacman-key --populate
+    # }}}
+
     #pacstrap /mnt base linux
     pacstrap /mnt base
 
