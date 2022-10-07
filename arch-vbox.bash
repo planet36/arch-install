@@ -234,6 +234,11 @@ setup_0() {
     # }}}
 
     # {{{ Initialize the keyring and reload the default keys
+    # Supposed to be fixed in pacman 6.0.1-8
+    # https://github.com/archlinux/archinstall/issues/1511
+    # https://github.com/archlinux/archinstall/issues/1389
+    # https://bbs.archlinux.org/viewtopic.php?pid=2055012#p2055012
+    # https://gitlab.archlinux.org/archlinux/archiso/-/issues/191
     pacman-key --init
     pacman-key --populate
     # }}}
