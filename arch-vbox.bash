@@ -312,7 +312,6 @@ setup_1() {
     # https://www.man7.org/linux/man-pages/man5/vconsole.conf.5.html
     # Should be set before mkinitcpio is called
 #    cat <<EOT >> /etc/vconsole.conf
-#KEYMAP=us
 #FONT=Lat2-Terminus16
 #EOT
     # }}}
