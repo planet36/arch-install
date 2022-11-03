@@ -333,6 +333,7 @@ the_silver_searcher
 
 
 # search emojis
+#rofi-emoji
 #rofimoji
 
 
