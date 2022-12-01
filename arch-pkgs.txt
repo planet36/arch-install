@@ -242,7 +242,6 @@ diff-so-fancy
 diffstat
 git-delta
 highlight
-jq
 patch
 sloccount
 tidy
@@ -252,6 +251,7 @@ tidy
 #fx
 #gron
 #jless
+jq
 #rq
 
 
