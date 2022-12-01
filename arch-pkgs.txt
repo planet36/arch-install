@@ -248,6 +248,13 @@ sloccount
 tidy
 
 
+# JavaScript tools
+#fx
+#gron
+#jless
+#rq
+
+
 # needed for git-send-email
 perl-authen-sasl
 perl-io-socket-ssl
