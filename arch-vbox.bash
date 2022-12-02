@@ -528,13 +528,11 @@ setup_2() {
     # }}}
 
     # https://www.colour-science.org/installation-guide/
-    #sudo --set-home pip install colour-science
-
     # https://github.com/gtaylor/python-colormath
-    #sudo --set-home pip install colormath
-
     # https://eyed3.readthedocs.io/en/latest/installation.html
-    #sudo --set-home pip install eyed3
+    # https://github.com/Wazzaps/jqed#download--install
+    #declare -a PIP_PACKAGES=(colour-science colormath eyed3 jqed)
+    #pip install --user ${PIP_PACKAGES[@]}
 }
 
 parse_options() {
