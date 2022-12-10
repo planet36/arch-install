@@ -439,6 +439,7 @@ opus-tools
 # file managers
 #broot
 fff
+#lf
 mediainfo
 nnn
 odt2txt
