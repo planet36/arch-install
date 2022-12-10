@@ -473,6 +473,7 @@ parallel
 #rofi-calc
 screenkey
 scrypt
+#sl
 termdown
 time
 units
