@@ -467,7 +467,7 @@ figlet
 fortune-mod
 grc
 hyperfine
-libqalculate # 11.60 MiB
+#libqalculate
 moreutils
 neofetch
 #onefetch
