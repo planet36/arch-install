@@ -490,13 +490,8 @@ python-geographiclib
 python-gmpy2
 python-matplotlib
 python-numpy
-python-pendulum
 python-pillow
-python-pycryptodome
-python-regex
 python-scipy
-python-yaml
-python-zxcvbn
 
 #python-sympy
 # Total Download Size:   10.09 MiB
