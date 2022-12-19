@@ -181,9 +181,9 @@ wget
 
 
 # resource monitor
-bashtop
-bottom
-bpytop
+#bashtop
+#bottom
+#bpytop
 btop
 #gtop
 htop
