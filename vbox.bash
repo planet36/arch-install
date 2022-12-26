@@ -235,10 +235,12 @@ setup_0() {
 
     # {{{ Wait for pacman-init.service to finish
     # pacman-init.service does the pacman-key --init and --populate.
-    if systemctl list-unit-files --all --type=service pacman-init.service > /dev/null
+    # https://unix.stackexchange.com/a/396638/439780
+    if systemctl is-active --quiet pacman-init.service
     then
         echo "Waiting for pacman-init.service to finish ..."
-        while ! systemctl show pacman-init.service | grep -q 'SubState=exited'
+        # https://unix.stackexchange.com/a/396633/439780
+        while [[ "$(systemctl show -p SubState --value pacman-init.service)" != 'exited' ]]
         do
             sleep 1s
         done
