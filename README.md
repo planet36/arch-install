@@ -10,9 +10,7 @@ Use this installation script so you can honestly say _"I use Arch btw"_.
   - List of [Arch Linux packages](https://www.archlinux.org/packages/) to install
 
 ## Usage
-When the [Arch Linux Live CD](https://www.archlinux.org/download/) boot loader menu appears, choose option <u>`Arch Linux install medium (x86_64, BIOS, Copy to RAM)`</u>.
-If you don't choose that option, after the install script finishes, the Live CD won't be ejected.
-Consequently, the system will reboot to the Live CD instead of the new installation.
+When the [Arch Linux Live CD](https://www.archlinux.org/download/) boot loader menu appears, choose option <u>`Arch Linux install medium (x86_64, BIOS)`</u>.
 
 At the prompt, download the installation script and run it.
 ```sh
@@ -22,6 +20,9 @@ bash arch-vbox.bash -u NEW_USER [-w DPY_W] [-h DPY_H] [-d DPY_D] [-e]
 ```
 
 The installation process is uninterruptible.  That is, if it's stopped before finishing, it can't be resumed.
+
+After the install script finishes, the Live CD will be ejected before reboot.
+If it isn't ejected (because the VM had insufficient RAM), the system will reboot to the Live CD instead of the new installation.
 
 ### Options
 - `-u NEW_USER`
