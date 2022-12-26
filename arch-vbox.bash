@@ -233,14 +233,26 @@ setup_0() {
     sed -E -i 's/^#(ParallelDownloads)\>/\1/' /etc/pacman.conf
     # }}}
 
+    # {{{ Wait for pacman-init.service to finish
+    # pacman-init.service does the pacman-key --init and --populate.
+    if systemctl list-unit-files --all --type=service pacman-init.service > /dev/null
+    then
+        echo "Waiting for pacman-init.service to finish ..."
+        while ! systemctl show pacman-init.service | grep -q 'SubState=exited'
+        do
+            sleep 1s
+        done
+    fi
+    # }}}
+
     # {{{ Initialize the keyring and reload the default keys
     # Supposed to be fixed in pacman 6.0.1-8
     # https://github.com/archlinux/archinstall/issues/1511
     # https://github.com/archlinux/archinstall/issues/1389
     # https://bbs.archlinux.org/viewtopic.php?pid=2055012#p2055012
     # https://gitlab.archlinux.org/archlinux/archiso/-/issues/191
-    pacman-key --init
-    pacman-key --populate
+    #pacman-key --init
+    #pacman-key --populate
     # }}}
 
     #pacstrap /mnt base linux
