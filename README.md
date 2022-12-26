@@ -4,7 +4,7 @@
 Use this installation script so you can honestly say _"I use Arch btw"_.
 
 ## File Description
-- [arch-vbox.bash](arch-vbox.bash)
+- [vbox.bash](vbox.bash)
   - Script to [install Arch Linux](https://wiki.archlinux.org/title/Installation_guide) in a [VirtualBox](https://www.virtualbox.org/) guest
 - [pkgs.txt](pkgs.txt)
   - List of [Arch Linux packages](https://www.archlinux.org/packages/) to install
@@ -14,9 +14,9 @@ When the [Arch Linux Live CD](https://www.archlinux.org/download/) boot loader m
 
 At the prompt, download the installation script and run it.
 ```sh
-curl -O https://raw.githubusercontent.com/planet36/arch-install/main/arch-vbox.bash
+curl -O https://raw.githubusercontent.com/planet36/arch-install/main/vbox.bash
 
-bash arch-vbox.bash -u NEW_USER [-w DPY_W] [-h DPY_H] [-d DPY_D] [-e]
+bash vbox.bash -u NEW_USER [-w DPY_W] [-h DPY_H] [-d DPY_D] [-e]
 ```
 
 The installation process is uninterruptible.  That is, if it's stopped before finishing, it can't be resumed.
