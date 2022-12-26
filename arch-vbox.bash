@@ -245,6 +245,12 @@ setup_0() {
     fi
     # }}}
 
+    # {{{ Update the keyring if it's out-of-date
+    # Do not use the "--needed" option
+    pacman -S          --noconfirm -y archlinux-keyring
+    #pacman -S --needed --noconfirm -u
+    # }}}
+
     # {{{ Initialize the keyring and reload the default keys
     # Supposed to be fixed in pacman 6.0.1-8
     # https://github.com/archlinux/archinstall/issues/1511
@@ -339,12 +345,6 @@ setup_1() {
     # {{{ Change pacman.conf misc options
     sed -E -i 's/^#(VerbosePkgLists)\>/\1/' /etc/pacman.conf
     sed -E -i 's/^#(ParallelDownloads)\>/\1/' /etc/pacman.conf
-    # }}}
-
-    # {{{ Update the keyring if it's out-of-date
-    # Do not use the "--needed" option
-    pacman -S          --noconfirm -y archlinux-keyring
-    pacman -S --needed --noconfirm -u
     # }}}
 
     # {{{ Edit /etc/mkinitcpio.conf
