@@ -378,7 +378,7 @@ EOT
     # }}}
 
     # {{{ Install Arch packages
-    curl -L https://raw.githubusercontent.com/planet36/arch-install/main/arch-pkgs.txt | grep -E -o '^[^#]+' | xargs -r pacman -S --needed --noconfirm
+    curl -L https://raw.githubusercontent.com/planet36/arch-install/main/pkgs.txt | grep -E -o '^[^#]+' | xargs -r pacman -S --needed --noconfirm
     # }}}
 
     # {{{ Configure grub

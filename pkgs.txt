@@ -1,7 +1,7 @@
 # vim: ft=sh:
 
 # Usage:
-# grep -E -o '^[^#]+' arch-pkgs.txt | sudo xargs -r -o pacman --color always -S --needed
+# grep -E -o '^[^#]+' pkgs.txt | sudo xargs -r -o pacman --color always -S --needed
 
 
 # https://www.archlinux.org/groups/
