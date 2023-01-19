@@ -213,6 +213,7 @@ fmt
 jsoncpp
 nlohmann-json
 spdlog
+tbb
 
 
 # dev libs
