@@ -214,6 +214,7 @@ jsoncpp
 nlohmann-json
 spdlog
 tbb
+utf8cpp
 
 
 # dev libs
