@@ -155,6 +155,10 @@ shellharden
 #zsh-syntax-highlighting
 
 
+# fish utils
+fisher
+
+
 # shell utils
 #z
 #zoxide
