@@ -545,7 +545,7 @@ setup_2() {
     # https://github.com/gtaylor/python-colormath
     # https://eyed3.readthedocs.io/en/latest/installation.html
     # https://github.com/Wazzaps/jqed#download--install
-    #declare -a PIP_PACKAGES=(colour-science colormath eyed3 jqed)
+    #declare -a PIP_PACKAGES=(colour-science colormath eyed3 jqed snakeviz)
     #pip install --user ${PIP_PACKAGES[@]}
 }
 
