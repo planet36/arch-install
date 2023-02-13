@@ -2,6 +2,7 @@
 # SPDX-FileCopyrightText: Steven Ward
 # SPDX-License-Identifier: OSL-3.0
 
+# shellcheck disable=SC1091
 # shellcheck disable=SC2086
 
 declare -a ARGS=("$@")
@@ -522,9 +523,10 @@ setup_2() {
 
     # The following may only be done after the dotfiles are installed
 
-    # Copied from .bash_profile
+    # {{{ Copied from .bash_profile
     source "${XDG_CONFIG_HOME:-$HOME/.config}"/bash/xdg-envvars.bash
     source "$XDG_CONFIG_HOME"/bash/envvars.bash
+    # }}}
 
     # Install programs after env vars are set
     # XXX: Do not run sequential targets (i.e. install, clean) in parallel
