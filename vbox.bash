@@ -11,31 +11,31 @@ declare -a ARGS=("$@")
 # https://mywiki.wooledge.org/BashFAQ/105
 set -e
 
-THIS_SCRIPT="$(realpath -- "$0")"
+THIS_SCRIPT="$(realpath -- "${BASH_SOURCE[0]}")"
 
 export LC_ALL=C
 
 # Do not save history
 unset HISTFILE
 
-DEFAULT_DPY_W=1920
-DEFAULT_DPY_H=1080
-DEFAULT_DPI=96
+declare -r DEFAULT_DPY_W=1920
+declare -r DEFAULT_DPY_H=1080
+declare -r DEFAULT_DPI=96
 
-is_int() {
+function is_int {
     # shellcheck disable=SC2065
     test "$1" -eq 0 -o "$1" -ne 0 &> /dev/null
 }
 
-is_uint() {
+function is_uint {
     is_int "$1" && test "$1" -ge 0
 }
 
-is_pos_int() {
+function is_pos_int {
     is_int "$1" && test "$1" -gt 0
 }
 
-setup_grub() {
+function setup_grub {
     cp --backup=numbered /etc/default/grub /etc/default/grub.bak
 
     cat <<EOT >> /etc/default/grub
@@ -54,7 +54,7 @@ EOT
     grub-mkconfig -o /boot/grub/grub.cfg
 }
 
-setup_hostname_hosts() {
+function setup_hostname_hosts {
 
     # shellcheck disable=SC1091
     source /usr/lib/os-release
@@ -75,7 +75,7 @@ setup_hostname_hosts() {
 EOT
 }
 
-setup_reflector_service() {
+function setup_reflector_service {
 
     mv --backup=numbered -- /etc/xdg/reflector/reflector.conf /etc/xdg/reflector/reflector.conf.bak
     cat <<EOT > /etc/xdg/reflector/reflector.conf
@@ -92,14 +92,14 @@ EOT
     systemctl enable reflector.timer
 }
 
-setup_paccache_timer() {
+function setup_paccache_timer {
 
     # https://wiki.archlinux.org/title/Pacman#Cleaning_the_package_cache
     #systemctl start paccache.timer # Running in chroot, ignoring command 'start'
     systemctl enable paccache.timer
 }
 
-setup_vbox_service() {
+function setup_vbox_service {
 
     systemctl enable vboxservice.service
     # OR
@@ -119,7 +119,7 @@ EOT
     chmod --changes 755 -- /etc/X11/xinit/xinitrc.d/99-vboxclient-all.sh
 }
 
-setup_dpi() {
+function setup_dpi {
 
     local DPI="$DEFAULT_DPI"
 
@@ -135,7 +135,7 @@ setup_dpi() {
     printf 'Xft.dpi: %d\n' "$DPI" >> "$XDG_CONFIG_HOME"/xorg/Xresources-xft
 }
 
-setup_0() {
+function setup_0 {
 
     if ((EUID != 0))
     then
@@ -160,7 +160,7 @@ setup_0() {
 
     if $ENCRYPT_ROOT_PARTITION
     then
-        if [ ! -t 0 ]
+        if [[ ! -t 0 ]]
         then
             echo 'Error: must run in an interactive shell'
             exit 1
@@ -170,7 +170,7 @@ setup_0() {
         do
             read -r -s -p 'Enter encryption passphrase: ' ENCRYPT_PASSPHRASE
             echo
-            if [ -z "$ENCRYPT_PASSPHRASE" ]
+            if [[ -z "$ENCRYPT_PASSPHRASE" ]]
             then
                 echo 'Error: passphrase for encrypting the root partition may not be empty'
                 continue
@@ -300,7 +300,7 @@ EOT
     fi
 
     # if interactive
-    if [ -t 0 ]
+    if [[ -t 0 ]]
     then
         printf '\nTook %d seconds\n\n' "$SECONDS"
 
@@ -314,7 +314,7 @@ EOT
 }
 
 # setup system, install packages
-setup_1() {
+function setup_1 {
 
     if ((EUID != 0))
     then
@@ -509,12 +509,12 @@ EOT
 }
 
 # setup user dotfiles and programs
-setup_2() {
+function setup_2 {
 
     # {{{ Setup dotfiles
     cd
 
-    if [ ! -d .dotfiles ]
+    if [[ ! -d .dotfiles ]]
     then
         git clone --quiet https://github.com/planet36/dotfiles.git .dotfiles
     fi
@@ -551,7 +551,7 @@ setup_2() {
     #pip install --user ${PIP_PACKAGES[@]}
 }
 
-parse_options() {
+function parse_options {
 
     # Used in setup_1
     NEW_USER=''
@@ -577,9 +577,9 @@ parse_options() {
     # Do not shift because options will be re-used
     #shift $((OPTIND - 1))
 
-    if [ -z "$NEW_USER" ]
+    if [[ -z "$NEW_USER" ]]
     then
-        if [ ! -t 0 ]
+        if [[ ! -t 0 ]]
         then
             echo 'Error: must run in an interactive shell'
             exit 1
@@ -591,7 +591,7 @@ parse_options() {
         ARGS+=(-u "$NEW_USER")
     fi
 
-    if [ -z "$DPY_W" ]
+    if [[ -z "$DPY_W" ]]
     then
         DPY_W="$DEFAULT_DPY_W"
         #printf 'Enter the width (in pixels) of the display: '
@@ -605,7 +605,7 @@ parse_options() {
         exit 1
     fi
 
-    if [ -z "$DPY_H" ]
+    if [[ -z "$DPY_H" ]]
     then
         DPY_H="$DEFAULT_DPY_H"
         #printf 'Enter the height (in pixels) of the display: '
@@ -620,7 +620,7 @@ parse_options() {
     fi
 
     # This is optional
-    #if [ -z "$DPY_D" ]
+    #if [[ -z "$DPY_D" ]]
     #then
     #    printf 'Enter the diagonal size (in inches) of the display: '
     #    read -r DPY_D < /dev/tty
@@ -629,7 +629,7 @@ parse_options() {
     #fi
 }
 
-main() {
+function main {
 
     if ((EUID == 0))
     then # as root
