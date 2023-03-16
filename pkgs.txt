@@ -216,8 +216,8 @@ double-conversion
 fmt
 jsoncpp
 nlohmann-json
+onetbb
 spdlog
-tbb
 utf8cpp
 
 
