@@ -97,8 +97,10 @@ gnu-free-fonts # required by firefox
 #ttc-iosevka-slab # large download/installed size
 #ttf-anonymous-pro
 #ttf-dejavu
+ttf-go-nerd
 ttf-hack
 #ttf-ibm-plex
+ttf-input
 #ttf-jetbrains-mono
 #ttf-liberation
 #ttf-monoid
