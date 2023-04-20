@@ -87,7 +87,6 @@ fontconfig
 
 # fonts
 adobe-source-code-pro-fonts # required by gsettings-desktop-schemas
-#font-bh-ttf # Luxi
 gnu-free-fonts # required by firefox
 #otf-cascadia-code
 #otf-overpass
