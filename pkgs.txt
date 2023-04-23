@@ -97,6 +97,7 @@ gnu-free-fonts # required by firefox
 ttf-go-nerd
 ttf-hack
 #ttf-ibm-plex
+ttf-inconsolata
 ttf-input
 #ttf-jetbrains-mono
 #ttf-liberation
