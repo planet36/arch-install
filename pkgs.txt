@@ -328,6 +328,7 @@ duf
 dfc
 #dust
 exa
+#gdu
 lfs
 lsd # installs awesome-terminal-fonts
 ncdu
@@ -337,12 +338,14 @@ tree
 # search for files
 fd
 fzf
+#skim
 
 
 # search within files
 ack
 ripgrep
 the_silver_searcher
+#ugrep
 
 
 # search emojis
