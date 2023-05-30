@@ -366,8 +366,8 @@ function setup_1 {
 
 # Added by $THIS_SCRIPT
 # Changes to HOOKS array:
-#   Move "keyboard" after "block"
-#   If encrypt, "keyboard" must be before "encrypt" to enter the passphrase
+#   Move "block" before "keyboard"
+#   If encrypt, "encrypt" must be after "keyboard" to enter the passphrase
 HOOKS=(base udev autodetect modconf kms block keyboard keymap consolefont $ENCRYPT_HOOK filesystems fsck)
 EOT
 
