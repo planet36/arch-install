@@ -369,7 +369,7 @@ function setup_1 {
 #   Move "keyboard" after "block"
 #   Add "keymap consolefont" after "keyboard"
 #   If encrypt, "keyboard" must be before "encrypt" to enter the passphrase
-HOOKS=(base udev autodetect modconf block keyboard keymap consolefont $ENCRYPT_HOOK filesystems fsck)
+HOOKS=(base udev autodetect modconf kms block keyboard keymap consolefont $ENCRYPT_HOOK filesystems fsck)
 EOT
 
     #mkinitcpio -p linux
