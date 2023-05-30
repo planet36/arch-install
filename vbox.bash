@@ -90,6 +90,8 @@ EOT
     # reflector.timer starts reflector.service weekly
     #systemctl start reflector.timer # Running in chroot, ignoring command 'start'
     systemctl enable reflector.timer
+    # To run the reflector service manually:
+    #sudo systemctl start reflector.service
 }
 
 function setup_paccache_timer {
