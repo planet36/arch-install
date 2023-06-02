@@ -7,10 +7,10 @@ Use this installation script so you can honestly say _"I use Arch btw"_.
 - [vbox.bash](vbox.bash)
   - Script to [install Arch Linux](https://wiki.archlinux.org/title/Installation_guide) in a [VirtualBox](https://www.virtualbox.org/) guest
 - [pkgs.txt](pkgs.txt)
-  - List of [Arch Linux packages](https://www.archlinux.org/packages/) to install
+  - List of [Arch Linux packages](https://archlinux.org/packages/) to install
 
 ## Usage
-When the [Arch Linux Live CD](https://www.archlinux.org/download/) boot loader menu appears, choose option <u>`Arch Linux install medium (x86_64, BIOS)`</u>.
+When the [Arch Linux Live CD](https://archlinux.org/download/) boot loader menu appears, choose option <u>`Arch Linux install medium (x86_64, BIOS)`</u>.
 
 At the prompt, download the installation script and run it.
 ```sh
@@ -52,5 +52,5 @@ Dotfiles for the new user are cloned from [planet36/dotfiles](https://github.com
 - Base Memory >= 2048 MB
 
 ## License
-[OSL-3.0](https://opensource.org/licenses/OSL-3.0)
+[OSL-3.0](https://opensource.org/license/osl-3-0-php/)
 
