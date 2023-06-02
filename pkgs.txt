@@ -123,7 +123,6 @@ asp
 expac
 pacman-contrib
 pacman-mirrorlist
-pacmatic
 pkgfile
 pkgstats
 reflector
@@ -487,7 +486,6 @@ scrypt
 #sl
 termdown
 time
-units
 
 #screenfetch # XXX: inferior to neofetch
 
