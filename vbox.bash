@@ -241,7 +241,7 @@ function setup_0 {
 
     # {{{ Wait for pacman-init.service to finish
     # pacman-init.service does the pacman-key --init and --populate.
-    echo "Waiting for pacman-init.service to finish ..."
+    echo 'Waiting for pacman-init.service to finish ...'
     # https://unix.stackexchange.com/a/396633/439780
     while [[ "$(systemctl show -p SubState --value pacman-init.service)" != 'exited' ]]
     do
