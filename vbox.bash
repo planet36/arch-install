@@ -236,6 +236,9 @@ function setup_0 {
     sed -E -i 's/^#(ParallelDownloads)\>/\1/' /etc/pacman.conf
     # }}}
 
+    # pacman-init.service won't start till this service finishes
+    systemctl stop systemd-time-wait-sync.service
+
     # {{{ Wait for pacman-init.service to finish
     # pacman-init.service does the pacman-key --init and --populate.
     # https://unix.stackexchange.com/a/396638/439780
