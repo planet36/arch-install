@@ -241,16 +241,12 @@ function setup_0 {
 
     # {{{ Wait for pacman-init.service to finish
     # pacman-init.service does the pacman-key --init and --populate.
-    # https://unix.stackexchange.com/a/396638/439780
-    if systemctl is-active --quiet pacman-init.service
-    then
-        echo "Waiting for pacman-init.service to finish ..."
-        # https://unix.stackexchange.com/a/396633/439780
-        while [[ "$(systemctl show -p SubState --value pacman-init.service)" != 'exited' ]]
-        do
-            sleep 1s
-        done
-    fi
+    echo "Waiting for pacman-init.service to finish ..."
+    # https://unix.stackexchange.com/a/396633/439780
+    while [[ "$(systemctl show -p SubState --value pacman-init.service)" != 'exited' ]]
+    do
+        sleep 1s
+    done
     # }}}
 
     # {{{ Update the keyring if it's out-of-date
