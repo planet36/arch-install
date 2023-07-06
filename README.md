@@ -1,13 +1,7 @@
 # arch-install
 
 ## Introduction
-Use this installation script so you can honestly say _"I use Arch btw"_.
-
-## File Description
-- [vbox.bash](vbox.bash)
-  - Script to [install Arch Linux](https://wiki.archlinux.org/title/Installation_guide) in a [VirtualBox](https://www.virtualbox.org/) guest
-- [pkgs.txt](pkgs.txt)
-  - List of [Arch Linux packages](https://archlinux.org/packages/) to install
+Use this script to [install Arch Linux](https://wiki.archlinux.org/title/Installation_guide) within a [VirtualBox](https://www.virtualbox.org/) guest VM.  Then you can honestly say _"I use Arch btw"_.
 
 ## Usage
 When the [Arch Linux Live CD](https://archlinux.org/download/) boot loader menu appears, choose option <u>`Arch Linux install medium (x86_64, BIOS)`</u>.

@@ -2,6 +2,8 @@
 # SPDX-FileCopyrightText: Steven Ward
 # SPDX-License-Identifier: OSL-3.0
 
+# Script to install Arch Linux in a VirtualBox guest VM
+
 # shellcheck disable=SC1091
 # shellcheck disable=SC2086
 

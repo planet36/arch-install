@@ -1,5 +1,8 @@
 # vim: ft=sh:
 
+# List of Arch Linux packages to install
+# https://archlinux.org/packages/
+
 # Usage:
 # grep -E -o '^[^#]+' pkgs.txt | sudo xargs -r -o pacman --color always -S --needed
 
