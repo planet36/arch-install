@@ -328,6 +328,7 @@ duf
 
 # directory tools
 dfc
+#diskus
 #dust
 exa
 #gdu
