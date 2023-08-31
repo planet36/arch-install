@@ -7,13 +7,6 @@
 # grep -E -o '^[^#]+' pkgs.txt | sudo xargs -r -o pacman --color always -S --needed
 
 
-# https://www.archlinux.org/groups/
-
-base
-grub
-linux
-
-
 # Install initramfs compression methods listed in /etc/mkinitcpio.conf
 bzip2
 gzip
