@@ -323,7 +323,7 @@ duf
 dfc
 #diskus
 #dust
-exa
+eza
 #gdu
 lsd # installs awesome-terminal-fonts
 ncdu
