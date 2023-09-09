@@ -420,7 +420,7 @@ maim
 nsxiv
 optipng
 scrot
-sxiv
+#sxiv
 xwallpaper
 
 #nitrogen
