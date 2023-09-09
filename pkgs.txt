@@ -417,6 +417,7 @@ jpegexiforient
 libheif
 libraw
 maim
+nsxiv
 optipng
 scrot
 sxiv
