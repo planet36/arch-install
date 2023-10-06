@@ -307,10 +307,8 @@ EOT
     then
         printf '\nTook %d seconds\n\n' "$SECONDS"
 
-        echo 'Press Enter key to reboot now'
         # shellcheck disable=SC2034
-        read -r DUMMY < /dev/tty
-        #read -r -p 'Press Enter key to reboot'
+        read -r -p 'Press Enter key to reboot now ' DUMMY
     fi
 
     systemctl reboot
@@ -586,9 +584,7 @@ function parse_options {
             exit 1
         fi
 
-        printf 'Enter new user: '
-        read -r NEW_USER < /dev/tty
-        #read -r -p 'Enter new user: ' NEW_USER
+        read -r -p 'Enter new user: ' NEW_USER
         ARGS+=(-u "$NEW_USER")
     fi
 
