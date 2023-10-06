@@ -5,7 +5,6 @@
 # Script to install Arch Linux in a VirtualBox guest VM
 
 # shellcheck disable=SC1091
-# shellcheck disable=SC2086
 
 declare -a ARGS=("$@")
 
@@ -58,7 +57,6 @@ EOT
 
 function setup_hostname_hosts {
 
-    # shellcheck disable=SC1091
     source /usr/lib/os-release
 
     HOSTNAME="$ID"-vm
