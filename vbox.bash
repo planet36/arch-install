@@ -591,8 +591,6 @@ function parse_options {
     if [[ -z "$DPY_W" ]]
     then
         DPY_W="$DEFAULT_DPY_W"
-        #printf 'Enter the width (in pixels) of the display: '
-        #read -r DPY_W < /dev/tty
         ARGS+=(-w "$DPY_W")
     fi
 
@@ -605,8 +603,6 @@ function parse_options {
     if [[ -z "$DPY_H" ]]
     then
         DPY_H="$DEFAULT_DPY_H"
-        #printf 'Enter the height (in pixels) of the display: '
-        #read -r DPY_H < /dev/tty
         ARGS+=(-h "$DPY_H")
     fi
 
@@ -615,15 +611,6 @@ function parse_options {
         printf 'Error: display height must be a positive integer: %s\n' "$DPY_H"
         exit 1
     fi
-
-    # This is optional
-    #if [[ -z "$DPY_D" ]]
-    #then
-    #    printf 'Enter the diagonal size (in inches) of the display: '
-    #    read -r DPY_D < /dev/tty
-    #    #read -r -p 'Enter the diagonal size (in inches) of the display: ' NEW_USER
-    #    ARGS+=(-d "$DPY_D")
-    #fi
 }
 
 function main {
