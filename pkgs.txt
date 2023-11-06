@@ -271,10 +271,10 @@ python-wheel
 
 
 # editors
-#vim
 #kakoune
 neovim
 python-pynvim
+#vim
 #vis
 
 
