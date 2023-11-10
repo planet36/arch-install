@@ -491,6 +491,7 @@ time
 
 # python3 modules
 python-geographiclib
+python-geopy
 python-gmpy2
 python-icecream
 python-matplotlib
