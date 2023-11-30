@@ -19,19 +19,6 @@ export LC_ALL=C
 # Do not save history
 unset HISTFILE
 
-function is_int {
-    # shellcheck disable=SC2065
-    test "$1" -eq 0 -o "$1" -ne 0 &> /dev/null
-}
-
-function is_uint {
-    is_int "$1" && test "$1" -ge 0
-}
-
-function is_pos_int {
-    is_int "$1" && test "$1" -gt 0
-}
-
 function setup_grub {
     cp --backup=numbered /etc/default/grub /etc/default/grub.bak
 
@@ -115,22 +102,6 @@ fi
 EOT
 
     chmod --changes 755 -- /etc/X11/xinit/xinitrc.d/99-vboxclient-all.sh
-}
-
-function setup_dpi {
-
-    local DPI="$DEFAULT_DPI"
-
-    if [[ -n "$DPY_W" ]] && [[ -n "$DPY_H" ]] && [[ -n "$DPY_D" ]]
-    then
-        DPI=$(~/.local/bin/calc-dpi --width "$DPY_W" --height "$DPY_H" "$DPY_D")
-    fi
-
-    # ~/.xprofile is sourced by some display managers
-    #printf "xrandr --dpi %d\n" "$DPI" >> $XDG_CONFIG_HOME/xorg/xprofile
-
-    #printf 'Xft.dpi: %d\n' "$DPI" >> "$XDG_CONFIG_HOME"/xorg/Xresources
-    printf 'Xft.dpi: %d\n' "$DPI" >> "$XDG_CONFIG_HOME"/xorg/Xresources-xft
 }
 
 function setup_0 {
