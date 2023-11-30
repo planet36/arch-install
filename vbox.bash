@@ -19,10 +19,6 @@ export LC_ALL=C
 # Do not save history
 unset HISTFILE
 
-declare -r DEFAULT_DPY_W=1920
-declare -r DEFAULT_DPY_H=1080
-declare -r DEFAULT_DPI=96
-
 function is_int {
     # shellcheck disable=SC2065
     test "$1" -eq 0 -o "$1" -ne 0 &> /dev/null
@@ -44,7 +40,7 @@ function setup_grub {
 # Added by $THIS_SCRIPT
 GRUB_TIMEOUT=2
 GRUB_CMDLINE_LINUX_DEFAULT+=" mitigations=off random.trust_cpu=yes vconsole.font=Lat2-Terminus16"
-GRUB_GFXMODE=${DPY_W}x${DPY_H}x32,1280x1024x32,auto
+GRUB_GFXMODE=1280x1024x32,auto
 EOT
 
     if $ENCRYPT_ROOT_PARTITION
@@ -538,8 +534,6 @@ function setup_2 {
 
     # Install neovim plugins
     bash "$XDG_DATA_HOME"/nvim/site/pack/myplugins/clone-plugins.bash
-
-    setup_dpi
     # }}}
 
     # https://www.colour-science.org/installation-guide/
@@ -554,20 +548,13 @@ function parse_options {
 
     # Used in setup_1
     NEW_USER=''
-    # Used in setup_dpi (setup_2)
-    DPY_W=''
-    DPY_H=''
-    DPY_D=''
     # Used in setup_0, setup_grub, setup_1
     ENCRYPT_ROOT_PARTITION=false
 
-    while getopts 'u:w:h:d:e' OPTION "${ARGS[@]}"
+    while getopts 'u:e' OPTION "${ARGS[@]}"
     do
         case $OPTION in
             u) NEW_USER="$OPTARG" ;;
-            w) DPY_W="$OPTARG" ;; # pixels
-            h) DPY_H="$OPTARG" ;; # pixels
-            d) DPY_D="$OPTARG" ;; # inches
             e) ENCRYPT_ROOT_PARTITION=true ;;
             \?) exit 1 ;;
             *) ;;
@@ -586,30 +573,6 @@ function parse_options {
 
         read -r -p 'Enter new user: ' NEW_USER
         ARGS+=(-u "$NEW_USER")
-    fi
-
-    if [[ -z "$DPY_W" ]]
-    then
-        DPY_W="$DEFAULT_DPY_W"
-        ARGS+=(-w "$DPY_W")
-    fi
-
-    if ! is_pos_int "$DPY_W"
-    then
-        printf 'Error: display width must be a positive integer: %s\n' "$DPY_W"
-        exit 1
-    fi
-
-    if [[ -z "$DPY_H" ]]
-    then
-        DPY_H="$DEFAULT_DPY_H"
-        ARGS+=(-h "$DPY_H")
-    fi
-
-    if ! is_pos_int "$DPY_H"
-    then
-        printf 'Error: display height must be a positive integer: %s\n' "$DPY_H"
-        exit 1
     fi
 }
 
