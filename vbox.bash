@@ -127,7 +127,7 @@ function setup_dpi {
 
     if [[ -n "$DPY_W" ]] && [[ -n "$DPY_H" ]] && [[ -n "$DPY_D" ]]
     then
-        DPI=$(~/.local/bin/calc-dpi -w "$DPY_W" -h "$DPY_H" "$DPY_D")
+        DPI=$(~/.local/bin/calc-dpi --width "$DPY_W" --height "$DPY_H" "$DPY_D")
     fi
 
     # ~/.xprofile is sourced by some display managers
