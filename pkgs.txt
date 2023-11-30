@@ -100,7 +100,6 @@ ttf-input
 #ttf-monoid
 #ttf-roboto-mono
 #ttf-ubuntu-font-family
-#xorg-fonts-misc # zutty default font
 
 
 # virtual machine utils
@@ -509,7 +508,6 @@ alacritty
 kitty
 #terminator
 xterm
-#zutty
 
 
 # GUI diff tools
