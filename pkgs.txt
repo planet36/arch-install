@@ -188,6 +188,7 @@ htop
 iftop
 #glances
 #nmon
+#nvtop
 
 #gtop
 # Total Download Size:   11.71 MiB
