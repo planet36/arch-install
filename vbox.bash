@@ -457,7 +457,9 @@ EOT
     # https://bugs.archlinux.org/task/33677
     # https://bugs.archlinux.org/task/33694
     # https://bugs.archlinux.org/task/69699
-    echo '/usr/bin/bash' >> /etc/shells
+    # https://gitlab.archlinux.org/archlinux/packaging/packages/filesystem/-/commit/db8fce055a018aa7e581ff5901472ca350006d4f
+    # https://gitlab.archlinux.org/archlinux/packaging/packages/bash/-/commit/20244daa4cca1e08f0d01db1bf68908176a5aa7e
+    #echo '/usr/bin/bash' >> /etc/shells
     # }}}
 
     # Lock the root account
