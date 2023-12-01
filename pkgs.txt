@@ -325,7 +325,7 @@ dfc
 #dust
 eza
 #gdu
-lsd # installs awesome-terminal-fonts
+#lsd # installs awesome-terminal-fonts
 ncdu
 tree
 
