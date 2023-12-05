@@ -114,7 +114,6 @@ virtualbox-guest-utils
 
 
 # pacman utils
-asp
 expac
 pacman-contrib
 pacman-mirrorlist
@@ -432,7 +431,6 @@ xwallpaper
 ffmpeg
 libdvdcss
 rtmpdump
-youtube-dl
 yt-dlp
 
 
