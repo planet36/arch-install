@@ -206,6 +206,7 @@ tk
 
 # C++ dev libs
 benchmark
+boost
 chrono-date
 double-conversion
 fmt
