@@ -29,6 +29,7 @@ strace
 
 
 # firewall
+#firewalld
 ufw
 
 
