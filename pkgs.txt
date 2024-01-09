@@ -84,6 +84,8 @@ fontconfig
 
 # fonts
 adobe-source-code-pro-fonts # required by gsettings-desktop-schemas
+# https://bbs.archlinux.org/viewtopic.php?id=245006
+# https://bugs.archlinux.org/task/62046
 # firefox requires ttf-font
 #gnu-free-fonts # upstream might be unmaintained
 #otf-cascadia-code
