@@ -84,7 +84,7 @@ fontconfig
 
 # fonts
 adobe-source-code-pro-fonts # required by gsettings-desktop-schemas
-gnu-free-fonts # required by firefox
+#gnu-free-fonts # required by firefox
 #otf-cascadia-code
 #otf-overpass
 #ttc-iosevka-curly # large download/installed size
