@@ -209,6 +209,7 @@ benchmark
 boost
 chrono-date
 double-conversion
+#eigen
 fmt
 jsoncpp
 nlohmann-json
