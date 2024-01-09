@@ -84,16 +84,17 @@ fontconfig
 
 # fonts
 adobe-source-code-pro-fonts # required by gsettings-desktop-schemas
-#gnu-free-fonts # required by firefox
+# firefox requires ttf-font
+#gnu-free-fonts # upstream might be unmaintained
 #otf-cascadia-code
 #otf-overpass
 #ttc-iosevka-curly # large download/installed size
 #ttc-iosevka-curly-slab # large download/installed size
 #ttf-anonymous-pro
-#ttf-dejavu
+#ttf-dejavu # upstream might be unmaintained
 ttf-go-nerd
 ttf-hack
-#ttf-ibm-plex
+#ttf-ibm-plex # large download/installed size
 ttf-inconsolata
 ttf-input
 #ttf-jetbrains-mono
