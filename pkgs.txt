@@ -249,6 +249,8 @@ diffstat
 git-delta
 highlight
 patch
+prettier
+shfmt
 sloccount
 tidy
 
