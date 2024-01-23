@@ -488,6 +488,13 @@ scrypt
 termdown
 time
 
+
+# console image utils
+catimg
+chafa
+jp2a
+
+
 #screenfetch # XXX: inferior to neofetch
 
 #lolcat # XXX: installs ruby
