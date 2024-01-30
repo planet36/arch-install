@@ -60,13 +60,11 @@ EOT
 
 function setup_reflector_service {
 
-    mv --backup=numbered -- /etc/xdg/reflector/reflector.conf /etc/xdg/reflector/reflector.conf.bak
-    cat <<EOT > /etc/xdg/reflector/reflector.conf
+    # https://xyne.dev/projects/reflector/
+    cat <<EOT >> /etc/xdg/reflector/reflector.conf
+
+# Added by $THIS_SCRIPT
 --country US
---number 5
---protocol https
---save /etc/pacman.d/mirrorlist
---sort score
 EOT
 
     # https://wiki.archlinux.org/title/Reflector#Automation
