@@ -193,7 +193,7 @@ function setup_0 {
 
     # {{{ Update mirrorlist
     cp --verbose -- /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.bak
-    reflector --country US --number 5 --protocol https --save /etc/pacman.d/mirrorlist --sort score
+    reflector --save /etc/pacman.d/mirrorlist --protocol https --latest 5 --sort age --country US
     # }}}
 
     # {{{ Change pacman.conf misc options
