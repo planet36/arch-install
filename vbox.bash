@@ -236,12 +236,14 @@ function setup_0 {
     genfstab -U /mnt >> /mnt/etc/fstab
 
     # Do not copy to /mnt/tmp because it is cleared after chroot
-    cp --verbose -- "$0" /mnt/
+    cp --verbose -- "$THIS_SCRIPT" /mnt/
 
     # https://wiki.archlinux.org/title/Systemd-networkd#Wired_adapter_using_DHCP
     cp --verbose /etc/systemd/network/* /mnt/etc/systemd/network/
 
-    arch-chroot /mnt bash /"$(basename -- "$0")" "${ARGS[@]}"
+    # Must do basename of $THIS_SCRIPT because the parent path won't be present.
+    # Example: /root/vbox.bash is copied to /mnt/vbox.bash, then run was /vbox.bash inside the chroot environment.
+    arch-chroot /mnt bash /"$(basename -- "$THIS_SCRIPT")" "${ARGS[@]}"
 
     umount --verbose --recursive -- /mnt
 
@@ -472,7 +474,7 @@ EOT
     # }}}
 
     # Must use absolute path of $0
-    su --login "$NEW_USER" -- "$(realpath -- "$0")" "${ARGS[@]}"
+    su --login "$NEW_USER" -- "$THIS_SCRIPT" "${ARGS[@]}"
 }
 
 # setup user dotfiles and programs
