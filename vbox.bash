@@ -286,6 +286,9 @@ function setup_1 {
         exit 1
     fi
 
+    # https://stackoverflow.com/a/3403786
+    exec &> >(tee --append --ignore-interrupts -- ./vbox.log)
+
     # {{{ Locale
     mv --backup=numbered -- /etc/locale.gen /etc/locale.gen.bak
     #sed -E -i 's/^#\s*\(en_US.UTF-8\)/\1/' /etc/locale.gen
