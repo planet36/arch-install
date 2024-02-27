@@ -179,6 +179,7 @@ words
 # net tools
 curl
 #mosh
+#openbsd-netcat
 openssh
 rsync
 wget
