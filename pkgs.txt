@@ -470,6 +470,7 @@ w3m
 aalib
 asciinema
 asciiquarium
+b3sum
 banner
 bc
 calc
