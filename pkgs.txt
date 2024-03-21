@@ -94,6 +94,7 @@ adobe-source-code-pro-fonts # required by gsettings-desktop-schemas
 #ttc-iosevka-curly # large download/installed size
 #ttc-iosevka-curly-slab # large download/installed size
 #ttf-anonymous-pro
+#ttf-anonymouspro-nerd
 #ttf-croscore # upstream might be unmaintained
 #ttf-dejavu # upstream might be unmaintained
 #ttf-droid # upstream might be unmaintained
