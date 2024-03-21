@@ -107,6 +107,7 @@ ttf-input
 ttf-liberation # required by chromium
 #ttf-monoid
 #ttf-roboto-mono
+#ttf-sourcecodepro-nerd
 #ttf-ubuntu-font-family
 
 
