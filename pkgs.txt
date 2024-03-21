@@ -99,7 +99,7 @@ adobe-source-code-pro-fonts # required by gsettings-desktop-schemas
 #ttf-dejavu # upstream might be unmaintained
 #ttf-droid # upstream might be unmaintained
 ttf-go-nerd
-ttf-hack
+ttf-hack-nerd
 #ttf-ibm-plex # large download/installed size
 ttf-inconsolata
 ttf-input
