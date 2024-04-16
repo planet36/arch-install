@@ -214,6 +214,7 @@ tk
 
 
 # C++ dev libs
+#abseil-cpp
 benchmark
 boost
 chrono-date
@@ -223,6 +224,7 @@ fmt
 jsoncpp
 nlohmann-json
 onetbb
+#re2
 spdlog
 utf8cpp
 
@@ -236,6 +238,7 @@ xxhash
 
 # dev tools
 gperf # needed to build coreutils
+#protobuf
 
 
 # user utils
