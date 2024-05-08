@@ -484,6 +484,7 @@ cowsay
 datamash
 dateutils
 dictd
+#fastfetch
 figlet
 fortune-mod
 grc
@@ -499,6 +500,7 @@ scrypt
 #sl
 termdown
 time
+#uwufetch
 
 
 # console image utils
