@@ -22,6 +22,7 @@ unset HISTFILE
 function setup_grub {
     cp --backup=numbered /etc/default/grub /etc/default/grub.bak
 
+    # https://www.kernel.org/doc/html/latest/admin-guide/kernel-parameters.html
     cat <<EOT >> /etc/default/grub
 
 # Added by $THIS_SCRIPT
