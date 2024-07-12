@@ -26,6 +26,7 @@ function setup_grub {
 
 # Added by $THIS_SCRIPT
 GRUB_TIMEOUT=2
+GRUB_CMDLINE_LINUX_DEFAULT="loglevel=3"
 GRUB_CMDLINE_LINUX_DEFAULT+=" mitigations=off random.trust_cpu=yes vconsole.font=Lat2-Terminus16"
 GRUB_GFXMODE=1280x1024x32,auto
 EOT
