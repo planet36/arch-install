@@ -494,6 +494,7 @@ moreutils
 neofetch
 #onefetch
 parallel
+rng-tools
 #rofi-calc
 screenkey
 scrypt
