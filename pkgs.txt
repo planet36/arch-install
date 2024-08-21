@@ -24,7 +24,9 @@ base-devel
 
 # debug tools
 gdb
+#kcachegrind
 ltrace
+#qcachegrind
 strace
 valgrind
 
@@ -222,6 +224,7 @@ chrono-date
 double-conversion
 #eigen
 fmt
+#highway
 jsoncpp
 nlohmann-json
 onetbb
