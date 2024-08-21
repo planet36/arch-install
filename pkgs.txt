@@ -26,6 +26,7 @@ base-devel
 gdb
 ltrace
 strace
+valgrind
 
 
 # firewall
