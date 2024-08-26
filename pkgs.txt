@@ -228,6 +228,7 @@ fmt
 jsoncpp
 nlohmann-json
 onetbb
+range-v3
 #re2
 spdlog
 utf8cpp
