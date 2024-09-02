@@ -306,6 +306,7 @@ tmux
 # doc creation
 #doxygen
 #graphviz
+#mathjax
 
 
 # dwm deps
