@@ -251,6 +251,7 @@ at
 entr
 lsof
 opendoas
+rt-tests
 util-linux
 
 
