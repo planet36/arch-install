@@ -90,25 +90,25 @@ adobe-source-code-pro-fonts # required by gsettings-desktop-schemas
 # https://bbs.archlinux.org/viewtopic.php?id=245006
 # https://bugs.archlinux.org/task/62046
 # firefox requires ttf-font (ttf-bitstream-vera, gnu-free-fonts, noto-fonts, ttf-croscore, ttf-dejavu, ttf-droid, ttf-ibm-plex, ttf-liberation)
-#gnu-free-fonts # upstream might be unmaintained
-#noto-fonts # large download/installed size
-#otf-cascadia-code
-#otf-overpass
-#ttc-iosevka-curly # large download/installed size
-#ttc-iosevka-curly-slab # large download/installed size
 #ttf-anonymous-pro
 #ttf-anonymouspro-nerd
+#otf-cascadia-code
 #ttf-croscore # upstream might be unmaintained
 #ttf-dejavu # upstream might be unmaintained
 #ttf-droid # upstream might be unmaintained
+#gnu-free-fonts # upstream might be unmaintained
 ttf-go-nerd
 ttf-hack-nerd
 #ttf-ibm-plex # large download/installed size
 ttf-inconsolata-nerd
 ttf-input
+#ttc-iosevka-curly # large download/installed size
+#ttc-iosevka-curly-slab # large download/installed size
 #ttf-jetbrains-mono
 ttf-liberation # required by chromium
 #ttf-monoid
+#noto-fonts # large download/installed size
+#otf-overpass
 #ttf-roboto-mono
 #ttf-sourcecodepro-nerd
 #ttf-ubuntu-font-family
