@@ -502,14 +502,14 @@ cowsay
 datamash
 dateutils
 dictd
-#fastfetch
+fastfetch
 figlet
 fortune-mod
 grc
 hyperfine
 #libqalculate
 moreutils
-neofetch
+#neofetch
 #onefetch
 parallel
 rng-tools
