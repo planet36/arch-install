@@ -86,16 +86,25 @@ fontconfig
 
 
 # fonts
+#ttf-0xproto-nerd
+#ttf-bitstream-vera-mono-nerd
+ttf-cascadia-mono-nerd
+#otf-codenewroman-nerd
+otf-commit-mono-nerd
+#otf-firamono-nerd
+ttf-hack-nerd
+ttf-inconsolata-nerd
+#ttc-iosevka-curly # large download/installed size
+#ttf-liberation-mono-nerd
+#ttf-sourcecodepro-nerd
+ttf-ubuntu-mono-nerd
 adobe-source-code-pro-fonts # required by gsettings-desktop-schemas
 # https://bbs.archlinux.org/viewtopic.php?id=245006
 # https://bugs.archlinux.org/task/62046
 # firefox requires ttf-font (ttf-bitstream-vera, gnu-free-fonts, noto-fonts, ttf-croscore, ttf-dejavu, ttf-droid, ttf-ibm-plex, ttf-liberation)
 #ttf-anonymous-pro
 #ttf-anonymouspro-nerd
-#ttf-bitstream-vera-mono-nerd
 #otf-cascadia-code
-# cascadia-code has ligatures; cascadia-mono does not have ligatures
-#ttf-cascadia-mono-nerd
 #ttf-croscore # upstream might be unmaintained
 #ttf-dejavu # upstream might be unmaintained
 #ttf-dejavu-nerd
@@ -103,26 +112,21 @@ adobe-source-code-pro-fonts # required by gsettings-desktop-schemas
 #otf-droid-nerd
 #gnu-free-fonts # upstream might be unmaintained
 ttf-go-nerd
-ttf-hack-nerd
 #ttf-ibm-plex # large download/installed size
 #ttf-ibmplex-mono-nerd
-ttf-inconsolata-nerd
 ttf-input
 #ttc-iosevka-curly # large download/installed size
 #ttc-iosevka-curly-slab # large download/installed size
 #ttf-jetbrains-mono
 #ttf-jetbrains-mono-nerd
 ttf-liberation # required by chromium
-#ttf-liberation-mono-nerd
 #ttf-monoid
 #ttf-monoid-nerd
 #noto-fonts # large download/installed size
 #otf-overpass
 #ttf-roboto-mono
 #ttf-roboto-mono-nerd
-#ttf-sourcecodepro-nerd
 #ttf-ubuntu-font-family
-#ttf-ubuntu-mono-nerd
 
 
 # virtual machine utils
