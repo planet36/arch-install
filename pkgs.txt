@@ -526,7 +526,6 @@ python-scipy
 # terminal emulators
 alacritty
 kitty
-#terminator
 xterm
 
 
