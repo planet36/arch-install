@@ -419,6 +419,7 @@ firefox-ublock-origin
 # image tools
 dcraw
 feh
+#gif2png
 graphicsmagick
 hsetroot
 imagemagick
