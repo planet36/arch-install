@@ -483,6 +483,7 @@ fastfetch
 figlet
 fortune-mod
 grc
+hexyl
 hyperfine
 #libqalculate
 moreutils
