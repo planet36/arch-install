@@ -337,6 +337,7 @@ eza
 #lsd # installs awesome-terminal-fonts
 ncdu
 tree
+vivid
 
 
 # search for files
@@ -488,6 +489,7 @@ moreutils
 #neofetch
 #onefetch
 parallel
+pastel
 rng-tools
 #rofi-calc
 screenkey
@@ -496,6 +498,7 @@ scrypt
 termdown
 time
 #uwufetch
+xcolor
 
 
 # console image utils
