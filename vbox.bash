@@ -351,7 +351,7 @@ EOT
     # }}}
 
     # {{{ Install Arch packages
-    curl -L https://raw.githubusercontent.com/planet36/arch-install/main/pkgs.txt | grep -E -o '^[^# ]+' > /tmp/pkgs.txt
+    curl -L https://raw.githubusercontent.com/planet36/arch-install/main/pkgs.txt | command grep -E -o '^[^# ]+' > /tmp/pkgs.txt
 
     until pacman -S --needed --noconfirm - < /tmp/pkgs.txt
     do
