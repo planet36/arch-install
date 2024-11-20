@@ -286,6 +286,10 @@ python-pynvim
 #vis
 
 
+# editor plugins
+#vim-tabular
+
+
 # tmux
 tmux
 
