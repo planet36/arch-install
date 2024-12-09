@@ -239,6 +239,7 @@ lsof
 opendoas
 rt-tests
 util-linux
+#uutils-coreutils
 
 
 # code tools
