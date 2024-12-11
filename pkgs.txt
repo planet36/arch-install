@@ -228,6 +228,7 @@ xxhash
 
 
 # dev tools
+#cmake
 gperf # needed to build coreutils
 #protobuf
 
