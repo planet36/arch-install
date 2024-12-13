@@ -222,6 +222,7 @@ utf8cpp
 
 # dev libs
 freeglut
+#libb2
 libbsd
 pcre2
 xxhash
