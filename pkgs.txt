@@ -493,6 +493,7 @@ grc
 hexyl
 hyperfine
 #libqalculate
+#lolcat # XXX: installs ruby
 moreutils
 #neofetch
 #onefetch
@@ -500,6 +501,7 @@ parallel
 pastel
 rng-tools
 #rofi-calc
+#screenfetch # XXX: inferior to neofetch
 screenkey
 scrypt
 #sl
@@ -513,11 +515,6 @@ xcolor
 catimg
 chafa
 jp2a
-
-
-#screenfetch # XXX: inferior to neofetch
-
-#lolcat # XXX: installs ruby
 
 
 # python3 modules
