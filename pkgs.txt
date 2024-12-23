@@ -389,7 +389,7 @@ zstd
 # other comprson programs
 lrzip
 ncompress
-p7zip
+7zip
 pixz
 unrar
 unzip
