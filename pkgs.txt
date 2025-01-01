@@ -483,6 +483,7 @@ bc
 calc
 cmatrix
 cowsay
+#cpufetch
 datamash
 dateutils
 dictd
