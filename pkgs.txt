@@ -350,6 +350,7 @@ vivid
 # search for files
 fd
 fzf
+plocate
 #skim
 
 
