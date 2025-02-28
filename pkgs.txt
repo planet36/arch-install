@@ -212,6 +212,7 @@ double-conversion
 fmt
 #highway
 jsoncpp
+#libblake3
 nlohmann-json
 onetbb
 range-v3
