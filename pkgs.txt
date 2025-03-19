@@ -499,6 +499,7 @@ hyperfine
 #lolcat # XXX: installs ruby
 moreutils
 #neofetch
+nyancat
 #onefetch
 parallel
 pastel
