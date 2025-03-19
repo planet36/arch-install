@@ -511,6 +511,7 @@ scrypt
 #sl
 termdown
 time
+toilet
 #uwufetch
 xcolor
 
