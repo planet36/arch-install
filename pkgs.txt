@@ -68,10 +68,6 @@ xss-lock
 xtrlock
 
 
-# lock console, virtual terminal
-physlock
-
-
 # Wayland
 #wofi
 
