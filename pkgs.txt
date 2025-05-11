@@ -351,7 +351,6 @@ plocate
 
 
 # search within files
-ack
 ripgrep
 the_silver_searcher
 #ugrep
