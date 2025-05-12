@@ -63,6 +63,7 @@ xsel
 
 # lock X
 slock
+#xscreensaver
 xsecurelock
 xss-lock
 xtrlock
