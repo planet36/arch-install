@@ -62,6 +62,7 @@ xsel
 
 
 # lock X
+i3lock
 slock
 #xlockmore
 #xscreensaver
