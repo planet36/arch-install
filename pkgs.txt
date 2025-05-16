@@ -500,6 +500,7 @@ nyancat
 #onefetch
 parallel
 pastel
+pv
 rng-tools
 #rofi-calc
 #screenfetch # XXX: inferior to neofetch
