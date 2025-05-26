@@ -276,8 +276,11 @@ ipython
 pypy3
 python
 python-pip
-python-pylint
 python-wheel
+
+
+# python analyzers/formatters
+python-pylint
 
 
 # editors
