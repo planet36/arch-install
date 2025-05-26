@@ -280,6 +280,9 @@ python-wheel
 
 
 # python analyzers/formatters
+autopep8
+python-black
+python-pycodestyle
 python-pylint
 
 
