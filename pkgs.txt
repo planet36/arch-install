@@ -437,6 +437,7 @@ graphicsmagick
 hsetroot
 imagemagick
 jpegexiforient
+jpegoptim
 libheif
 libraw
 maim
