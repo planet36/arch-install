@@ -167,6 +167,7 @@ words
 
 # net tools
 curl
+ipcalc
 #mosh
 #openbsd-netcat
 openssh
