@@ -169,6 +169,7 @@ words
 curl
 ipcalc
 #mosh
+#mtr
 #openbsd-netcat
 openssh
 rsync
@@ -183,9 +184,11 @@ btop
 #gtop
 htop
 iftop
+#iotop-c
 #glances
 #nmon
 #nvtop
+#progress
 
 #gtop
 # Total Download Size:   11.71 MiB
@@ -239,6 +242,7 @@ at
 entr
 lsof
 opendoas
+#procs
 rt-tests
 util-linux
 #uutils-coreutils
