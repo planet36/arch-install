@@ -237,17 +237,6 @@ gperf # needed to build coreutils
 #protobuf
 
 
-# user utils
-at
-entr
-lsof
-opendoas
-#procs
-rt-tests
-util-linux
-#uutils-coreutils
-
-
 # code tools
 cloc
 colordiff
@@ -483,10 +472,11 @@ w3m
 #xplr
 
 
-# utils
+# utils (user and system)
 aalib
 asciinema
 asciiquarium
+at
 b3sum
 banner
 bc
@@ -497,6 +487,7 @@ cowsay
 datamash
 dateutils
 dictd
+entr
 fastfetch
 figlet
 fortune-mod
@@ -505,15 +496,19 @@ hexyl
 hyperfine
 #libqalculate
 #lolcat # XXX: installs ruby
+lsof
 moreutils
 #neofetch
 nyancat
 #onefetch
+opendoas
 parallel
 pastel
+#procs
 pv
 rng-tools
 #rofi-calc
+rt-tests
 #screenfetch # XXX: inferior to neofetch
 screenkey
 scrypt
@@ -521,6 +516,8 @@ scrypt
 termdown
 time
 toilet
+util-linux
+#uutils-coreutils
 #uwufetch
 xcolor
 
