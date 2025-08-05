@@ -512,6 +512,7 @@ rt-tests
 #screenfetch # XXX: inferior to neofetch
 screenkey
 scrypt
+sha3sum
 #sl
 termdown
 time
