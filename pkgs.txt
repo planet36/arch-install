@@ -333,6 +333,7 @@ perl-rename
 # filesystem tools
 dfc
 duf
+#dysk
 
 
 # directory tools
