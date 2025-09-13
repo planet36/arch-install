@@ -331,11 +331,11 @@ perl-rename
 
 
 # filesystem tools
+dfc
 duf
 
 
 # directory tools
-dfc
 #diskus
 #dust
 eza
