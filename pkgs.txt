@@ -66,7 +66,7 @@ i3lock
 slock
 #xlockmore
 #xscreensaver
-xsecurelock
+#xsecurelock
 xss-lock
 xtrlock
 
