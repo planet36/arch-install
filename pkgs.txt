@@ -541,6 +541,7 @@ python-perf
 python-pillow
 python-scipy
 python-sympy
+#python-wcwidth
 
 
 # terminal emulators
