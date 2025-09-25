@@ -160,8 +160,8 @@ function setup_0 {
     # {{{ Partition /dev/sda
     #parted --script --align optimal /dev/sda mklabel msdos unit % mkpart primary 0 100
     parted --script --align optimal /dev/sda mklabel msdos \
-    mkpart primary 1MiB 256MiB \
-    mkpart primary 256MiB 100%
+    mkpart primary 1MiB 512MiB \
+    mkpart primary 512MiB 100%
     parted --script /dev/sda set 1 boot on
     # }}}
 
