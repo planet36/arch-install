@@ -38,7 +38,7 @@ Dotfiles for the new user are cloned from [planet36/dotfiles](https://github.com
 ## Recommended Virtual Machine Resources
 
 - Storage >= 50 GB
-- Base Memory >= 2048 MB
+- Base Memory >= 4096 MB
 
 ## License
 
