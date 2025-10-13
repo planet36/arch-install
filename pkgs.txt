@@ -435,6 +435,7 @@ jpegexiforient
 jpegoptim
 libheif
 libraw
+libwebp-utils
 maim
 nsxiv
 optipng
