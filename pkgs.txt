@@ -347,6 +347,7 @@ vivid
 
 
 # search for files
+#bfs
 fd
 fzf
 plocate
