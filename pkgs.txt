@@ -170,7 +170,7 @@ curl
 ipcalc
 #mosh
 #mtr
-#openbsd-netcat
+openbsd-netcat
 openssh
 rsync
 wget
