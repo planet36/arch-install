@@ -431,7 +431,6 @@ feh
 graphicsmagick
 hsetroot
 imagemagick
-jpegexiforient
 jpegoptim
 libheif
 libraw
