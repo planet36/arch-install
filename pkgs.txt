@@ -235,6 +235,8 @@ xxhash
 # dev tools
 #cmake
 gperf # needed to build coreutils
+#meson
+#ninja
 #protobuf
 
 
