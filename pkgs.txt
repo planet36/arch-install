@@ -554,6 +554,7 @@ python-sympy
 
 # terminal emulators
 alacritty
+#ghostty
 kitty
 xterm
 
