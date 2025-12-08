@@ -527,7 +527,7 @@ termdown
 time
 toilet
 util-linux
-#uutils-coreutils
+uutils-coreutils
 #uwufetch
 xcolor
 
