@@ -319,7 +319,7 @@ libxinerama
 
 
 # dwm optional deps
-rofi
+#rofi
 
 
 # st deps
