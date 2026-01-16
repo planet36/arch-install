@@ -93,6 +93,7 @@ otf-firamono-nerd
 ttf-hack-nerd
 ttf-inconsolata-nerd
 #ttc-iosevka-curly # large download/installed size
+#ttf-jetbrains-mono-nerd
 #ttf-liberation-mono-nerd
 #ttf-nerd-fonts-symbols
 #ttf-nerd-fonts-symbols-mono
