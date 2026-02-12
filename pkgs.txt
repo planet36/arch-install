@@ -378,6 +378,7 @@ bat
 bat-extras
 choose
 sd
+tinyxxd
 
 
 # comprson programs
