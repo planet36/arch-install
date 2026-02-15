@@ -292,7 +292,7 @@ python-pylint
 #kakoune
 neovim
 python-pynvim
-#vim
+#vim # XXX: conflicts with tinyxxd
 #vis
 
 
@@ -378,7 +378,7 @@ bat
 bat-extras
 choose
 sd
-tinyxxd
+#tinyxxd # XXX: conflicts with vim
 
 
 # comprson programs
