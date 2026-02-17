@@ -321,6 +321,7 @@ libxinerama
 
 
 # dwm optional deps
+dunst
 #rofi
 
 
