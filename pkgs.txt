@@ -36,7 +36,7 @@ valgrind
 ufw
 
 
-# https://archlinux.org/groups/x86_64/xorg/
+# https://archlinux.org/groups/x86_64/
 xorg
 
 # X
