@@ -40,11 +40,11 @@ ufw
 xorg
 
 # X
+xcompmgr
 xorg-xclock
 xorg-xeyes
 xorg-xinit
 xorg-xmessage
-xcompmgr
 
 
 # keyboard, mouse
