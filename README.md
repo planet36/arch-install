@@ -39,8 +39,3 @@ Dotfiles for the new user are cloned from [planet36/dotfiles](https://github.com
 
 - Storage >= 50 GB
 - Base Memory >= 4096 MB
-
-## License
-
-[OSL-3.0](https://opensource.org/license/osl-3-0-php/)
-
