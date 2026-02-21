@@ -1,6 +1,6 @@
 #!/usr/bin/bash
 # SPDX-FileCopyrightText: Steven Ward
-# SPDX-License-Identifier: OSL-3.0
+# SPDX-License-Identifier: MPL-2.0
 
 # Script to install Arch Linux in a VirtualBox guest VM
 
@@ -93,7 +93,7 @@ function setup_vbox_service {
     cat <<EOT > /etc/X11/xinit/xinitrc.d/99-vboxclient-all.sh
 #!/usr/bin/sh
 # SPDX-FileCopyrightText: Steven Ward
-# SPDX-License-Identifier: OSL-3.0
+# SPDX-License-Identifier: MPL-2.0
 
 if command -v VBoxClient-all > /dev/null
 then
