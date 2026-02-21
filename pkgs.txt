@@ -95,6 +95,7 @@ ttf-cascadia-mono-nerd
 #otf-codenewroman-nerd
 otf-commit-mono-nerd
 otf-firamono-nerd
+#ttf-go-nerd
 ttf-hack-nerd
 ttf-inconsolata-nerd
 #ttc-iosevka-curly # large download/installed size
