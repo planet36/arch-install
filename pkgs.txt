@@ -258,6 +258,7 @@ ctags
 diff-so-fancy
 diffstat
 git-delta
+git-filter-repo
 highlight
 patch
 prettier
