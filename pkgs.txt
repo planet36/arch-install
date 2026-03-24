@@ -29,7 +29,7 @@ base-devel
 # debug tools
 gdb
 #kcachegrind
-ltrace
+#ltrace
 #qcachegrind
 strace
 valgrind
