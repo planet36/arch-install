@@ -6,6 +6,10 @@
 # Usage:
 # command grep -E -o '^[^#]+' pkgs.txt | sudo xargs -r -o pacman --color always -S --needed
 
+base
+grub
+linux
+
 
 # Install initramfs compression methods listed in /etc/mkinitcpio.conf
 bzip2
