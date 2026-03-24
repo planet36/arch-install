@@ -502,7 +502,7 @@ asciinema
 asciiquarium
 at
 b3sum
-banner
+#banner
 bc
 calc
 cmatrix
