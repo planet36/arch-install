@@ -580,16 +580,6 @@ xterm
 meld
 
 
-# meld deps
-# expac -S -1 '%E' -l '\n' meld
-#python-gobject
-#python-cairo
-#gtksourceview3
-#gtksourceview4 # XXX: required for new meld (3.21)
-#gsettings-desktop-schemas
-#dconf
-
-
 # XXX: can't compare folders
 #diffuse
 # Total Download Size:   0.32 MiB
