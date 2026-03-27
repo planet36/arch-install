@@ -558,6 +558,7 @@ jp2a
 
 # python3 modules
 #python-blessed
+python-eyed3
 python-geographiclib
 python-geopy
 python-gmpy2
