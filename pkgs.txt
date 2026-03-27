@@ -264,10 +264,12 @@ diffstat
 git-delta
 git-filter-repo
 highlight
+luacheck
 patch
 prettier
 shfmt
 sloccount
+stylua
 tidy
 
 
