@@ -565,6 +565,7 @@ python-gmpy2
 python-icecream
 python-matplotlib
 python-numpy
+#python-pandas
 python-perf
 python-pillow
 python-scipy
