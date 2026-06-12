@@ -84,10 +84,6 @@ xtrlock
 #wofi
 
 
-# Wayland clipboard
-#wl-clipboard
-
-
 # fontconfig
 fontconfig
 
