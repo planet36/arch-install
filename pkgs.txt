@@ -171,6 +171,7 @@ words
 
 
 # net tools
+#bind
 curl
 ipcalc
 #mosh
