@@ -287,11 +287,14 @@ python-pip
 python-wheel
 
 
-# python analyzers/formatters
+# python analyzers/formatters/linters
 autopep8
+mypy
 python-black
 python-pycodestyle
 python-pylint
+python-pytest
+ruff
 
 
 # editors
