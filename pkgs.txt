@@ -567,6 +567,7 @@ python-pillow
 python-scipy
 python-sympy
 #python-wcwidth
+#python-z3-solver
 
 
 # terminal emulators
