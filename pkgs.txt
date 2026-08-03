@@ -558,6 +558,7 @@ python-eyed3
 python-geographiclib
 python-geopy
 python-gmpy2
+#python-highspy
 python-icecream
 python-matplotlib
 python-numpy
