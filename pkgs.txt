@@ -571,6 +571,13 @@ python-sympy
 #python-z3-solver
 
 
+# Java packages
+#java-commons-daemon
+#java-commons-io
+#java-commons-lang
+#java-commons-logging
+
+
 # terminal emulators
 alacritty
 #ghostty
