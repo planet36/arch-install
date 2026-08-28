@@ -507,9 +507,6 @@ function setup_2 {
     # Install programs from external git repos
     make -j"$(nproc)" -C ~/.local/src install
     make -j"$(nproc)" -C ~/.local/src clean
-
-    # Install neovim plugins
-    bash "$XDG_DATA_HOME"/nvim/site/pack/myplugins/clone-plugins.bash
     # }}}
 
     # https://www.colour-science.org/installation-guide/
