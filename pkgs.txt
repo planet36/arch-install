@@ -159,6 +159,7 @@ fisher
 
 
 # docs
+help2man
 man-db
 man-pages
 texinfo
