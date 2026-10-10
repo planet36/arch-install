@@ -618,6 +618,7 @@ meld
 # games
 aisleriot # installs as sol
 bsd-games
+gnome-mines
 #kpat
 #pysolfc # installs as pysol
 tty-solitaire
