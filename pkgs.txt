@@ -457,7 +457,7 @@ libraw
 libwebp-utils
 maim
 nsxiv
-#pngcrush
+pngcrush
 optipng
 oxipng
 scrot
