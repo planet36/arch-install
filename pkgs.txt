@@ -563,6 +563,7 @@ python-geopy
 python-gmpy2
 #python-highspy
 python-icecream
+python-markdown
 python-matplotlib
 python-numpy
 #python-pandas
