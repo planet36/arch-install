@@ -30,7 +30,7 @@ base-devel
 gdb
 #kcachegrind
 ltrace
-#qcachegrind
+qcachegrind
 strace
 valgrind
 
