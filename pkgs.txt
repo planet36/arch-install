@@ -285,6 +285,7 @@ ipython
 pypy3
 python
 python-pip
+python-pipx
 python-wheel
 
 
