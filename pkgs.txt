@@ -217,6 +217,7 @@ tk
 benchmark
 boost
 chrono-date
+#cpp-httplib
 double-conversion
 #eigen
 fmt
